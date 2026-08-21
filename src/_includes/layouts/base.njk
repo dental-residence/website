@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ title | safe }}</title><meta property="og:site_name" content="Dental Residence" />
+<meta property="og:title" content="{{ ogTitle }}" />
+<meta property="og:description" content="{{ ogDescription }}" />
+<meta property="og:url" content="{{ ogUrl }}" />
+<link rel="canonical" href="{{ site.url }}{{ '/' if page.url == '/index.html' else page.url }}" />
+{% if description %}<meta name="description" content="{{ description }}" />
+{% endif %}{% if keywords %}<meta name="keywords" content="{{ keywords }}" />
+{% endif %}<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{% for l in headLinks %}    {{ l | safe }}
+{% endfor %}
+		<meta property="og:image" content="{{ site.url }}/files/theme/images/socialshare.png" />
+
+{% include "partials/tracking-head.njk" %}
+{% if adsConversion %}
+<!-- Event snippet for Thank You Page conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-357358707/l6F3CKeX89YCEPO4s6oB'});
+</script>
+{% endif %}
+{% for block in jsonld %}<script type="application/ld+json">{{ block | safe }}</script>
+{% endfor %}
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="/assets/css/vendor/sites.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="/files/main_style.css" title="wsite-theme-css" />
+<link href='/assets/fonts/Didact_Gothic/font.css' rel='stylesheet' type='text/css' />
+<link href='/assets/fonts/Raleway/font.css' rel='stylesheet' type='text/css' />
+<link href='/assets/fonts/Lora/font.css' rel='stylesheet' type='text/css' />
+<link href='/assets/fonts/Libre_Franklin/font.css' rel='stylesheet' type='text/css' />
+<link href='/assets/fonts/Montserrat/font.css' rel='stylesheet' type='text/css' />
+<link href='/assets/fonts/GFS_Didot/font.css' rel='stylesheet' type='text/css' />
+{% include "partials/head-styles.njk" %}
+<link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css" />
+	</head>
+	<body class="{{ bodyClass }}"><div class="body-wrap">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSWZZVL9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+		<div id="header">
+		<div>
+			<div class="nav-trigger hamburger">
+				<div class="open-btn">
+					<span class="mobile"></span>
+					<span class="mobile"></span>
+					<span class="mobile"></span>
+				</div>
+			</div>
+                <div id="sitename"><img class="logo-image" src="files/theme/images/dental_residence_logo.png"> </div>
+			</div>
+
+
+		</div>
+		<div id="wrapper">
+			<div class="bg-wrapper">
+				{% import "partials/nav.njk" as navmenu %}<div id="navigation">{{ navmenu.menu(nav, navActive, navActiveSub) }}</div>
+{{ content | safe }}
+<div id="footer"{% if 'no-header' not in bodyClass %} style="background-color: #FFFFFF"{% endif %}>
+				{% include "partials/footer-content.njk" %}
+		<div class="navmobile-wrapper">
+			<div id="navmobile" class="nav">{{ navmenu.menu(nav, navActive, navActiveSub) }}</div>
+		</div>
+	</div>
+
+<div style='display:none'><span id="wsite-title">Dental Residence</span></div>
+
+<script src="/assets/js/nav.js"></script>
+		<script async type='text/javascript' src='https://www.myhealth1st.com.au/mh1-widget/2021/popup.v3.js'></script>
+
+	</body>
+</html>

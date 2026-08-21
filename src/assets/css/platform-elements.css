@@ -4760,3 +4760,293 @@
   bottom: 22px;
 }
 
+
+
+/* pe-v17 (x3, e.g. footer) */
+
+	.pe-v17 .h1 {
+  content: "h1";
+  display: block;
+}
+.pe-v17 .h2 {
+  content: "h2";
+  display: block;
+}
+.pe-v17 .h3 {
+  content: "h3";
+  display: block;
+}
+.pe-v17 .h4 {
+  content: "h4";
+  display: block;
+}
+.pe-v17 .h5 {
+  content: "h5";
+  display: block;
+}
+.pe-v17 .h6 {
+  content: "h6";
+  display: block;
+}
+.pe-v17 h1,
+.pe-v17 h2,
+.pe-v17 h3,
+.pe-v17 h4,
+.pe-v17 h5,
+.pe-v17 h6 {
+  text-align: left !important;
+  color: #000000 !important;
+  font-weight: 400 !important;
+  margin-bottom: 10px !important;
+  line-height: 1 !important;
+  font-size: 20px !important;
+}
+.pe-v17 .default-transform {
+  text-transform: initial;
+}
+.pe-v17 .lowercase {
+  text-transform: lowercase;
+}
+.pe-v17 .capitalize {
+  text-transform: capitalize;
+}
+.pe-v17 .uppercase {
+  text-transform: uppercase;
+}
+.pe-v17 .default-font {
+  font-family: inherit;
+}
+.pe-v17 .anton {
+  font-family: 'Anton' !important;
+}
+.pe-v17 .architects-daughter {
+  font-family: 'Architects Daughter' !important;
+}
+.pe-v17 .arial {
+  font-family: 'Arial' !important;
+}
+.pe-v17 .cedarville-cursive {
+  font-family: 'Cedarville Cursive' !important;
+}
+.pe-v17 .cherry-cream-soda {
+  font-family: 'Cherry Cream Soda' !important;
+}
+.pe-v17 .chewy {
+  font-family: 'Chewy' !important;
+}
+.pe-v17 .condiment {
+  font-family: 'Condiment' !important;
+}
+.pe-v17 .crafty-girls {
+  font-family: 'Crafty Girls' !important;
+}
+.pe-v17 .dancing-script {
+  font-family: 'Dancing Script' !important;
+}
+.pe-v17 .erica-one {
+  font-family: 'Erica One' !important;
+}
+.pe-v17 .exo-2 {
+  font-family: 'Exo 2' !important;
+}
+.pe-v17 .faster-one {
+  font-family: 'Faster One' !important;
+}
+.pe-v17 .gloria-hallelujah {
+  font-family: 'Gloria Hallelujah' !important;
+}
+.pe-v17 .im-fell-dw-pica-sc {
+  font-family: 'IM Fell DW Pica SC' !important;
+}
+.pe-v17 .indie-flower {
+  font-family: 'Indie Flower' !important;
+}
+.pe-v17 .josefin-sans {
+  font-family: 'Josefin Sans' !important;
+}
+.pe-v17 .lato {
+  font-family: 'Lato' !important;
+}
+.pe-v17 .loved-by-the-king {
+  font-family: 'Loved by the King' !important;
+}
+.pe-v17 .luckiest-guy {
+  font-family: 'Luckiest Guy' !important;
+}
+.pe-v17 .monofett {
+  font-family: 'Monofett' !important;
+}
+.pe-v17 .montserrat {
+  font-family: 'Montserrat' !important;
+}
+.pe-v17 .news-cycle {
+  font-family: 'News Cycle' !important;
+}
+.pe-v17 .open-sans {
+  font-family: 'Open Sans' !important;
+}
+.pe-v17 .oswald {
+  font-family: 'Oswald' !important;
+}
+.pe-v17 .over-the-rainbow {
+  font-family: 'Over the Rainbow' !important;
+}
+.pe-v17 .oxygen {
+  font-family: 'Oxygen' !important;
+}
+.pe-v17 .patrick-hand-sc {
+  font-family: 'Patrick Hand SC' !important;
+}
+.pe-v17 .paytone-one {
+  font-family: 'Paytone One' !important;
+}
+.pe-v17 .permanent-marker {
+  font-family: 'Permanent Marker' !important;
+}
+.pe-v17 .playfair-display {
+  font-family: 'Playfair Display' !important;
+}
+.pe-v17 .questrial {
+  font-family: 'Questrial' !important;
+}
+.pe-v17 .quicksand {
+  font-family: 'Quicksand' !important;
+}
+.pe-v17 .raleway {
+  font-family: 'Raleway' !important;
+}
+.pe-v17 .reenie-beanie {
+  font-family: 'Reenie Beanie' !important;
+}
+.pe-v17 .roboto {
+  font-family: 'Roboto' !important;
+}
+.pe-v17 .rock-salt {
+  font-family: 'Rock Salt' !important;
+}
+.pe-v17 .shadows-into-light {
+  font-family: 'Shadows Into Light' !important;
+}
+.pe-v17 .syncopate {
+  font-family: 'Syncopate' !important;
+}
+.pe-v17 .titillium-web {
+  font-family: 'Titillium Web' !important;
+}
+.pe-v17 .yanone-kaffeesatz {
+  font-family: 'Yanone Kaffeesatz' !important;
+}
+.pe-v17 .zeyada {
+  font-family: 'Zeyada' !important;
+}
+@media screen and (max-width: 767px) {
+  .pe-v17 h1.desktop {
+    font-size: 20px !important;
+  }
+  .pe-v17 h1.small {
+    font-size: 2em !important;
+  }
+  .pe-v17 h1.medium {
+    font-size: 2.25em !important;
+  }
+  .pe-v17 h1.large {
+    font-size: 2.5em !important;
+  }
+  .pe-v17 h1.x-large {
+    font-size: 2.75em !important;
+  }
+  .pe-v17 h1.xx-large {
+    font-size: 3em !important;
+  }
+  .pe-v17 h2.desktop {
+    font-size: 20px !important;
+  }
+  .pe-v17 h2.small {
+    font-size: 1.75em !important;
+  }
+  .pe-v17 h2.medium {
+    font-size: 2em !important;
+  }
+  .pe-v17 h2.large {
+    font-size: 2.25em !important;
+  }
+  .pe-v17 h2.x-large {
+    font-size: 2.5em !important;
+  }
+  .pe-v17 h2.xx-large {
+    font-size: 2.75em !important;
+  }
+  .pe-v17 h3.desktop {
+    font-size: 20px !important;
+  }
+  .pe-v17 h3.small {
+    font-size: 1.5em !important;
+  }
+  .pe-v17 h3.medium {
+    font-size: 1.75em !important;
+  }
+  .pe-v17 h3.large {
+    font-size: 2em !important;
+  }
+  .pe-v17 h3.x-large {
+    font-size: 2.25em !important;
+  }
+  .pe-v17 h3.xx-large {
+    font-size: 2.5em !important;
+  }
+  .pe-v17 h4.desktop {
+    font-size: 20px !important;
+  }
+  .pe-v17 h4.small {
+    font-size: 1.25em !important;
+  }
+  .pe-v17 h4.medium {
+    font-size: 1.5em !important;
+  }
+  .pe-v17 h4.large {
+    font-size: 1.75em !important;
+  }
+  .pe-v17 h4.x-large {
+    font-size: 2em !important;
+  }
+  .pe-v17 h4.xx-large {
+    font-size: 2.25em !important;
+  }
+  .pe-v17 h5.desktop {
+    font-size: 20px !important;
+  }
+  .pe-v17 h5.small {
+    font-size: 1em !important;
+  }
+  .pe-v17 h5.medium {
+    font-size: 1.25em !important;
+  }
+  .pe-v17 h5.large {
+    font-size: 1.5em !important;
+  }
+  .pe-v17 h5.x-large {
+    font-size: 1.75em !important;
+  }
+  .pe-v17 h5.xx-large {
+    font-size: 2em !important;
+  }
+  .pe-v17 h6.desktop {
+    font-size: 20px !important;
+  }
+  .pe-v17 h6.small {
+    font-size: .75em !important;
+  }
+  .pe-v17 h6.medium {
+    font-size: 1em !important;
+  }
+  .pe-v17 h6.large {
+    font-size: 1.25em !important;
+  }
+  .pe-v17 h6.x-large {
+    font-size: 1.5em !important;
+  }
+  .pe-v17 h6.xx-large {
+    font-size: 1.75em !important;
+  }
+}
+

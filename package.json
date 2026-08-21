@@ -2,6 +2,7 @@
   "name": "dental-residence-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Dental Residence — dentalresidence.com.au (Eleventy static site, served via Netlify)",
   "scripts": {
     "build": "eleventy",

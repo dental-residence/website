@@ -85,6 +85,13 @@ for (const page of PAGES) {
     ogUrl: grab(/property="og:url" content="([^"]*)"/, true),
     bodyClass: (html.match(/<body class="([^"]*)"/) || fail(page, 'no body class'))[1],
   };
+  // per-page head extras: hero pages carry Google css2 font links + Typekit
+  const headLinks = [
+    ...head.matchAll(/<link href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]*"[^>]*>/g),
+    ...head.matchAll(/<link rel="stylesheet" href="https:\/\/use\.typekit\.net\/[^"]*">/g),
+  ].map(m => m[0]);
+  if (headLinks.length) fm.headLinks = headLinks;
+
   const desc = grab(/<meta name="description" content="([^"]*)"/);
   const keywords = grab(/<meta name="keywords" content="([^"]*)"/);
   if (desc) fm.description = desc;
@@ -167,6 +174,37 @@ for (const page of PAGES) {
   if (content.includes('cdn-cgi')) fail(page, 'unhandled cdn-cgi reference remains');
 
   writeFileSync(join(OUT, page), `---json\n${JSON.stringify(fm, null, 2)}\n---\n${content}`);
+}
+
+// ---- footer partial (identical on all pages bar incidental drift; veneers is the reference)
+{
+  const html = readFileSync(join(SCRAPE, 'veneers.html'), 'utf8');
+  const fc = html.indexOf('<div id="footer-content">');
+  const nm = html.indexOf('<div class="navmobile-wrapper">');
+  if (fc < 0 || nm < fc) throw new Error('footer markers not found in veneers.html');
+  let footer = html.slice(fc, nm).replace(/\s+$/, '\n');
+  const footerStamps = new Map();
+  footer = footer.replace(/<style type="text\/css">([\s\S]*?)<\/style>/g, (full, css) => {
+    const uuids = [...new Set([...css.matchAll(/#element-([0-9a-f-]+)/g)].map(m => m[1]))];
+    if (!uuids.length) return full;
+    const norm = css.replace(/#element-[0-9a-f-]+/g, '@EL@');
+    const hash = createHash('md5').update(norm).digest('hex');
+    if (!styleBlocks.has(hash)) styleBlocks.set(hash, { norm, count: 0, sample: 'footer', cls: `pe-v${styleBlocks.size + 1}` });
+    const b = styleBlocks.get(hash);
+    b.count++;
+    for (const u of uuids) footerStamps.set(u, b.cls);
+    return '';
+  });
+  for (const [uuid, cls] of footerStamps) {
+    const tag = new RegExp(`(<div id="element-${uuid}"[^>]*class=")`);
+    if (!tag.test(footer)) throw new Error(`footer: no content div for element-${uuid}`);
+    footer = footer.replace(tag, `$1${cls} `);
+  }
+  footer = footer.replace(/<script type="text\/javascript" class="element-script">[\s\S]*?<\/script>/g, '');
+  footer = footer.replace(/<link href="https:\/\/fonts\.googleapis\.com\/css\?family=[^"]*"[^>]*>\n?/g, '');
+  if (/\{\{|\{%/.test(footer)) throw new Error('footer contains template braces');
+  writeFileSync(fileURLToPath(new URL('../src/_includes/partials/footer-content.njk', import.meta.url)), footer);
+  console.log('wrote partials/footer-content.njk');
 }
 
 // ---- platform-element CSS uniformity

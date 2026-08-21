@@ -1,0 +1,43 @@
+{# Renders the Weebly-style menu tree from _data/nav.json.
+   Used twice per page: desktop #navigation and mobile #navmobile.
+   Class/id contract matches the original markup so main_style.css and
+   sites.css flyout styles apply unchanged:
+   - current top-level li: id="active" (replaces its pgNNN id)
+   - current sub-item li: class gains "wsite-nav-current" #}
+{% macro submenu(items, navActiveSub) %}
+<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+	{%- for item in items %}
+		<li id="{{ item.id }}"
+	class="wsite-menu-subitem-wrap {% if item.url == navActiveSub %}wsite-nav-current{% endif %}"
+	>
+	<a
+				href="{{ item.url }}"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			{{ item.title | safe }}
+		</span>{% if item.children %}<span class="wsite-menu-arrow">&gt;</span>{% endif %}
+	</a>
+	{% if item.children %}{{ submenu(item.children, navActiveSub) }}{% endif %}
+</li>
+	{%- endfor %}
+	</ul>
+</div>
+{% endmacro %}
+
+{% macro menu(items, navActive, navActiveSub) %}
+<ul class="wsite-menu-default">
+{%- for item in items %}
+		<li id="{% if item.url == navActive %}active{% else %}{{ item.id }}{% endif %}" class="wsite-menu-item-wrap">
+			<a
+						href="{{ item.url }}"
+				class="wsite-menu-item"
+				>
+				{{ item.title | safe }}
+			</a>
+			{% if item.children %}{{ submenu(item.children, navActiveSub) }}{% endif %}
+		</li>
+{%- endfor %}
+</ul>
+{% endmacro %}
