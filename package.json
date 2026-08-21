@@ -1,0 +1,15 @@
+{
+  "name": "dental-residence-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dental Residence — dentalresidence.com.au (Eleventy static site, served via Netlify)",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "extract": "node scripts/extract.mjs",
+    "audit-refs": "node scripts/audit-refs.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
