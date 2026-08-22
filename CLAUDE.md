@@ -16,11 +16,14 @@ GitHub (drwazza29/dental-residence-website). See README.md for the folder map.
   `src/_includes/partials/tracking-head.njk` and `layouts/base.njk`.
 - `netlify.toml` disables Netlify post-processing so `.html` URLs are never
   rewritten — do not remove `skip_processing`.
-- **Do not re-run `scripts/extract.mjs`** unless intentionally regenerating all
-  of `src/pages/` from the old scrape (`../DR Website`) — it overwrites manual
-  page edits. All deliberate content transforms (Netlify form, link fixes,
-  draft meta descriptions) are encoded inside it, so keep it updated if pages
-  are regenerated.
+- **`scripts/extract.mjs` is FROZEN** (it exits unless forced). `src/pages/`
+  and `partials/footer-content.njk` are the source of truth and contain manual
+  SEO edits (titles, emergency-page rewrite, footer fixes, alt text) that the
+  extractor does not encode. Never regenerate.
+- `marrickville-dentist.html` is a **Google Ads landing page**: kept live but
+  `noindex` and excluded from the sitemap so the homepage is the sole organic
+  target for "Marrickville Dentist". Don't index it or link it into the sitemap;
+  don't delete it (Ads traffic lands there).
 
 ## Architecture notes
 

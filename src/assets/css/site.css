@@ -1,0 +1,13 @@
+/* Site-specific overrides, loaded last. Manual tweaks live here (never generated). */
+
+/* The three footer column headings were <h1> on the old Weebly site; they were
+   demoted to <h2> for SEO (junk H1s on every page). That exposed them to the
+   theme's generic `.wsite-footer h2` styling (Montserrat/uppercase), so this
+   pins their original rendering. ID-level :is() outguns the theme !importants. */
+#footer :is(#element-2d82e37a-2df0-4933-bae9-62fcacf4f5a4,
+            #element-de73dbd2-71e1-4499-b637-a69a1a0e7d6e,
+            #element-7880b904-89d8-4fea-9e01-69d9a5b6841e) .default-font {
+  font-family: inherit !important;
+  text-transform: initial !important;
+  letter-spacing: normal !important;
+}

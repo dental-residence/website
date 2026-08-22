@@ -5,7 +5,9 @@
 <meta property="og:title" content="{{ ogTitle }}" />
 <meta property="og:description" content="{{ ogDescription }}" />
 <meta property="og:url" content="{{ ogUrl }}" />
-<link rel="canonical" href="{{ site.url }}{{ '/' if page.url == '/index.html' else page.url }}" />
+{% if noindex %}<meta name="robots" content="noindex" />
+{% else %}<link rel="canonical" href="{{ site.url }}{{ '/' if page.url == '/index.html' else page.url }}" />
+{% endif %}
 {% if description %}<meta name="description" content="{{ description }}" />
 {% endif %}{% if keywords %}<meta name="keywords" content="{{ keywords }}" />
 {% endif %}<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -40,6 +42,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
 {% include "partials/head-styles.njk" %}
 <link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/site.css" />
 	</head>
 	<body class="{{ bodyClass }}"><div class="body-wrap">
 <!-- Google Tag Manager (noscript) -->

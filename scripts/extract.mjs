@@ -1,3 +1,13 @@
+// ⚠️ FROZEN (2026-08-22, post-SEO-pass): src/pages/ and partials/footer-content.njk
+// are now the source of truth and contain manual edits (SEO titles, emergency-page
+// rewrite, footer link/heading fixes, alt text) that this script does NOT encode.
+// Re-running it will DESTROY those edits. Keep only as migration provenance.
+if (!process.argv.includes('--i-know-this-overwrites-manual-edits')) {
+  console.error('extract.mjs is frozen — src/pages now contains manual SEO edits.\n' +
+    'Run with --i-know-this-overwrites-manual-edits to override.');
+  process.exit(1);
+}
+
 // One-time extractor: Weebly scrape -> src/pages/*.html with JSON front matter.
 //
 // Byte-fidelity strategy: raw string slicing on verified-stable markers, never
