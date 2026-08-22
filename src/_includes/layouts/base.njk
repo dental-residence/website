@@ -32,12 +32,11 @@
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="/assets/css/vendor/sites.css" />
 <link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="screen,projection" />
 <link rel="stylesheet" type="text/css" href="/files/main_style.css" title="wsite-theme-css" />
-<link href='/assets/fonts/Didact_Gothic/font.css' rel='stylesheet' type='text/css' />
-<link href='/assets/fonts/Raleway/font.css' rel='stylesheet' type='text/css' />
-<link href='/assets/fonts/Lora/font.css' rel='stylesheet' type='text/css' />
-<link href='/assets/fonts/Libre_Franklin/font.css' rel='stylesheet' type='text/css' />
-<link href='/assets/fonts/Montserrat/font.css' rel='stylesheet' type='text/css' />
-<link href='/assets/fonts/GFS_Didot/font.css' rel='stylesheet' type='text/css' />
+<link rel="preload" href="/assets/fonts/Didact_Gothic/regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Libre_Franklin/regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Montserrat/regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/GFS_Didot/regular.woff2" as="font" type="font/woff2" crossorigin>
+{% include "partials/fonts.njk" %}
 {# Families used by platform-element font classes (playfair-display, lato,
    oxygen). The old Weebly site loaded them via a 39-family Google Fonts
    request inside every platform element; we load just the used ones. #}
