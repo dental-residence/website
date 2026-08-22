@@ -185,10 +185,10 @@ for (const page of PAGES) {
     styleCount++;
     const norm = css.replace(/#element-[0-9a-f-]+/g, '@EL@');
     const hash = createHash('md5').update(norm).digest('hex');
-    if (!styleBlocks.has(hash)) styleBlocks.set(hash, { norm, count: 0, sample: `${page}`, cls: `pe-v${styleBlocks.size + 1}` });
+    if (!styleBlocks.has(hash)) styleBlocks.set(hash, { norm, count: 0, sample: `${page}`, cls: `pe-v${styleBlocks.size + 1}`, uuids: new Set() });
     const b = styleBlocks.get(hash);
     b.count++;
-    for (const u of uuids) uuidVariant.set(u, b.cls);
+    for (const u of uuids) { uuidVariant.set(u, b.cls); b.uuids.add(u); }
     return '';
   });
   for (const [uuid, cls] of uuidVariant) {
@@ -240,10 +240,10 @@ for (const page of PAGES) {
     if (!uuids.length) return full;
     const norm = css.replace(/#element-[0-9a-f-]+/g, '@EL@');
     const hash = createHash('md5').update(norm).digest('hex');
-    if (!styleBlocks.has(hash)) styleBlocks.set(hash, { norm, count: 0, sample: 'footer', cls: `pe-v${styleBlocks.size + 1}` });
+    if (!styleBlocks.has(hash)) styleBlocks.set(hash, { norm, count: 0, sample: 'footer', cls: `pe-v${styleBlocks.size + 1}`, uuids: new Set() });
     const b = styleBlocks.get(hash);
     b.count++;
-    for (const u of uuids) footerStamps.set(u, b.cls);
+    for (const u of uuids) { footerStamps.set(u, b.cls); b.uuids.add(u); }
     return '';
   });
   for (const [uuid, cls] of footerStamps) {
@@ -264,7 +264,13 @@ console.log(`\nplatform-element CSS variants: ${styleBlocks.size}`);
 for (const [hash, b] of styleBlocks) console.log(`  ${b.cls} ${hash.slice(0, 8)} x${b.count} (first seen: ${b.sample})`);
 if (styleBlocks.size >= 1) {
   const css = [...styleBlocks.values()]
-    .map(b => `/* ${b.cls} (x${b.count}, e.g. ${b.sample}) */\n` + b.norm.replaceAll('@EL@', `.${b.cls}`))
+    .map(b => {
+      // :is() of the original element ids keeps ID-level specificity so these
+      // rules still beat theme selectors like `#wsite-content h2 { ... !important }`,
+      // exactly as the original inline #element-<uuid> styles did.
+      const scope = `:is(${[...b.uuids].map(u => `#element-${u}`).join(',')})`;
+      return `/* ${b.cls} (x${b.count}, e.g. ${b.sample}) */\n` + b.norm.replaceAll('@EL@', scope);
+    })
     .join('\n\n');
   writeFileSync(CSSOUT, css);
   console.log(`wrote ${CSSOUT}`);
