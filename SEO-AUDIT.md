@@ -241,3 +241,36 @@ before changes; compare 6–8 weeks post-implementation. Off-site (not in this a
 scope but material to the local pack): Google Business Profile completeness, review
 velocity and replies, and consistent NAP citations remain roughly half the local-ranking
 equation.
+
+---
+
+## Implementation log (2026-08-22)
+
+Implemented same day as the audit:
+
+- ✅ **C1** Footer "Petersham" link → petersham-dentist.html (33 inbound links).
+  Footer "Marrickville" intentionally stays → homepage (see C3 resolution).
+- ✅ **C2** Emergency page fully retargeted: new title/meta/H1, same-day emergency copy,
+  "Emergencies we treat" + "What to do right now" sections, 4 FAQs with FAQPage schema,
+  cross-links from toothache.html and tooth-extraction.html.
+- ✅ **C3** marrickville-dentist.html confirmed as a Google Ads landing page → kept live,
+  `noindex`, removed from sitemap. Homepage is now the sole organic target for
+  "Marrickville Dentist".
+- ✅ **H2** Footer H1s demoted to H2 (rendering pinned identical via site.css).
+- ✅ **H3** All 32 titles rewritten — service + locality + brand pattern; duplicate
+  implants/dentures/bridges titles resolved.
+- ✅ **H1 (perf)** Hero video poster + preload=metadata; 40 heavy images converted to
+  WebP (~48MB saved; banner LCP image 1.2MB → 96KB; tutorial thumbs 5.9MB → ~100KB);
+  preconnects for fonts/GTM; self-hosted @font-face inlined with font-display:swap +
+  core woff2 preloads (hero H1 text was font-blocked).
+- ✅ **H4** 90 alt attributes added (review cards, affiliate logos, decorative icons,
+  header logo — now also linked to home).
+- ✅ **H5** Dentist schema: sameAs (FB/IG/LinkedIn) + areaServed (6 suburbs) on all four
+  landing pages; Petersham schema brought to parity (geo/hours/priceRange).
+- ✅ **M4** ING footer link fixed (ing.com.tr → ing.com.au/health-insurance).
+- **Measured result (Lighthouse mobile, homepage):** performance 58 → 71,
+  LCP 17.5s → 4.8s, SEO 85 → 92, accessibility 70 → 79.
+
+Still open: **M1** meta-description sign-off (DESCRIPTIONS-REVIEW.md), **M2/M3/M5**
+content-depth work (implants page, service FAQs, more contextual links), remaining
+accessibility contrast items.
