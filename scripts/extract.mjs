@@ -63,6 +63,53 @@ const FIXES = {
   ],
 };
 
+// Enquiry form: Weebly formSubmit.php -> Netlify Form (same wsite-form markup/styling)
+FIXES['enquiry.html'] = [
+  [/<form enctype="multipart\/form-data" action="\/\/www\.weebly\.com\/weebly\/apps\/formSubmit\.php" method="POST" id="form-644554648387987849">/g,
+    '<form name="enquiry" action="/thank-you-enquiry.html" method="POST" id="form-644554648387987849" data-netlify="true" netlify-honeypot="bot-field">', 1],
+  [/<input aria-required="true" (id="input-722105135656311657"[^>]*type="text") name="_u722105135656311657" \/>/g, '<input aria-required="true" required $1 name="name" />', 1],
+  [/<input aria-required="true" (id="input-817843584583315216"[^>]*)type="text" name="_u817843584583315216" \/>/g, '<input aria-required="true" required $1type="email" name="email" />', 1],
+  [/<input aria-required="true" (id="input-613116001876635998"[^>]*)type="text" name="_u613116001876635998\[number\]" \/>/g, '<input aria-required="true" required $1type="tel" name="phone" />', 1],
+  [/<input aria-required="true" (id="input-347807437256743252"[^>]*type="text") name="_u347807437256743252" \/>/g, '<input aria-required="true" required $1 name="postcode" />', 1],
+  [/name="_u286691674224923099"/g, 'name="health_fund"', 1],
+  [/name='_u155957773449481547' (class='form-select' aria-required="true")/g, "name='contact_method' $1 required", 1],
+  [/<input aria-required="true" (id="input-795870890238306914"[^>]*type="text") name="_u795870890238306914" \/>/g, '<input aria-required="true" required $1 name="subject" />', 1],
+  [/<textarea aria-required="true" (id="input-823038380465961307"[^>]*)name="_u823038380465961307"/g, '<textarea aria-required="true" required $1name="comment"', 1],
+  [/<div style="display:none; visibility:hidden;">\s*<input type="hidden" name="wsite_subject" \/>\s*<\/div>/g,
+    '<div style="display:none; visibility:hidden;">\n\t\t\t<label>Don\'t fill this out if you\'re human: <input name="bot-field" /></label>\n\t\t</div>', 1],
+  [/<input type="hidden" name="form_version" value="2" \/>\s*<input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" \/>\s*<input type="hidden" name="ucfid" value="644554648387987849" \/>\s*<input type="hidden" name="recaptcha_token"\/>/g,
+    '<input type="hidden" name="form-name" value="enquiry" />', 1],
+  [/<a class="wsite-button">/g, '<a class="wsite-button" id="enquiry-submit-button">', 1],
+  [/<\/form>\s*<div id="g-recaptcha-644554648387987849"[^>]*><\/div>/g,
+    '</form>\n\t<script>\n\tdocument.getElementById(\'enquiry-submit-button\').addEventListener(\'click\', function (e) {\n\t\te.preventDefault();\n\t\tvar form = document.getElementById(\'form-644554648387987849\');\n\t\tif (form.requestSubmit) form.requestSubmit(); else form.submit();\n\t});\n\t</script>', 1],
+];
+
+// Draft meta descriptions for pages that never had one on the Weebly site.
+// PENDING USER REVIEW before launch — see DESCRIPTIONS-REVIEW.md at repo root.
+// Applied only when the scraped head has no <meta name="description">.
+const DRAFT_DESCRIPTIONS = {
+  'checkup.html': 'Comprehensive dental checkup and clean in Marrickville. Gentle, thorough examinations with scale and polish at Dental Residence. Call (02) 8384 6667.',
+  'childrens-dentist.html': "Children's dentist in Marrickville providing gentle, friendly dental care for kids, including the Child Dental Benefits Schedule. Book online today.",
+  'contact.html': 'Contact Dental Residence, your Marrickville dentist at 4/2 Albert St. Call (02) 8384 6667 or book online for general, cosmetic and emergency dentistry.',
+  'cosmetic-dentistry.html': 'Cosmetic dentistry in Marrickville: porcelain veneers, teeth whitening, crowns and Invisalign to transform your smile. Book at Dental Residence.',
+  'covid-safety.html': 'COVID safety at Dental Residence Marrickville: enhanced infection control, screening and hygiene protocols keeping our patients and team safe.',
+  'crowns.html': 'Same-day 1-hour porcelain crowns in Marrickville using CAD/CAM technology. Strong, natural-looking crowns in a single visit at Dental Residence.',
+  'dental-fillings.html': 'Tooth-coloured dental fillings in Marrickville. Repair decay and restore your smile with natural-looking composite fillings at Dental Residence.',
+  'enquiry.html': 'Send an enquiry to Dental Residence, Marrickville. Ask about treatments, health funds or appointments and our friendly team will get back to you.',
+  'general-dental.html': 'Complete general and complex dental services in Marrickville, from checkups, cleans and fillings to root canal therapy and wisdom tooth removal.',
+  'general.html': 'General dental care in Marrickville including checkups, cleans, fillings, toothache and gum disease treatment at Dental Residence. Book online today.',
+  'gum-disease.html': 'Gum disease diagnosis and treatment in Marrickville. Protect your teeth and gums from gingivitis and periodontitis at Dental Residence.',
+  'invisalign.html': 'Invisalign® clear aligners in Marrickville. Straighten your teeth discreetly without traditional braces at Dental Residence. Book a consultation.',
+  'privacy.html': 'Read the Dental Residence privacy policy explaining how we collect, use and protect your personal and health information.',
+  'root-canal.html': 'Gentle root canal therapy in Marrickville to save infected teeth and relieve pain. Modern, comfortable endodontic treatment at Dental Residence.',
+  'thank-you.html': 'Thank you for your booking with Dental Residence, Marrickville. We look forward to seeing you soon.',
+  'thank-you-enquiry.html': 'Thank you for your enquiry with Dental Residence, Marrickville. Our friendly team will be in touch shortly.',
+  'toothache.html': 'Toothache relief in Marrickville. Fast diagnosis and gentle treatment of dental pain, including emergency appointments at Dental Residence.',
+  'tutorial.html': 'Dental care tutorials from Dental Residence Marrickville: how to floss correctly and use floss picks and interdental brushes for healthy gums.',
+  'veneers.html': 'Porcelain veneers in Marrickville to instantly improve your smile. Natural-looking, custom-made veneers at Dental Residence. Book a consultation.',
+  'why-choose-us.html': 'Why choose Dental Residence? Award-winning Marrickville dentist with modern technology, gentle care and all major health funds accepted.',
+};
+
 const styleBlocks = new Map(); // normalizedHash -> { css, count, sample }
 const log = [];
 
@@ -95,6 +142,10 @@ for (const page of PAGES) {
   const desc = grab(/<meta name="description" content="([^"]*)"/);
   const keywords = grab(/<meta name="keywords" content="([^"]*)"/);
   if (desc) fm.description = desc;
+  else if (DRAFT_DESCRIPTIONS[page]) {
+    fm.description = DRAFT_DESCRIPTIONS[page];
+    log.push(`${page}: DRAFT meta description added (review before launch)`);
+  }
   if (keywords) fm.keywords = keywords;
 
   const jsonld = [...head.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => m[1]);

@@ -1,0 +1,11 @@
+# Retired draft homepages (were live + indexed on Weebly)
+/home-new-817931.html   /   301
+/home-test-963199.html  /   301
+
+# Broken internal links that existed on the old site
+/childrens-dental.html  /childrens-dentist.html   301
+/cosmetic.html          /cosmetic-dentistry.html  301
+
+# Extensionless links used on a couple of pages
+/general-dental         /general-dental.html      301!
+/emergency-dentist      /emergency-dentist.html   301!

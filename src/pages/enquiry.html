@@ -6,6 +6,7 @@
   "ogDescription": "Crn of Addison and Albert Street Servicing Petersham, Marrickville and Stanmore",
   "ogUrl": "https://www.dentalresidence.com.au/enquiry.html",
   "bodyClass": "no-header  wsite-page-enquiry  full-width-on  wsite-theme-light",
+  "description": "Send an enquiry to Dental Residence, Marrickville. Ask about treatments, health funds or appointments and our friendly team will get back to you.",
   "sitemap": false
 }
 ---
@@ -20,7 +21,7 @@
 				<div class="wsite-spacer" style="height:50px;"></div>
 
 <div>
-	<form enctype="multipart/form-data" action="//www.weebly.com/weebly/apps/formSubmit.php" method="POST" id="form-644554648387987849">
+	<form name="enquiry" action="/thank-you-enquiry.html" method="POST" id="form-644554648387987849" data-netlify="true" netlify-honeypot="bot-field">
 		<div id="644554648387987849-form-parent" class="wsite-form-container"
 				 style="margin-top:10px;">
 			<ul class="formlist" id="644554648387987849-form-list">
@@ -37,7 +38,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-722105135656311657">Full Name <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input aria-required="true" id="input-722105135656311657" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u722105135656311657" />
+					<input aria-required="true" required id="input-722105135656311657" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="name" />
 				</div>
 				<div id="instructions-722105135656311657" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -45,7 +46,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-817843584583315216">Email <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input aria-required="true" id="input-817843584583315216" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u817843584583315216" />
+					<input aria-required="true" required id="input-817843584583315216" class="wsite-form-input wsite-input wsite-input-width-370px" type="email" name="email" />
 				</div>
 				<div id="instructions-817843584583315216" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -62,7 +63,7 @@
 				<label class="wsite-form-label" for="input-613116001876635998">Phone Number <span class="form-required">*</span></label>
 				<div style="clear:both;"></div>
 				<div class="wsite-form-input-container wsite-form-left" style="margin-bottom:5px;">
-					<input aria-required="true" id="input-613116001876635998" class="wsite-form-input wsite-input" type="text" name="_u613116001876635998[number]" />
+					<input aria-required="true" required id="input-613116001876635998" class="wsite-form-input wsite-input" type="tel" name="phone" />
 				</div>
 				<div id="instructions-613116001876635998" class="wsite-form-instructions" style="display:none;"></div>
 			</div>
@@ -77,7 +78,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-347807437256743252">Postcode <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input aria-required="true" id="input-347807437256743252" class="wsite-form-input wsite-input wsite-input-width-100px" type="text" name="_u347807437256743252" />
+					<input aria-required="true" required id="input-347807437256743252" class="wsite-form-input wsite-input wsite-input-width-100px" type="text" name="postcode" />
 				</div>
 				<div id="instructions-347807437256743252" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -92,7 +93,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-286691674224923099">Health Fund (if applicable) <span class="form-not-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input id="input-286691674224923099" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u286691674224923099" />
+					<input id="input-286691674224923099" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="health_fund" />
 				</div>
 				<div id="instructions-286691674224923099" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -100,7 +101,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 0px 0px;">
   <label class="wsite-form-label" for="input-155957773449481547">Preferred Method of Contact <span class="form-required">*</span></label>
   <div class="wsite-form-radio-container">
-    <select id='input-155957773449481547' name='_u155957773449481547' class='form-select' aria-required="true">
+    <select id='input-155957773449481547' name='contact_method' class='form-select' aria-required="true" required>
 	<option value='Telephone Call'>Telephone Call</option>
 	<option value='Email'>Email</option>
 	<option value='SMS Message'>SMS Message</option>
@@ -119,7 +120,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-795870890238306914">Subject <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<input aria-required="true" id="input-795870890238306914" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="_u795870890238306914" />
+					<input aria-required="true" required id="input-795870890238306914" class="wsite-form-input wsite-input wsite-input-width-370px" type="text" name="subject" />
 				</div>
 				<div id="instructions-795870890238306914" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -127,7 +128,7 @@
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
 				<label class="wsite-form-label" for="input-823038380465961307">Comment <span class="form-required">*</span></label>
 				<div class="wsite-form-input-container">
-					<textarea aria-required="true" id="input-823038380465961307" class="wsite-form-input wsite-input wsite-input-width-370px" name="_u823038380465961307" style="height: 200px"></textarea>
+					<textarea aria-required="true" required id="input-823038380465961307" class="wsite-form-input wsite-input wsite-input-width-370px" name="comment" style="height: 200px"></textarea>
 				</div>
 				<div id="instructions-823038380465961307" class="wsite-form-instructions" style="display:none;"></div>
 			</div></div>
@@ -142,20 +143,23 @@
 			
 		</div>
 		<div style="display:none; visibility:hidden;">
-			<input type="hidden" name="wsite_subject" />
+			<label>Don't fill this out if you're human: <input name="bot-field" /></label>
 		</div>
 		<div style="text-align:left; margin-top:10px; margin-bottom:10px;">
-			<input type="hidden" name="form_version" value="2" />
-			<input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" />
-			<input type="hidden" name="ucfid" value="644554648387987849" />
-			<input type="hidden" name="recaptcha_token"/>
+			<input type="hidden" name="form-name" value="enquiry" />
 			<input type="submit" role="button" aria-label="Submit" value="Submit" style="position:absolute;top:0;left:-9999px;width:1px;height:1px" />
-			<a class="wsite-button">
+			<a class="wsite-button" id="enquiry-submit-button">
 				<span class="wsite-button-inner">Submit</span>
 			</a>
 		</div>
 	</form>
-	<div id="g-recaptcha-644554648387987849" class="recaptcha" data-size="invisible" data-recaptcha="0" data-sitekey="6Ldf5h8UAAAAAJFJhN6x2OfZqBvANPQcnPa8eb1C"></div>
+	<script>
+	document.getElementById('enquiry-submit-button').addEventListener('click', function (e) {
+		e.preventDefault();
+		var form = document.getElementById('form-644554648387987849');
+		if (form.requestSubmit) form.requestSubmit(); else form.submit();
+	});
+	</script>
 
 
 

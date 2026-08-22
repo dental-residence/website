@@ -1,0 +1,14 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in collections.all %}
+{%- if p.data.sitemap != false %}
+	<url>
+		<loc>{{ site.url }}{{ '/' if p.url == '/index.html' else p.url }}</loc>
+	</url>
+{%- endif %}
+{%- endfor %}
+</urlset>

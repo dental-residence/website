@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+# Never post-process: URLs must stay exactly /<name>.html (SEO), and assets are
+# already served from their original live-site paths.
+[build.processing]
+  skip_processing = true
+
+[[headers]]
+  for = "/files/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
