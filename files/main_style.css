@@ -84,6 +84,8 @@
  .cta-button-navy { display: inline-block; background-color: #191c46; }
  .cta-button-navy:hover { background-color: #ac8e6f; }
  @media (max-width: 768px) {
+ .video-container { height: 70vh; height: 70svh; }
+ .video-background { object-position: 62% center; }
  .video-overlay-content { top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: left; width: 100%; }
  .video-overlay-content h1 { font-size: 1.8em; }
  .video-overlay-content div.paragraph { font-size: 1em; }
