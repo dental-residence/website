@@ -11,3 +11,19 @@
   text-transform: initial !important;
   letter-spacing: normal !important;
 }
+
+/* Footer links. The Weebly theme styles the footer for a dark background
+   (`.wsite-footer .paragraph a {color:#fff}` in head-styles.njk), but #footer
+   is white — so the Other Links / Accepting All Major Funds / Affiliations
+   lists rendered white-on-white. Repainted in the brand tan, going navy on
+   hover, matching the tan/navy swap used by .button-navigation. */
+#footer-content :is(.wsite-footer h2 a,
+                    .wsite-footer .paragraph a,
+                    .wsite-footer blockquote a) {
+  color: #ac8e6f !important;
+}
+#footer-content :is(.wsite-footer h2 a,
+                    .wsite-footer .paragraph a,
+                    .wsite-footer blockquote a):hover {
+  color: #192a43 !important;
+}
