@@ -6,7 +6,7 @@
 <meta property="og:description" content="{{ ogDescription }}" />
 <meta property="og:url" content="{{ ogUrl }}" />
 {% if noindex %}<meta name="robots" content="noindex" />
-{% else %}<link rel="canonical" href="{{ site.url }}{{ '/' if page.url == '/index.html' else page.url }}" />
+{% else %}<link rel="canonical" href="{{ site.url }}{{ canonical if canonical else ('/' if page.url == '/index.html' else page.url) }}" />
 {% endif %}
 {% if description %}<meta name="description" content="{{ description }}" />
 {% endif %}{% if keywords %}<meta name="keywords" content="{{ keywords }}" />
@@ -62,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<span class="mobile"></span>
 				</div>
 			</div>
-                <div id="sitename"><a href="/"><img class="logo-image" src="/files/theme/images/dental_residence_logo.png" alt="Dental Residence — Marrickville Dentist"></a> </div>
+                <div id="sitename"><a href="/"><img class="logo-image" width="4203" height="300" src="/files/theme/images/dental_residence_logo.png" alt="Dental Residence — Marrickville Dentist"></a> </div>
 			</div>
 
 

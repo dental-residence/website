@@ -25,7 +25,7 @@
 		<div id="644554648387987849-form-parent" class="wsite-form-container"
 				 style="margin-top:10px;">
 			<ul class="formlist" id="644554648387987849-form-list">
-				<h2 class="wsite-content-title" style="text-align:center;">GENERAL ENQUIRY FORM</h2>
+				<h1 class="wsite-content-title" style="text-align:center;">GENERAL ENQUIRY FORM</h1>
 
 <label class="wsite-form-label wsite-form-fields-required-label"><span class="form-required">*</span> Indicates required field</label><div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
 	<table class="wsite-multicol-table">
@@ -147,17 +147,22 @@
 		</div>
 		<div style="text-align:left; margin-top:10px; margin-bottom:10px;">
 			<input type="hidden" name="form-name" value="enquiry" />
-			<input type="submit" role="button" aria-label="Submit" value="Submit" style="position:absolute;top:0;left:-9999px;width:1px;height:1px" />
-			<a class="wsite-button" id="enquiry-submit-button">
+			<input type="submit" tabindex="-1" aria-hidden="true" value="Submit" style="position:absolute;top:0;left:-9999px;width:1px;height:1px" />
+			<a class="wsite-button" id="enquiry-submit-button" role="button" tabindex="0">
 				<span class="wsite-button-inner">Submit</span>
 			</a>
 		</div>
 	</form>
 	<script>
-	document.getElementById('enquiry-submit-button').addEventListener('click', function (e) {
+	var enquirySubmit = document.getElementById('enquiry-submit-button');
+	function submitEnquiry(e) {
 		e.preventDefault();
 		var form = document.getElementById('form-644554648387987849');
 		if (form.requestSubmit) form.requestSubmit(); else form.submit();
+	}
+	enquirySubmit.addEventListener('click', submitEnquiry);
+	enquirySubmit.addEventListener('keydown', function (e) {
+		if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') submitEnquiry(e);
 	});
 	</script>
 
@@ -191,15 +196,15 @@
 
 <div><div id="214038592939156870" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div style="text-align: center">
 
-<a href="https://www.myhealth1st.com.au/profile/show/9023"; target="_blank" id="9023" data-mh1-source="customer-name" class="1stAvailableWidget widget "style="cursor: pointer;">
+<a href="https://www.myhealth1st.com.au/profile/show/9023" target="_blank" id="9023" data-mh1-source="customer-name" class="1stAvailableWidget widget "style="cursor: pointer;" rel="noopener">
 
 <button class="cta-button cta-button-responsive" id="book_online_button">Book Online</button>
 
 </a>
-<a href="tel:+61283846667";
+<a href="tel:+61283846667"
 
 
-target="_blank">
+target="_blank" rel="noopener">
 
 <button class="cta-button cta-button-responsive cta-button-navy" id="book_online_button">(02) 8384 6667</button>
 
@@ -213,7 +218,7 @@ target="_blank">
 <div class="wsite-spacer" style="height:24px;"></div>
 
 <div style="text-align:center;"><div style="height:10px;overflow:hidden"></div>
-<span class="wsite-social wsite-social-default"><a class='first-child wsite-social-item wsite-social-facebook' href='https://www.facebook.com/the.dental.residence' target='_blank' alt='Facebook' aria-label='Facebook'><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-instagram' href='//instagram.com/dental.residence' target='_blank' alt='Instagram' aria-label='Instagram'><span class='wsite-social-item-inner'></span></a><a class='last-child wsite-social-item wsite-social-linkedin' href='https://www.linkedin.com/company/dental-residence' target='_blank' alt='Linkedin' aria-label='Linkedin'><span class='wsite-social-item-inner'></span></a></span>
+<span class="wsite-social wsite-social-default"><a class='first-child wsite-social-item wsite-social-facebook' href='https://www.facebook.com/the.dental.residence' target='_blank' alt='Facebook' aria-label='Facebook' rel="noopener"><span class='wsite-social-item-inner'></span></a><a class='wsite-social-item wsite-social-instagram' href='//instagram.com/dental.residence' target='_blank' alt='Instagram' aria-label='Instagram' rel="noopener"><span class='wsite-social-item-inner'></span></a><a class='last-child wsite-social-item wsite-social-linkedin' href='https://www.linkedin.com/company/dental-residence' target='_blank' alt='Linkedin' aria-label='Linkedin' rel="noopener"><span class='wsite-social-item-inner'></span></a></span>
 <div style="height:10px;overflow:hidden"></div></div>
 
 <div class="paragraph" style="text-align:center;"><strong><font color="#d5d5d5">Crn of Addison and Albert Street<br />Servicing Petersham, Marrickville and Stanmore</font></strong></div>

@@ -42,3 +42,24 @@ img.team-photo {
   object-fit: cover;
   object-position: center top;
 }
+
+/* Heading hierarchy fix. 14 pages had no <h1> at all and 11 had several, so the
+   heading that already acts as each page's title was promoted to <h1> and the
+   surplus ones demoted to <h2>. The Weebly theme only ever styles `h2` — its
+   font, size and colour rules are keyed to the tag with !important — so a
+   promoted <h1> fell through to the browser default (Didact Gothic, bold,
+   grey). These rules give h1.wsite-content-title the exact presentation its h2
+   had, in both the banner and the body, so the change is invisible on screen. */
+.wsite-header-section h1.wsite-content-title,
+.wsite-header-elements h1.wsite-content-title {
+  font-weight: 400 !important;
+}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h1.wsite-content-title,
+#wsite-content h1.wsite-content-title {
+  font-family: "Libre Franklin" !important;
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  color: #2b211f !important;
+  text-transform: none !important;
+}
+
