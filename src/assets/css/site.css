@@ -27,3 +27,18 @@
                     .wsite-footer blockquote a):hover {
   color: #192a43 !important;
 }
+
+/* "Meet Our Experienced Dentists" headshots (home + emergency-dentist). The
+   four source photos have different aspect ratios (625x800, 706x800,
+   1039x1377, 625x800), so at equal column widths they rendered at four
+   different heights. Pin every one to Dr Simon Khalil's 625:800 ratio and let
+   object-fit crop the difference; `top` keeps faces in frame on the taller
+   sources. */
+img.team-photo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 625 / 800;
+  object-fit: cover;
+  object-position: center top;
+}
