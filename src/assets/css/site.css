@@ -63,3 +63,13 @@ img.team-photo {
   text-transform: none !important;
 }
 
+
+/* The width/height attributes stamped on every <img> for CLS are presentational
+   hints — they map to the CSS width and height properties. Any rule that sets
+   only a width (.icon-image is width:100%) overrode the width hint but left the
+   height hint standing, so those images rendered at their full intrinsic height
+   in a narrow box. Releasing height lets the browser derive it from the
+   attribute aspect-ratio instead. Deliberately the lowest possible specificity,
+   so every class rule and inline style that really does want a fixed height
+   (.logo-image, the affiliate strip, the arrow icons) still wins. */
+img { height: auto; }
