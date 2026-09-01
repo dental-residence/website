@@ -62,7 +62,7 @@
  .my-component-bottom-tan-div { height: auto; }
  .contact-container-div { display: block !important; padding-top: 10px; }
  .cta-button-div { width: 100% !important; display: block; box-sizing: border-box; margin-bottom: 15px; }
- .cta-button-responsive { width: 100% !important; padding: 30px 15px; display: block; margin-bottom: 15px; box-sizing: border-box; }
+ .cta-button-responsive { width: 100% !important; padding: 16px 20px; display: block; margin-bottom: 15px; box-sizing: border-box; }
  .vertical-line { display: none !important; }
  .telephone-with-icon { width: 100% !important; padding: 0 !important; box-sizing: border-box; display: block !important; margin-top: 15px !important; text-align: center !important; }
  .telephone-icon { width: 100%; margin: 0; padding: 0px 0px 20px 0px; }
@@ -84,13 +84,13 @@
  .cta-button-navy { display: inline-block; background-color: #493638; }
  .cta-button-navy:hover { background-color: #ac8e6f; }
  @media (max-width: 768px) {
- .video-container { height: 70vh; height: 70svh; }
+ .video-container { height: auto; min-height: 58vh; min-height: 58svh; display: flex; align-items: center; }
  .video-background { object-position: 62% center; }
- .video-overlay-content { top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: left; width: 100%; }
+ .video-overlay-content { position: relative; top: auto; left: auto; transform: none; text-align: left; width: 100%; padding: 28px 20px; }
  .video-overlay-content h1 { font-size: 1.8em; }
  .video-overlay-content div.paragraph { font-size: 1em; }
  .video-overlay-content p { font-size: 1em; }
- .cta-button { font-size: 1.5em; padding: 30px 15px; }
+ .cta-button { font-size: 1.05em; padding: 16px 20px; }
  }
  .button-small { background-color: #ac8e6f; border: 2px solid #ffffff; color: white; padding: 10px; text-align: center; text-decoration: none; font-size: 20px; font-weight: 700; width: 200px; border-radius: 6px; margin: 3px auto; }
  .button-small-new { background-color: #ac8e6f; border: 2px solid #ffffff; color: white; padding: 10px; text-align: center; text-decoration: none; font-size: 20px; font-weight: 700; border-radius: 6px; margin: 3px auto; display: inline-block; }
