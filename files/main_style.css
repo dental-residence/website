@@ -29,8 +29,8 @@
  .my-component-container { display: flex; width: 100%; height: 550px; border-radius: 20px 20px 20px 0px; overflow: hidden; }
  .my-component-left-div { position: relative; width: 50%; background-image: url('/files/theme/images/marrickville-dentist-with-crown-machine-flipped.jpg?1787293063'); background-size: cover; background-position: center; border-radius: 20px 0 0 0; padding: 0; margin: 0; box-sizing: border-box; }
  .learn-more { position: absolute; bottom: 0; left: 0; width: 100%; box-sizing: border-box; padding: 10px; }
- .my-component-right-div { position: relative; width: 50%; background-color: #192a43; display: flex; flex-wrap: wrap; border-radius: 0 0px 20px 0; box-sizing: border-box; padding: 0; margin: 0; height: 100%; }
- .my-component-inner-div { position: absolute; bottom: 0; right: 0; width: 50%; height: 60%; background-color: #192a43; padding: 0; margin: 0; box-sizing: border-box; }
+ .my-component-right-div { position: relative; width: 50%; background-color: #493638; display: flex; flex-wrap: wrap; border-radius: 0 0px 20px 0; box-sizing: border-box; padding: 0; margin: 0; height: 100%; }
+ .my-component-inner-div { position: absolute; bottom: 0; right: 0; width: 50%; height: 60%; background-color: #493638; padding: 0; margin: 0; box-sizing: border-box; }
  .my-component-transparent-div { width: 50%; height: 60%; background-color: transparent; box-sizing: border-box; padding: 0; margin: 0; }
  .top-left { background-color: white; width: 50%; padding: 0; margin: 0; height: 60%; }
  .top-right { background-color: transparent; width: 50%; padding: 0; margin: 0; height: 60%; }
@@ -46,7 +46,7 @@
  @media (max-width: 1200px) {
  .my-component-container { flex-direction: column; height: auto; }
  .my-component-left-div, .my-component-right-div { width: 100%; padding: 20px; position: relative; height: 550px; }
- .my-component-inner-div { position: absolute; bottom: 0; right: 0; width: 50%; height: 40%; background-color: #192a43; }
+ .my-component-inner-div { position: absolute; bottom: 0; right: 0; width: 50%; height: 40%; background-color: #493638; }
  .my-component-right-div { display: flex; flex-direction: row; flex-wrap: wrap; height: 400px; padding: 0; margin: 0; }
  .my-component-transparent-div { width: 50%; height: 50%; padding: 0; margin: 0; }
  .my-component-bottom-tan-div { position: static; width: 100%; height: 50%; padding: 0; margin: 0; box-sizing: border-box; }
@@ -55,7 +55,7 @@
  .logo-image { align: center; padding: 7px 0px 0px 10px; height: 20px; width: auto; }
  .video-overlay-h1 { font-size: 30px; }
  .my-component-left-div { height: 300px; }
- .my-component-inner-div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(25,42,67,0.7); padding: 10px; box-sizing: border-box; }
+ .my-component-inner-div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(73,54,56,0.7); padding: 10px; box-sizing: border-box; }
  .my-component-right-div { height: auto; }
  .top-left { width: 100%; height: auto; }
  .top-right { width: 100%; height: auto; margin-top: 10px; }
