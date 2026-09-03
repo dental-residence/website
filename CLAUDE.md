@@ -2,7 +2,7 @@
 
 Eleventy static site for dentalresidence.com.au (dental practice in
 Marrickville, Sydney). Migrated from Weebly 2026-08-22; served by Netlify from
-GitHub (drwazza29/dental-residence-website). See README.md for the folder map.
+GitHub (dental-residence/website). See README.md for the folder map.
 
 ## Hard rules
 
