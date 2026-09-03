@@ -80,7 +80,7 @@
  .video-overlay-content div.paragraph { font-size: 1.2em; margin-bottom: 20px; }
  .video-overlay-content p { font-size: 1.2em; margin-bottom: 20px; }
  .cta-button { display: inline-block; border: none; padding: 30px 60px; font-size: 1.3em; color: white; background-color: #ac8e6f; text-decoration: none; border-radius: 100px; transition: background-color 0.3s ease; }
- .cta-button:hover { background-color: #191c46; }
+ .cta-button:hover { background-color: #493638; }
  .cta-button-navy { display: inline-block; background-color: #493638; }
  .cta-button-navy:hover { background-color: #ac8e6f; }
  @media (max-width: 768px) {
@@ -97,7 +97,7 @@
  .button-small:hover { background-color: #ffffff; border: 2px solid #09b5b5; color: #09b5b5; }
  .button-small-new:hover { background-color: #ffffff; border: 2px solid #09b5b5; color: #09b5b5; }
  .button-navigation { background-color: #ac8e6f; border: none; color: white; padding: 10px; text-align: center; text-decoration: none; font-size: 16px; font-weight: 400; width: 250px; height: 50px; border-radius: 25px; margin: 3px auto; }
- .button-navigation:hover { background-color: #192a43; }
+ .button-navigation:hover { background-color: #493638; }
  ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, div.paragraph, blockquote, fieldset, input { margin: 0; padding: 0; font-family: 'Didact Gothic', sans-serif; }
  ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input { margin: 0; padding: 0; font-family: 'Didact Gothic', sans-serif; }
  a img { border: 0; }
