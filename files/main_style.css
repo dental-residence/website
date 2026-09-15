@@ -85,6 +85,7 @@
  .cta-button:hover { background-color: #493638; }
  .cta-button-navy { display: inline-block; background-color: #493638; }
  .cta-button-navy:hover { background-color: #ac8e6f; }
+ @media (min-width: 769px) { .cta-button-responsive { min-width: 226px; } }
  @media (max-width: 768px) {
  .video-container { height: auto; min-height: 58vh; min-height: 58svh; display: flex; align-items: center; }
  .video-background { object-position: 62% center; }
