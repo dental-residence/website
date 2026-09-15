@@ -11,9 +11,9 @@ originals untouched.
 
 | Page | Draft description |
 |---|---|
-| checkup.html | Comprehensive dental checkup and clean in Marrickville. Gentle, thorough examinations with scale and polish at Dental Residence. Call (02) 8384 6667. |
+| checkup.html | Comprehensive dental checkup and clean in Marrickville. Gentle, thorough examinations with scale and polish at Dental Residence. Call 0416 689 022. |
 | childrens-dentist.html | Children's dentist in Marrickville providing gentle, friendly dental care for kids, including the Child Dental Benefits Schedule. Book online today. |
-| contact.html | Contact Dental Residence, your Marrickville dentist at 4/2 Albert St. Call (02) 8384 6667 or book online for general, cosmetic and emergency dentistry. |
+| contact.html | Contact Dental Residence, your Marrickville dentist at 4/2 Albert St. Call 0416 689 022 or book online for general, cosmetic and emergency dentistry. |
 | cosmetic-dentistry.html | Cosmetic dentistry in Marrickville: porcelain veneers, teeth whitening, crowns and Invisalign to transform your smile. Book at Dental Residence. |
 | covid-safety.html | COVID safety at Dental Residence Marrickville: enhanced infection control, screening and hygiene protocols keeping our patients and team safe. |
 | crowns.html | Same-day 1-hour porcelain crowns in Marrickville using CAD/CAM technology. Strong, natural-looking crowns in a single visit at Dental Residence. |
