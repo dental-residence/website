@@ -9,3 +9,10 @@
 # Extensionless links used on a couple of pages
 /general-dental         /general-dental.html      301!
 /emergency-dentist      /emergency-dentist.html   301!
+
+# general.html duplicated general-dental.html word for word (merged 2026-10-15)
+/general.html           /general-dental.html      301!
+/general                /general-dental.html      301!
+
+# Netlify staging hostname: send everything to the real domain
+https://dentalresidenceproject.netlify.app/*  https://www.dentalresidence.com.au/:splat  301!
