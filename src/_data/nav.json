@@ -27,51 +27,44 @@
     "url": "/general-dental.html",
     "children": [
       {
-        "id": "wsite-nav-367825141785671282",
-        "title": "GENERAL DENTAL",
-        "url": "/general-dental.html",
-        "children": [
-          {
-            "id": "wsite-nav-507978216625858452",
-            "title": "CHECKUP AND CLEAN",
-            "url": "/checkup.html"
-          },
-          {
-            "id": "wsite-nav-908892228296982593",
-            "title": "GUM DISEASE",
-            "url": "/gum-disease.html"
-          },
-          {
-            "id": "wsite-nav-698268555884731160",
-            "title": "TOOTHACHE",
-            "url": "/toothache.html"
-          },
-          {
-            "id": "wsite-nav-519523528676711268",
-            "title": "DENTAL FILLINGS",
-            "url": "/dental-fillings.html"
-          },
-          {
-            "id": "wsite-nav-455205056187653856",
-            "title": "1-HOUR CROWNS",
-            "url": "/crowns.html"
-          },
-          {
-            "id": "wsite-nav-386763783944482845",
-            "title": "ROOT CANAL THERAPY",
-            "url": "/root-canal.html"
-          },
-          {
-            "id": "wsite-nav-382763892785923893",
-            "title": "TOOTH EXTRACTION",
-            "url": "/tooth-extraction.html"
-          },
-          {
-            "id": "wsite-nav-803835700399632943",
-            "title": "WISDOM TOOTH REMOVAL",
-            "url": "/wisdom-tooth-removal.html"
-          }
-        ]
+        "id": "wsite-nav-507978216625858452",
+        "title": "CHECKUP AND CLEAN",
+        "url": "/checkup.html"
+      },
+      {
+        "id": "wsite-nav-908892228296982593",
+        "title": "GUM DISEASE",
+        "url": "/gum-disease.html"
+      },
+      {
+        "id": "wsite-nav-698268555884731160",
+        "title": "TOOTHACHE",
+        "url": "/toothache.html"
+      },
+      {
+        "id": "wsite-nav-519523528676711268",
+        "title": "DENTAL FILLINGS",
+        "url": "/dental-fillings.html"
+      },
+      {
+        "id": "wsite-nav-455205056187653856",
+        "title": "1-HOUR CROWNS",
+        "url": "/crowns.html"
+      },
+      {
+        "id": "wsite-nav-386763783944482845",
+        "title": "ROOT CANAL THERAPY",
+        "url": "/root-canal.html"
+      },
+      {
+        "id": "wsite-nav-382763892785923893",
+        "title": "TOOTH EXTRACTION",
+        "url": "/tooth-extraction.html"
+      },
+      {
+        "id": "wsite-nav-803835700399632943",
+        "title": "WISDOM TOOTH REMOVAL",
+        "url": "/wisdom-tooth-removal.html"
       },
       {
         "id": "wsite-nav-578431470116961027",

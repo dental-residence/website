@@ -16,3 +16,7 @@
 
 # Netlify staging hostname: send everything to the real domain
 https://dentalresidenceproject.netlify.app/*  https://www.dentalresidence.com.au/:splat  301!
+
+# Duplicate teeth whitening page (already canonicalised to the trays page)
+/general-328943-760397-270070-247430-929603-785701.html  /teeth-whitening-trays.html  301!
+/general-328943-760397-270070-247430-929603-785701       /teeth-whitening-trays.html  301!
