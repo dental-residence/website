@@ -849,3 +849,40 @@ img { height: auto; }
   }
 }
 
+
+/* Feature photo cropped to a 4:3 band (e.g. keep a portrait's smile and leave
+   out text printed higher up the image). */
+#wsite-content .tx-feature__img--crop img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 95%; }
+
+/* Split header: title and buttons on the left, the full (uncropped) photo on
+   the right, on the plain off-white band. Opt in with .tx-hero--split. */
+.tx-page .tx-hero--split .wsite-section-elements {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  column-gap: 72px;
+  align-content: center;
+  align-items: start;
+}
+.tx-page .tx-hero--split .wsite-section-elements > * { grid-column: 1; }
+.tx-page .tx-hero--split .tx-hero__photo {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  align-self: center;
+  margin: 0;
+}
+.tx-page .tx-hero--split .tx-hero__photo img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-left: auto;
+  filter: grayscale(1);
+}
+.tx-page .tx-hero--split .wsite-section-elements > p.tx-eyebrow { align-self: end; }
+.tx-page #banner:has(.tx-hero__photo) { padding-top: 70px !important; padding-bottom: 70px !important; }
+@media (max-width: 900px) {
+  .tx-page .tx-hero--split .wsite-section-elements { grid-template-columns: 1fr; }
+  .tx-page .tx-hero--split .tx-hero__photo { grid-column: 1; grid-row: auto; order: 10; margin-top: 28px; }
+  .tx-page .tx-hero--split .tx-hero__photo img { max-width: none; margin: 0; }
+  .tx-page #banner:has(.tx-hero__photo) { padding-top: 40px !important; padding-bottom: 40px !important; }
+}
