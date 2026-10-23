@@ -182,19 +182,17 @@ img { height: auto; }
   max-width: 920px;
   margin: 50px auto 60px;
 }
-#wsite-content .appt-guide h1.appt-guide__title {
-  font-family: "GFS Didot", serif !important;
-  font-size: 44px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  color: #1F1A18 !important;
-  text-transform: none !important;
-  margin: 0 0 16px;
-}
 #wsite-content .appt-guide p { margin: 0; }
+#wsite-content .appt-guide h1.appt-guide__title {
+  font-size: 52px !important;
+  line-height: 1 !important;
+  color: #1F1A18 !important;
+  margin: 0 0 18px;
+}
 #wsite-content .appt-guide .appt-guide__intro {
-  font-size: 17px !important;
-  line-height: 1.6 !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.02em;
   color: #1F1A18 !important;
   margin-bottom: 28px;
 }
@@ -253,7 +251,7 @@ img { height: auto; }
 #wsite-content .appt-guide a.appt-guide__btn:hover { background: #AC8E6F; }
 @media (max-width: 600px) {
   #wsite-content .appt-guide { margin: 32px auto 40px; }
-  #wsite-content .appt-guide h1.appt-guide__title { font-size: 32px !important; }
+  #wsite-content .appt-guide h1.appt-guide__title { font-size: 40px !important; }
   #wsite-content .appt-guide__item { flex-direction: column; align-items: stretch; gap: 14px; }
 }
 #wsite-content .appt-guide__actions {
@@ -936,3 +934,93 @@ img { height: auto; }
   object-fit: cover;
   transition: opacity 0.2s ease;
 }
+
+/* which-appointment.njk sizing for the two typefaces (see "Typeface system"
+   at the end): bigger capitals for the appointment names, small tracked
+   capitals for the meta line and buttons. */
+body.wsite-page-which-appointment #wsite-content .appt-guide,
+body.wsite-page-which-appointment #wsite-content .appt-guide :is(p, a) {
+  font-family: "Montserrat", sans-serif !important;
+}
+body.wsite-page-which-appointment #wsite-content .appt-guide .appt-guide__name {
+  font-family: "Oranienbaum", "GFS Didot", serif !important;
+  font-size: 32px !important;
+  line-height: 1.05 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+body.wsite-page-which-appointment #wsite-content .appt-guide :is(.appt-guide__for, .appt-guide__offer) { font-size: 14px !important; line-height: 1.7 !important; }
+body.wsite-page-which-appointment #wsite-content .appt-guide .appt-guide__meta {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 6px;
+}
+body.wsite-page-which-appointment #wsite-content .appt-guide .appt-guide__note { font-size: 13px !important; line-height: 1.7 !important; }
+body.wsite-page-which-appointment #wsite-content .appt-guide a.appt-guide__btn {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  padding: 14px 30px;
+}
+body.wsite-page-which-appointment #wsite-content .appt-guide a.appt-guide__rita { font-size: 12px; letter-spacing: 0.04em; }
+@media (max-width: 700px) {
+  body.wsite-page-which-appointment #wsite-content .appt-guide .appt-guide__name { font-size: 28px !important; }
+}
+
+/* ==========================================================================
+   Typeface system (2026-10-24): two faces sitewide, taken from the
+   "It's not just teeth / It's transformation" artwork.
+   - Oranienbaum (condensed high-contrast serif, self-hosted from Google
+     Fonts, OFL) for headings, in capitals.
+   - Montserrat (wide geometric sans, the logo face) for everything else.
+   The Weebly page bodies name eight older families inline, so instead of
+   editing every page those family names are re-pointed at the two files
+   here (these @font-face rules load after fonts.njk, so they win). Deleting
+   this block restores the old fonts.
+   ========================================================================== */
+@font-face { font-family: "Oranienbaum"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+/* Serif names -> Oranienbaum. Bold and italic map to the same file so
+   browsers don't fake a bold or a slant. */
+@font-face { font-family: "GFS Didot"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+@font-face { font-family: "GFS Didot"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+@font-face { font-family: "GFS Didot"; font-style: italic; font-weight: 400; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 400; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 700; font-display: swap; src: url("/assets/fonts/Oranienbaum/regular.woff2") format("woff2"); }
+/* Sans names -> Montserrat. */
+@font-face { font-family: "Libre Franklin"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+@font-face { font-family: "Didact Gothic"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "Didact Gothic"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+@font-face { font-family: "Raleway"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "Raleway"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+@font-face { font-family: "News Cycle"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "News Cycle"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+@font-face { font-family: "Lato"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "Lato"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+@font-face { font-family: "Oxygen"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "Oxygen"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 400; font-display: swap; src: url("/assets/fonts/Montserrat/regular.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 700; font-display: swap; src: url("/assets/fonts/Montserrat/bold.woff2") format("woff2"); }
+
+/* Headings everywhere: Oranienbaum in capitals. Older rules set heading
+   fonts and case at up to (1,2,1) specificity (e.g. #wsite-content
+   .tx-section h2.tx-section__title, footer h2s at Montserrat), so these
+   carry #wrapper plus :not(#_), which matches everything but adds an ID. */
+html body #wrapper :is(h1, h2, h3, h4, .wsite-content-title, .wsite-headline):not(#_),
+html body #wrapper :is(h1, h2, h3, h4, .wsite-content-title, .wsite-headline) :is(font, span, strong, b, em, i, a):not(#_),
+html body #wrapper :is(.booking-box__name, .appt-guide__name, .gd-tile__name, .tx-feature__line):not(#_) {
+  font-family: "Oranienbaum", "GFS Didot", serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+}
+/* Body copy that the theme or inline styles left on a system font. */
+body { font-family: "Montserrat", sans-serif; }
+/* Buttons and form fields don't inherit fonts, so they were showing the
+   device's system font. */
+html body :is(button, input, select, textarea) { font-family: "Montserrat", sans-serif; }

@@ -32,17 +32,11 @@
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="/assets/css/vendor/sites.css" />
 <link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="screen,projection" />
 <link rel="stylesheet" type="text/css" href="/files/main_style.css?v={{ now.build }}" title="wsite-theme-css" />
-<link rel="preload" href="/assets/fonts/Didact_Gothic/regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/Libre_Franklin/regular.woff2" as="font" type="font/woff2" crossorigin>
+{# Two faces sitewide (see "Typeface system" in site.css, which re-points the
+   older family names at these files). #}
 <link rel="preload" href="/assets/fonts/Montserrat/regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/GFS_Didot/regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Oranienbaum/regular.woff2" as="font" type="font/woff2" crossorigin>
 {% include "partials/fonts.njk" %}
-{# Families used by platform-element font classes (playfair-display, lato,
-   oxygen). The old Weebly site loaded them via a 39-family Google Fonts
-   request inside every platform element; we load just the used ones. #}
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
 {% include "partials/head-styles.njk" %}
 <link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css?v={{ now.build }}" />
 <link rel="stylesheet" type="text/css" href="/assets/css/site.css?v={{ now.build }}" />

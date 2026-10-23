@@ -56,10 +56,10 @@
     "treatmentId": 23619
   },
   "free-consult": {
-    "name": "Free Consultation - Cosmetic & Implants",
+    "name": "Complimentary Consultation - Cosmetic & Implants",
     "who": "Dr Anna Yip or Dr Mac Dean",
     "length": "30 min",
-    "for": "A free chat about implants, veneers, bridges or changing your smile.",
+    "for": "A complimentary consultation about implants, veneers, bridges or changing your smile.",
     "expect": [
       "We talk about what you would like to change",
       "We look at your teeth and explain your options",
@@ -108,10 +108,10 @@
     "treatmentId": 50182
   },
   "dentures": {
-    "name": "Dentures - New, Repair or Consult",
+    "name": "Dentures - Consultation",
     "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
     "length": "30 min",
-    "for": "New dentures, a repair, or advice about the dentures you have.",
+    "for": "A consultation about new dentures, a repair, or the dentures you have now.",
     "expect": [
       "Bring your current dentures if you have them",
       "We check your mouth and your dentures",
@@ -121,7 +121,7 @@
     "treatmentId": 15
   },
   "crown": {
-    "name": "Same-Day Crown - Assessment",
+    "name": "Same-Day Crown - Consultation",
     "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
     "length": "30 min",
     "for": "Find out if a crown is right for a broken or badly damaged tooth.",
@@ -134,7 +134,7 @@
     "treatmentId": 17
   },
   "root-canal": {
-    "name": "Root Canal - Assessment",
+    "name": "Root Canal - Consultation",
     "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
     "length": "30 min",
     "for": "Find out if a tooth needs root canal treatment.",
