@@ -1137,3 +1137,127 @@ html body :is(button, input, select, textarea) { font-family: "Montserrat", sans
   #wsite-content .appt-group .appt-guide__actions { flex-direction: row; align-items: center; justify-content: flex-start; gap: 18px; text-align: left; }
   body.wsite-page-which-appointment #wsite-content .appt-group .appt-guide__name { font-size: 25px !important; }
 }
+
+/* Contact page (ct-*), editorial layout: split header (stone panel + photo),
+   three numbered ways to reach us, then an ink band with address, hours and
+   a toned-down map. Headings take the sitewide Oranienbaum capitals. */
+.ct-page .wsite-header-elements .wsite-section-wrap,
+.ct-page .wsite-header-section { display: block; }
+/* The theme fixes the banner at 460px on wide screens; the split header
+   (up to 680px) must set its own height or the video spills into the next section. */
+body.ct-page .banner-wrap,
+body.ct-page .wsite-header-section { height: auto !important; min-height: 0 !important; max-height: none !important; }
+/* #EAE7DE is the photo's own paper colour, so the photo blends in. */
+body.ct-page .wsite-header-section { background: #EAE7DE !important; }
+.ct-page .wsite-header-section::before { background: none !important; }
+.ct-page .ct-hero { display: flex; height: 36vw; min-height: 460px; max-height: 680px; }
+.ct-page .ct-hero__text {
+  flex: 1 1 50%;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 48px 56px 48px max(24px, calc(50vw - 460px));
+  box-sizing: border-box; text-align: left; color: #1F1A18;
+}
+.ct-page .ct-eyebrow {
+  font-family: "Montserrat", sans-serif !important; font-size: 12px !important;
+  letter-spacing: 0.22em !important; text-transform: uppercase; color: #7a5f45 !important;
+  margin: 0 0 18px !important;
+}
+.ct-page .ct-hero h1.ct-hero__title {
+  font-size: 58px !important; line-height: 0.98 !important; color: #1F1A18 !important;
+  text-align: left !important; margin: 0 0 22px !important;
+}
+.ct-page .ct-hero .ct-hero__intro {
+  font-family: "Montserrat", sans-serif !important; font-size: 15px !important;
+  line-height: 1.75 !important; letter-spacing: 0.02em; color: #1F1A18 !important;
+  text-transform: none !important; margin: 0 !important; max-width: 460px;
+}
+/* The photo's "ARE YOU ready" is the headline: shown whole (contain) on
+   the matching paper colour, so the header reads as one poster. */
+.ct-page .ct-hero__photo { flex: 0 0 54%; background-repeat: no-repeat; background-size: auto 74%; background-position: 30% 55%; }
+/* Looping video variant (red curtain + phone): fills its half. */
+.ct-page .ct-hero__photo--video { position: relative; overflow: hidden; background: #2a0308; }
+.ct-page .ct-hero__photo--video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+
+.ct-page a.ct-btn {
+  display: inline-block; padding: 15px 34px;
+  font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  text-decoration: none !important; border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.ct-page a.ct-btn--line { border-color: #EFEAE1; color: #EFEAE1 !important; }
+.ct-page a.ct-btn--line:hover { background: #EFEAE1; color: #1F1A18 !important; }
+
+#wsite-content .ct-ways {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px; margin: 80px auto; border-top: 1px solid #ddd3c4;
+}
+#wsite-content .ct-way { padding: 36px 32px 8px; text-align: left; }
+#wsite-content .ct-way + .ct-way { border-left: 1px solid #ddd3c4; }
+#wsite-content .ct-way .ct-way__num {
+  font-family: "Oranienbaum", serif !important; font-size: 18px !important;
+  color: #AC8E6F !important; margin: 0 0 12px !important;
+}
+#wsite-content .ct-way h2.ct-way__title { font-size: 38px !important; line-height: 1 !important; text-align: left !important; margin: 0 0 14px !important; color: #1F1A18 !important; }
+#wsite-content .ct-way .ct-way__line { font-size: 14px !important; line-height: 1.7 !important; color: #4a4441 !important; margin: 0 0 18px !important; }
+#wsite-content .ct-way a.ct-way__link {
+  font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #1F1A18 !important; text-decoration: none !important;
+  border-bottom: 1px solid #AC8E6F; padding-bottom: 4px;
+}
+#wsite-content .ct-way a.ct-way__link:hover { color: #7a5f45 !important; }
+#wsite-content .ct-ways--two { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+#wsite-content .ct-way a.ct-way__phone {
+  font-family: "Oranienbaum", serif; font-size: 34px; line-height: 1; letter-spacing: 0.02em;
+  color: #1F1A18 !important; text-decoration: none !important;
+}
+#wsite-content .ct-way a.ct-way__phone:hover { color: #7a5f45 !important; }
+.ct-page .ct-hero .ct-hero__details {
+  margin: 26px 0 0 !important; display: flex; flex-direction: column; gap: 6px;
+  font-family: "Montserrat", sans-serif !important; font-size: 11px !important; line-height: 1.6 !important;
+  letter-spacing: 0.16em !important; text-transform: uppercase; color: #4a4441 !important;
+}
+.ct-page .ct-hero .ct-hero__details a {
+  font-size: 13px; color: #1F1A18 !important; text-decoration: underline !important;
+  text-decoration-color: #AC8E6F !important; text-underline-offset: 4px; align-self: flex-start;
+}
+
+.ct-page .ct-visit-band { background: #1F1A18 !important; }
+
+/* Typewriter band: the photo's own deep red (#380003) as the band colour so
+   the photo bleeds into it; cream type. */
+.ct-page .ct-note-band { background: #380003 !important; }
+.ct-page .ct-note-band .container { max-width: none !important; width: 100% !important; padding: 0 !important; }
+.ct-page .ct-note { display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: 1200px; margin: 0 auto; }
+.ct-page .ct-note__photo { min-height: 640px; height: 100%; background-repeat: no-repeat; background-size: auto 115%; background-position: 50% 78%; }
+.ct-page .ct-note__text { padding: 64px 56px; text-align: left; color: #EFEAE1; }
+#wsite-content .ct-note p.ct-note__kicker { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.22em !important; text-transform: uppercase; color: #d9b9a3 !important; margin: 0 0 16px !important; text-align: left !important; }
+#wsite-content .ct-note p.ct-note__line { font-family: "Oranienbaum", serif !important; text-transform: uppercase; font-size: 64px !important; line-height: 0.98 !important; color: #EFEAE1 !important; margin: 0 0 22px !important; text-align: left !important; }
+#wsite-content .ct-note p.ct-note__sub { font-size: 15px !important; line-height: 1.75 !important; color: #e3cfc4 !important; margin: 0 0 30px !important; text-align: left !important; max-width: 400px; }
+.ct-page .ct-visit {
+  display: grid; grid-template-columns: 0.9fr 1fr 1.5fr; gap: 56px;
+  max-width: 1100px; margin: 0 auto; padding: 88px 24px; box-sizing: border-box; color: #EFEAE1;
+}
+#wsite-content .ct-visit h2.ct-visit__title { font-size: 36px !important; color: #EFEAE1 !important; text-align: left !important; margin: 0 0 20px !important; }
+#wsite-content .ct-visit p.ct-visit__addr { font-size: 15px !important; line-height: 1.8 !important; color: #cfc5b8 !important; text-align: left !important; margin: 0 0 28px !important; }
+.ct-page .ct-hours { margin: 0; }
+.ct-page .ct-hours div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid rgba(239, 234, 225, 0.15); }
+.ct-page .ct-hours dt { font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #EFEAE1; }
+.ct-page .ct-hours dd { margin: 0; font-family: "Montserrat", sans-serif; font-size: 14px; color: #cfc5b8; }
+.ct-page .ct-visit__map iframe { display: block; width: 100%; height: 100%; min-height: 340px; border: 0; filter: grayscale(1) contrast(0.95); }
+
+@media (max-width: 900px) {
+  .ct-page .ct-hero { flex-direction: column; height: auto; min-height: 0; max-height: none; }
+  .ct-page .ct-hero__photo { order: -1; flex: none; height: 78vw; background-size: auto 88%; background-position: 50% 60%; }
+  .ct-page .ct-hero__text { padding: 32px 24px 44px; }
+  .ct-page .ct-hero h1.ct-hero__title { font-size: 42px !important; }
+  .ct-page .ct-note { grid-template-columns: 1fr; gap: 0; }
+  .ct-page .ct-note__photo { min-height: 0; height: 100vw; }
+  .ct-page .ct-note__text { padding: 8px 24px 64px; }
+  #wsite-content .ct-note p.ct-note__line { font-size: 46px !important; }
+  #wsite-content .ct-ways { grid-template-columns: 1fr; margin: 48px auto; }
+  #wsite-content .ct-way { padding: 28px 0 28px; }
+  #wsite-content .ct-way + .ct-way { border-left: 0; border-top: 1px solid #ddd3c4; }
+  .ct-page .ct-visit { grid-template-columns: 1fr; gap: 44px; padding: 56px 24px; }
+  .ct-page .ct-visit__map iframe { min-height: 300px; }
+}
+
