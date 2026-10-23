@@ -7,5 +7,7 @@
   "gtmId": "GTM-TSWZZVL9",
   "ga4Id": "G-J9LBF4ZD0T",
   "adsId": "AW-357358707",
-  "fbPixelId": "1042136203074592"
+  "fbPixelId": "1042136203074592",
+  "treatmentBookingUrl": "https://www.myhealth1st.com.au/AppointmentWidget?practiceId=9023&treatmentId=",
+  "ritaBookingUrl": "https://www.myhealth1st.com.au/appointmentWidget/?practiceId=9023&practitionerId=3383715"
 }

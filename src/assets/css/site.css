@@ -73,3 +73,200 @@ img.team-photo {
    so every class rule and inline style that really does want a fixed height
    (.logo-image, the affiliate strip, the arrow icons) still wins. */
 img { height: auto; }
+
+/* Booking panel on service pages (partials/booking-box.njk). Styled in the
+   redesign's editorial register (see the Twenty Two concept): stone ground,
+   ink type, GFS Didot for the booking-type names, Libre Franklin for the rest,
+   one tan accent. No navy. !important only where the theme's tag rules
+   (p, ul, a inside .wsite-not-footer) would otherwise win. */
+#wsite-content .booking-box {
+  background: #EFEAE1;
+  color: #1F1A18;
+  border-top: 2px solid #AC8E6F;
+  padding: 32px 36px 28px;
+  margin: 36px 0;
+  font-family: "Libre Franklin", sans-serif;
+}
+#wsite-content .booking-box p { margin: 0; }
+#wsite-content .booking-box .booking-box__eyebrow {
+  font-size: 12px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a5f45 !important;
+  margin-bottom: 12px;
+}
+#wsite-content .booking-box .booking-box__intro {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #1F1A18 !important;
+  max-width: 62ch;
+  margin-bottom: 8px;
+}
+.booking-box__types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0 40px;
+}
+.booking-box__type { padding-top: 22px; display: flex; flex-direction: column; }
+#wsite-content .booking-box .booking-box__name {
+  font-family: "GFS Didot", serif !important;
+  font-size: 28px !important;
+  line-height: 1.2 !important;
+  color: #1F1A18 !important;
+  margin-bottom: 8px;
+}
+#wsite-content .booking-box .booking-box__meta {
+  font-size: 14px !important;
+  color: #4a4441 !important;
+  margin-bottom: 14px;
+}
+#wsite-content .booking-box .booking-box__offer,
+#wsite-content .booking-box .booking-box__expect li {
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #1F1A18 !important;
+}
+#wsite-content .booking-box .booking-box__offer { margin-bottom: 18px; }
+#wsite-content .booking-box .booking-box__label {
+  font-size: 12px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #4a4441 !important;
+  margin-bottom: 6px;
+}
+#wsite-content .booking-box .booking-box__expect {
+  margin: 0 0 18px !important;
+  padding-left: 18px !important;
+  color: #1F1A18 !important;
+}
+#wsite-content .booking-box a.booking-box__btn {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  background: #1F1A18;
+  color: #fff !important;
+  padding: 14px 22px;
+  font-size: 15px;
+  line-height: 1.35;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+}
+#wsite-content .booking-box a.booking-box__btn:hover { background: #AC8E6F; }
+#wsite-content .booking-box .booking-box__help {
+  font-size: 14px !important;
+  color: #4a4441 !important;
+  margin-top: 22px;
+}
+#wsite-content .booking-box .booking-box__help a {
+  color: #7a5f45 !important;
+  text-decoration: underline !important;
+}
+@media (max-width: 600px) {
+  #wsite-content .booking-box { padding: 24px 20px 22px; margin: 28px 0; }
+  #wsite-content .booking-box .booking-box__name { font-size: 24px !important; }
+  #wsite-content .booking-box a.booking-box__btn { align-self: stretch; text-align: center; }
+}
+
+#wsite-content .booking-box .booking-box__intro a {
+  color: #7a5f45 !important;
+  text-decoration: underline !important;
+}
+
+/* "Which appointment should I book?" guide (which-appointment.njk). Same
+   editorial register as .booking-box; reuses its button. */
+#wsite-content .appt-guide {
+  font-family: "Libre Franklin", sans-serif;
+  color: #1F1A18;
+  max-width: 920px;
+  margin: 50px auto 60px;
+}
+#wsite-content .appt-guide h1.appt-guide__title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 44px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  color: #1F1A18 !important;
+  text-transform: none !important;
+  margin: 0 0 16px;
+}
+#wsite-content .appt-guide p { margin: 0; }
+#wsite-content .appt-guide .appt-guide__intro {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #1F1A18 !important;
+  margin-bottom: 28px;
+}
+#wsite-content .appt-guide__list {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: 2px solid #AC8E6F;
+}
+#wsite-content .appt-guide__item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid #ddd3c4;
+  list-style: none;
+}
+#wsite-content .appt-guide__text { flex: 1; }
+#wsite-content .appt-guide .appt-guide__name {
+  font-family: "GFS Didot", serif !important;
+  font-size: 24px !important;
+  line-height: 1.25 !important;
+  color: #1F1A18 !important;
+  margin-bottom: 6px;
+}
+#wsite-content .appt-guide .appt-guide__for,
+#wsite-content .appt-guide .appt-guide__offer {
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  color: #1F1A18 !important;
+  margin-bottom: 4px;
+}
+#wsite-content .appt-guide .appt-guide__offer { font-style: italic; }
+#wsite-content .appt-guide .appt-guide__meta,
+#wsite-content .appt-guide .appt-guide__note {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: #4a4441 !important;
+}
+#wsite-content .appt-guide .appt-guide__note { margin-top: 20px; }
+#wsite-content .appt-guide :is(.appt-guide__intro, .appt-guide__meta, .appt-guide__note) a {
+  color: #7a5f45 !important;
+  text-decoration: underline !important;
+}
+#wsite-content .appt-guide a.appt-guide__btn {
+  display: inline-block;
+  flex-shrink: 0;
+  background: #1F1A18;
+  color: #fff !important;
+  padding: 12px 28px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+}
+#wsite-content .appt-guide a.appt-guide__btn:hover { background: #AC8E6F; }
+@media (max-width: 600px) {
+  #wsite-content .appt-guide { margin: 32px auto 40px; }
+  #wsite-content .appt-guide h1.appt-guide__title { font-size: 32px !important; }
+  #wsite-content .appt-guide__item { flex-direction: column; align-items: stretch; gap: 14px; }
+}
+#wsite-content .appt-guide__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+#wsite-content .appt-guide a.appt-guide__rita {
+  font-size: 14px;
+  color: #7a5f45 !important;
+  text-decoration: underline !important;
+}
+@media (max-width: 600px) {
+  #wsite-content .appt-guide__actions { align-items: stretch; text-align: center; }
+}

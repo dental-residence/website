@@ -27,43 +27,48 @@
     "url": "/general-dental.html",
     "children": [
       {
+        "id": "nav-which-appointment",
+        "title": "WHICH APPOINTMENT?",
+        "url": "/which-appointment.html"
+      },
+      {
         "id": "wsite-nav-507978216625858452",
-        "title": "CHECKUP AND CLEAN",
+        "title": "CHECK-UP &amp; CLEAN",
         "url": "/checkup.html"
       },
       {
         "id": "wsite-nav-908892228296982593",
-        "title": "GUM DISEASE",
+        "title": "GUM HEALTH &amp; DEEP CLEAN",
         "url": "/gum-disease.html"
       },
       {
         "id": "wsite-nav-698268555884731160",
-        "title": "TOOTHACHE",
+        "title": "TOOTHACHE &amp; EMERGENCIES",
         "url": "/toothache.html"
       },
       {
         "id": "wsite-nav-519523528676711268",
-        "title": "DENTAL FILLINGS",
+        "title": "FILLINGS &amp; TOOTH REPAIR",
         "url": "/dental-fillings.html"
       },
       {
         "id": "wsite-nav-455205056187653856",
-        "title": "1-HOUR CROWNS",
+        "title": "SAME-DAY CROWNS",
         "url": "/crowns.html"
       },
       {
         "id": "wsite-nav-386763783944482845",
-        "title": "ROOT CANAL THERAPY",
+        "title": "ROOT CANAL",
         "url": "/root-canal.html"
       },
       {
         "id": "wsite-nav-382763892785923893",
-        "title": "TOOTH EXTRACTION",
+        "title": "TOOTH REMOVAL",
         "url": "/tooth-extraction.html"
       },
       {
         "id": "wsite-nav-803835700399632943",
-        "title": "WISDOM TOOTH REMOVAL",
+        "title": "WISDOM TEETH",
         "url": "/wisdom-tooth-removal.html"
       },
       {
@@ -112,7 +117,7 @@
       },
       {
         "id": "wsite-nav-431031126925353643",
-        "title": "CHILDREN'S DENTISTRY",
+        "title": "CHILD CHECK-UP &amp; CLEAN",
         "url": "/childrens-dentist.html"
       }
     ]

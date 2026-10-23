@@ -1,0 +1,159 @@
+{
+  "new-patient": {
+    "name": "New Patient Check-up & Clean ($249)",
+    "who": "Dr Anna Yip, Dr Mac Dean or Rita Chen (Oral Health Therapist)",
+    "length": "45–60 min",
+    "for": "Your first visit to Dental Residence.",
+    "expect": [
+      "A full exam of your teeth and gums",
+      "A scale and clean",
+      "X-rays",
+      "Any further treatment is quoted before we start"
+    ],
+    "page": "/checkup.html",
+    "treatmentId": 64591,
+    "rita": true
+  },
+  "returning": {
+    "name": "Check-up & Clean (Returning Patient)",
+    "who": "Dr Anna Yip, Dr Mac Dean or Rita Chen (Oral Health Therapist)",
+    "length": "30–45 min",
+    "for": "Your regular check-up and clean, if you have been to us before.",
+    "expect": [
+      "A check of your teeth and gums",
+      "A scale and clean",
+      "Any further treatment is quoted before we start"
+    ],
+    "page": "/checkup.html",
+    "treatmentId": 7958,
+    "rita": true
+  },
+  "child": {
+    "name": "Child Check-up & Clean (Under 18)",
+    "who": "Dr Anna Yip, Dr Mac Dean or Rita Chen (Oral Health Therapist)",
+    "length": "30 min",
+    "for": "Check-ups and cleans for children and teenagers under 18.",
+    "expect": [
+      "A check of your child's teeth and gums",
+      "A clean",
+      "Time for any questions from you or your child"
+    ],
+    "page": "/childrens-dentist.html",
+    "treatmentId": 2087,
+    "rita": true
+  },
+  "emergency": {
+    "name": "Toothache or Dental Emergency",
+    "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
+    "length": "45 min",
+    "for": "Tooth pain, swelling, or a broken or knocked-out tooth.",
+    "expect": [
+      "We look at the problem and find the cause",
+      "We explain your options before anything is done",
+      "Any treatment is quoted before we start"
+    ],
+    "page": "/emergency-dentist.html",
+    "treatmentId": 23619
+  },
+  "free-consult": {
+    "name": "Free Consultation - Cosmetic, Invisalign & Implants",
+    "who": "Dr Anna Yip or Dr Mac Dean",
+    "length": "30 min",
+    "for": "A free chat about Invisalign, implants, veneers, bridges or changing your smile.",
+    "expect": [
+      "We talk about what you would like to change",
+      "We look at your teeth and explain your options",
+      "Costs are explained before you decide anything"
+    ],
+    "page": "/cosmetic-dentistry.html",
+    "treatmentId": 72066
+  },
+  "filling": {
+    "name": "Filling or Tooth Repair",
+    "who": "Dr Anna Yip, Dr Mac Dean, Dr Simon Khalil or Rita Chen (Oral Health Therapist)",
+    "length": "30–45 min",
+    "for": "A hole in a tooth, a chipped tooth, or a filling that has broken or fallen out.",
+    "expect": [
+      "We check the tooth and explain what it needs",
+      "Any treatment is quoted before we start",
+      "In pain? Book Toothache or Dental Emergency instead"
+    ],
+    "page": "/dental-fillings.html",
+    "treatmentId": 23621
+  },
+  "extraction": {
+    "name": "Wisdom Teeth or Tooth Removal",
+    "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
+    "length": "45 min",
+    "for": "Wisdom teeth, or any other tooth that may need to come out.",
+    "expect": [
+      "We check the tooth and the area around it",
+      "We explain whether it needs to come out, and your options",
+      "Any treatment is quoted before we start"
+    ],
+    "page": "/wisdom-tooth-removal.html",
+    "treatmentId": 50182
+  },
+  "dentures": {
+    "name": "Dentures - New, Repair or Consult",
+    "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
+    "length": "30 min",
+    "for": "New dentures, a repair, or advice about the dentures you have.",
+    "expect": [
+      "Bring your current dentures if you have them",
+      "We check your mouth and your dentures",
+      "Any treatment is quoted before we start"
+    ],
+    "page": "/dentures.html",
+    "treatmentId": 15
+  },
+  "crown": {
+    "name": "Same-Day Crown - Assessment",
+    "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
+    "length": "30 min",
+    "for": "Find out if a crown is right for a broken or badly damaged tooth.",
+    "expect": [
+      "We check the tooth",
+      "We explain whether a crown is the right option",
+      "Any treatment is quoted before we start"
+    ],
+    "page": "/crowns.html",
+    "treatmentId": 17
+  },
+  "root-canal": {
+    "name": "Root Canal - Assessment",
+    "who": "Dr Anna Yip, Dr Mac Dean or Dr Simon Khalil",
+    "length": "30 min",
+    "for": "Find out if a tooth needs root canal treatment.",
+    "expect": [
+      "We check the tooth",
+      "We explain whether root canal treatment is needed, and your options",
+      "Any treatment is quoted before we start",
+      "In pain? Book Toothache or Dental Emergency instead"
+    ],
+    "page": "/root-canal.html",
+    "treatmentId": 12647
+  },
+  "gum": {
+    "name": "Gum Health & Deep Clean",
+    "who": "Dr Anna Yip, Dr Mac Dean, Dr Simon Khalil or Rita Chen (Oral Health Therapist)",
+    "length": "60 min",
+    "for": "Bleeding, sore or receding gums, or a deeper clean than a regular check-up.",
+    "expect": [
+      "We check the health of your gums",
+      "A deep clean",
+      "Any further care is quoted before we start"
+    ],
+    "page": "/gum-disease.html",
+    "treatmentId": 19600,
+    "rita": true
+  },
+  "consultation": {
+    "name": "Consultation with Dr Simon Khalil",
+    "who": "Dr Simon Khalil only",
+    "length": "30 min",
+    "for": "A consultation with Dr Simon Khalil to discuss your concerns and treatment options. This is a discussion appointment, so no treatment is done on the day.",
+    "expect": [],
+    "treatmentId": 47973
+  }
+}

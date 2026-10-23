@@ -1,0 +1,31 @@
+{# "Book: <booking type>" panel for service pages. Rendered from the page's
+   `booking` front matter (keys into _data/bookingTypes.json, names matching the
+   MyHealth1st booking menu word for word) and spliced into the page body at the
+   <!-- booking-box --> marker by base.njk, since page bodies are never
+   template-processed.
+   Book buttons deep-link to the type's MyHealth1st treatmentId. They must stay
+   plain anchors: the 1stAvailableWidget class would let the widget script
+   hijack them back to the generic practice widget. The book_online_button id
+   prefix is what GTM's click trigger matches. Treatment links list dentists
+   only, so types Rita (OHT) also does get a separate practitioner link. #}
+{%- set ritaFlags %}{% for key in booking %}{% if bookingTypes[key].rita %}y{% endif %}{% endfor %}{% endset -%}
+<div class="booking-box">
+	<p class="booking-box__eyebrow">{{ bookingLabel or "Booking your appointment" }}</p>
+	{% if bookingIntro %}<p class="booking-box__intro">{{ bookingIntro | safe }}</p>{% endif %}
+	<div class="booking-box__types">
+	{%- for key in booking %}
+		<div class="booking-box__type">
+			<p class="booking-box__name">{{ bookingTypes[key].name }}</p>
+			<p class="booking-box__meta">{{ bookingTypes[key].who }} &middot; {{ bookingTypes[key].length }}</p>
+			{% if key == "new-patient" %}<p class="booking-box__offer">Your first visit: full exam, scale &amp; clean, and x-rays for $249. Any further treatment is quoted before we start.</p>
+			{% elif bookingTypes[key].expect.length %}<p class="booking-box__label">What to expect</p>
+			<ul class="booking-box__expect">{% for e in bookingTypes[key].expect %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+			<a href="{{ site.treatmentBookingUrl }}{{ bookingTypes[key].treatmentId }}" target="_blank" rel="noopener" class="booking-box__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book: {{ bookingTypes[key].name }}</a>
+		</div>
+	{%- endfor %}
+	</div>
+	{%- if ritaFlags | trim %}
+	<p class="booking-box__help">Seeing our Oral Health Therapist, Rita Chen? <a href="{{ site.ritaBookingUrl }}" target="_blank" rel="noopener" class="book-with-rita" id="book_online_button_rita" data-practitioner="rita-chen">Book with Rita</a></p>
+	{%- endif %}
+	<p class="booking-box__help">Not sure which to choose? <a href="/which-appointment.html">See which appointment to book</a>, or <a href="tel:{{ site.phone }}" id="telephone_button_booking">call us</a>.</p>
+</div>

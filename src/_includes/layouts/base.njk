@@ -70,7 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div id="wrapper">
 			<div class="bg-wrapper">
 				{% import "partials/nav.njk" as navmenu %}<div id="navigation">{{ navmenu.menu(nav, navActive, navActiveSub) }}</div>
-{{ content | safe }}
+{% if booking %}{% set bookingBox %}{% include "partials/booking-box.njk" %}{% endset %}{{ content | replace("<!-- booking-box -->", bookingBox) | safe }}{% else %}{{ content | safe }}{% endif %}
 <div id="footer"{% if 'no-header' not in bodyClass %} style="background-color: #FFFFFF"{% endif %}>
 				{% include "partials/footer-content.njk" %}
 		<div class="navmobile-wrapper">
