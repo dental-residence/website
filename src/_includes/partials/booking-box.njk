@@ -7,7 +7,8 @@
    plain anchors: the 1stAvailableWidget class would let the widget script
    hijack them back to the generic practice widget. The book_online_button id
    prefix is what GTM's click trigger matches. Treatment links list dentists
-   only, so types Rita (OHT) also does get a separate practitioner link. #}
+   only, so types Rita (OHT) also does get a separate practitioner link.
+   A type with no treatmentId yet falls back to its `url`. #}
 {%- set ritaFlags %}{% for key in booking %}{% if bookingTypes[key].rita %}y{% endif %}{% endfor %}{% endset -%}
 <div class="booking-box">
 	<p class="booking-box__eyebrow">{{ bookingLabel or "Booking your appointment" }}</p>
@@ -20,7 +21,7 @@
 			{% if key == "new-patient" %}<p class="booking-box__offer">Your first visit: full exam, scale &amp; clean, and x-rays for $249. Any further treatment is quoted before we start.</p>
 			{% elif bookingTypes[key].expect.length %}<p class="booking-box__label">What to expect</p>
 			<ul class="booking-box__expect">{% for e in bookingTypes[key].expect %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
-			<a href="{{ site.treatmentBookingUrl }}{{ bookingTypes[key].treatmentId }}" target="_blank" rel="noopener" class="booking-box__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book: {{ bookingTypes[key].name }}</a>
+			<a href="{% if bookingTypes[key].treatmentId %}{{ site.treatmentBookingUrl }}{{ bookingTypes[key].treatmentId }}{% else %}{{ bookingTypes[key].url }}{% endif %}" target="_blank" rel="noopener" class="booking-box__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book: {{ bookingTypes[key].name }}</a>
 		</div>
 	{%- endfor %}
 	</div>

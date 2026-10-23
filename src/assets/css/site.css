@@ -137,6 +137,7 @@ img { height: auto; }
 }
 #wsite-content .booking-box .booking-box__expect {
   margin: 0 0 18px !important;
+  text-align: left !important;
   padding-left: 18px !important;
   color: #1F1A18 !important;
 }
@@ -270,3 +271,241 @@ img { height: auto; }
 @media (max-width: 600px) {
   #wsite-content .appt-guide__actions { align-items: stretch; text-align: center; }
 }
+
+/* Invisalign page redesign (pilot for the editorial direction: The Twenty Two,
+   The Ned, Broadwick). Scoped to this page by its body class so the rest of
+   the site keeps the Weebly theme until the owner signs off. */
+/* Header photo in the brand's warm black and white: any source image is
+   greyed, warmed toward brown and deepened by the filter, so stock, Align and
+   photographer shots read as one set. The photo sits on ::before so the filter
+   never touches the type; ::after is free for a wash. Falls back
+   to a plain off-white band until /assets/img/invisalign-hero.jpg exists. */
+.wsite-page-invisalign .wsite-header-section {
+  position: relative;
+  overflow: hidden;
+  background-image: none !important;
+  background-color: #F7F5F2 !important; /* off-white: fallback that still carries the ink type */
+}
+.wsite-page-invisalign .wsite-header-section::before,
+.wsite-page-invisalign .wsite-header-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.wsite-page-invisalign .wsite-header-section::before {
+  background: var(--hero-img, url("/assets/img/invisalign-hero.jpg")) var(--hero-pos, 90% 55%) / cover no-repeat;
+  filter: var(--hero-filter, none);
+  z-index: 0 !important; /* theme gives section ::before z-index 1 */
+}
+
+.wsite-page-invisalign .wsite-header-section::after { z-index: 1; }
+.wsite-page-invisalign .wsite-header-section .wsite-section-content { position: relative; z-index: 2; }
+.wsite-page-invisalign #banner { padding-top: 140px !important; padding-bottom: 120px !important; }
+.wsite-page-invisalign .inv-eyebrow {
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e6d6c3 !important;
+  margin: 0 0 18px !important;
+  text-align: left !important;
+}
+.wsite-page-invisalign .wsite-header-elements h2.wsite-content-title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 64px !important;
+  line-height: 1.05 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: #fff !important;
+  margin: 0 0 36px !important;
+}
+.wsite-page-invisalign .wsite-header-elements .cta-button {
+  border-radius: 0 !important;
+  height: auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  padding: 16px 30px !important;
+  margin: 0 10px 10px 0 !important;
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1 !important;
+  background: #AC8E6F !important;
+  border: 1px solid #AC8E6F !important;
+  color: #fff !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.wsite-page-invisalign .wsite-header-elements .cta-button.cta-button-navy {
+  background: transparent !important;
+  border-color: rgba(255,255,255,0.8) !important;
+}
+.wsite-page-invisalign .wsite-header-elements .cta-button:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #1F1A18 !important;
+}
+
+#wsite-content .inv-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: start;
+  max-width: 1120px;
+  margin: 90px auto 100px;
+}
+#wsite-content .inv-eyebrow--dark { color: #7a5f45 !important; }
+#wsite-content h1.inv-title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 52px !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  text-align: left !important;
+  color: #1F1A18 !important;
+  margin: 0 0 28px !important;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #AC8E6F;
+}
+#wsite-content .inv-copy p {
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+  color: #3d3532 !important;
+  margin: 0 0 18px !important;
+  text-align: left !important;
+  max-width: 58ch;
+}
+#wsite-content .inv-copy p.inv-lede {
+  font-family: "GFS Didot", serif !important;
+  font-size: 23px !important;
+  line-height: 1.5 !important;
+  color: #1F1A18 !important;
+  margin-bottom: 26px !important;
+}
+#wsite-content .inv-intro__side .booking-box { margin: 0; }
+
+@media (max-width: 900px) {
+  #wsite-content .inv-intro { grid-template-columns: 1fr; gap: 40px; margin: 48px auto 60px; }
+  .wsite-page-invisalign #banner { padding-top: 90px !important; padding-bottom: 70px !important; }
+  .wsite-page-invisalign .wsite-header-elements h2.wsite-content-title { font-size: 44px !important; }
+  #wsite-content h1.inv-title { font-size: 38px !important; }
+  #wsite-content .inv-copy p.inv-lede { font-size: 20px !important; }
+}
+
+/* Plain header band (no photo) for pages whose banner image was retired.
+   Opt in with "banner-plain" in the page's bodyClass. */
+.banner-plain .wsite-header-section {
+  background-image: none !important;
+  background-color: #1F1A18 !important;
+}
+.banner-plain .wsite-header-elements h2.wsite-content-title { color: #fff !important; }
+
+/* Photo shown as shot (no grade, no wash) as the baseline to tune from.
+   Light photo, so the type goes ink. To grade it, set --hero-filter, e.g.
+   grayscale(1) sepia(0.3) contrast(1.2). */
+.wsite-page-invisalign .wsite-header-section::after { background: none; }
+.wsite-page-invisalign .wsite-header-elements h2.wsite-content-title { color: #1F1A18 !important; }
+.wsite-page-invisalign .wsite-header-elements .inv-eyebrow { color: #7a5f45 !important; }
+.wsite-page-invisalign .wsite-header-elements .cta-button.cta-button-navy {
+  color: #1F1A18 !important;
+  border-color: #1F1A18 !important;
+}
+.wsite-page-invisalign .wsite-header-elements .cta-button:hover {
+  background: #1F1A18 !important;
+  border-color: #1F1A18 !important;
+  color: #fff !important;
+}
+
+/* Dental Services dropdown is one flat list of every treatment (like
+   enDental's Treatments menu). The Weebly default 200px items wrapped most
+   labels onto two lines; widen so each sits on one line. */
+#wsite-menus .wsite-menu li { width: 310px; }
+#wsite-menus .wsite-menu a.wsite-menu-subitem { white-space: nowrap; }
+
+/* "Book Appointment" in the header (desktop, top right) and as a full-width
+   button at the top of the mobile menu. Goes to the booking guide, not
+   straight to MyHealth1st, so its ids deliberately avoid GTM's
+   book_online_button trigger. */
+#header > div { position: relative; }
+#header a.header-book {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: #1F1A18;
+  color: #fff !important;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: 14px 22px;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+#header a.header-book:hover { background: #AC8E6F; }
+.navmobile-wrapper a.navmobile-book { display: none; }
+@media (max-width: 992px) {
+  #header a.header-book { display: none; }
+  .navmobile-wrapper a.navmobile-book {
+    display: block;
+    margin: 16px 16px 8px;
+    padding: 16px;
+    background: #1F1A18;
+    color: #fff !important;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none !important;
+  }
+}
+
+/* General Dentistry hub tiles (general-dental.html): one tile per everyday
+   treatment, whole tile is the link. */
+#wsite-content .gd-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1080px;
+  margin: 36px auto 28px;
+}
+#wsite-content a.gd-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px 26px 24px;
+  background: #EFEAE1;
+  border-top: 2px solid #AC8E6F;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+}
+#wsite-content a.gd-tile:hover { background: #e6dfd2; }
+#wsite-content .gd-tile__name {
+  font-family: "GFS Didot", serif;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #1F1A18;
+}
+#wsite-content .gd-tile__line {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #3d3532;
+  flex: 1;
+}
+#wsite-content .gd-tile__more {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7a5f45;
+}
+#wsite-content .gd-more { text-align: center; }
+#wsite-content .gd-more a { color: #7a5f45 !important; text-decoration: underline !important; }
+@media (max-width: 900px) { #wsite-content .gd-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { #wsite-content .gd-tiles { grid-template-columns: 1fr; } }

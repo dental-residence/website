@@ -56,10 +56,10 @@
     "treatmentId": 23619
   },
   "free-consult": {
-    "name": "Free Consultation - Cosmetic, Invisalign & Implants",
+    "name": "Free Consultation - Cosmetic & Implants",
     "who": "Dr Anna Yip or Dr Mac Dean",
     "length": "30 min",
-    "for": "A free chat about Invisalign, implants, veneers, bridges or changing your smile.",
+    "for": "A free chat about implants, veneers, bridges or changing your smile.",
     "expect": [
       "We talk about what you would like to change",
       "We look at your teeth and explain your options",
@@ -67,6 +67,19 @@
     ],
     "page": "/cosmetic-dentistry.html",
     "treatmentId": 72066
+  },
+  "invisalign": {
+    "name": "Invisalign Consultation",
+    "who": "Dr Simon Khalil",
+    "length": "30 min",
+    "for": "A consultation with Dr Simon Khalil to find out if Invisalign is right for you.",
+    "expect": [
+      "We talk about what you would like to change",
+      "We look at your teeth and explain whether Invisalign suits you",
+      "Costs are explained before you decide anything"
+    ],
+    "page": "/invisalign.html",
+    "treatmentId": 2089
   },
   "filling": {
     "name": "Filling or Tooth Repair",
@@ -150,7 +163,7 @@
   },
   "consultation": {
     "name": "Consultation with Dr Simon Khalil",
-    "who": "Dr Simon Khalil only",
+    "who": "Dr Simon Khalil",
     "length": "30 min",
     "for": "A consultation with Dr Simon Khalil to discuss your concerns and treatment options. This is a discussion appointment, so no treatment is done on the day.",
     "expect": [],

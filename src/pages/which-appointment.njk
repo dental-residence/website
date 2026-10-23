@@ -5,7 +5,7 @@
   "ogTitle": "Which Appointment Should I Book?",
   "ogDescription": "A plain-English guide to every appointment you can book online at Dental Residence, Petersham.",
   "ogUrl": "https://www.dentalresidence.com.au/which-appointment.html",
-  "bodyClass": "header-page  wsite-page-which-appointment  full-width-on  wsite-theme-light",
+  "bodyClass": "header-page  banner-plain  wsite-page-which-appointment  full-width-on  wsite-theme-light",
   "description": "Not sure which dental appointment to book? A plain-English guide to every appointment at Dental Residence, Petersham, with who you'll see and how long it takes.",
   "navActiveSub": "/which-appointment.html"
 }
@@ -15,7 +15,7 @@
 				<div class="banner-wrap">
 					<div class="wsite-elements wsite-not-footer wsite-header-elements">
 	<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-header-section wsite-section-bg-image" style="vertical-align: middle;height: auto;background-image: url(&quot;/files/theme/images/Sofa-Wall.jpg&quot;) ;background-repeat: no-repeat ;background-position: 50% 50% ;background-color: transparent ;background-size: cover;">
+	<div class="wsite-section wsite-header-section wsite-section-bg-image" style="vertical-align: middle;height: auto;background-color: #1F1A18;">
 		<div class="wsite-section-content">
 						<div id="banner">
 							<div id="banner-container">
@@ -50,14 +50,14 @@
 				<p class="appt-guide__meta">{{ t.who }} &middot; {{ t.length }}{% if t.page %} &middot; <a href="{{ t.page }}">More about this</a>{% endif %}</p>
 			</div>
 			<div class="appt-guide__actions">
-				<a href="{{ site.treatmentBookingUrl }}{{ t.treatmentId }}" target="_blank" rel="noopener" class="appt-guide__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book</a>
+				<a href="{% if t.treatmentId %}{{ site.treatmentBookingUrl }}{{ t.treatmentId }}{% else %}{{ t.url }}{% endif %}" target="_blank" rel="noopener" class="appt-guide__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book</a>
 				{% if t.rita %}<a href="{{ site.ritaBookingUrl }}" target="_blank" rel="noopener" class="appt-guide__rita" id="book_online_button_rita_{{ key }}" data-practitioner="rita-chen">or book with Rita</a>{% endif %}
 			</div>
 		</li>
 	{%- endfor %}
 	</ol>
-	<p class="appt-guide__note">Teeth whitening can't be booked online. Please <a href="tel:{{ site.phone }}" id="telephone_button_guide_whitening">call us</a>, or book a Free Consultation - Cosmetic, Invisalign &amp; Implants.</p>
-	<p class="appt-guide__note">We accept DVA, OHFFSS and Zip, and offer interest-free payment plans.</p>
+	<p class="appt-guide__note">Teeth whitening can't be booked online. Please <a href="tel:{{ site.phone }}" id="telephone_button_guide_whitening">call us</a>, or book a Free Consultation - Cosmetic &amp; Implants.</p>
+	<p class="appt-guide__note">We accept DVA, OHFFSS, Afterpay, Zip and humm, and offer interest-free payment plans.</p>
 </div>
 			</div>
 		</div>
