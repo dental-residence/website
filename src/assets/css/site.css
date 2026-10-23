@@ -539,7 +539,7 @@ img { height: auto; }
 }
 
 /* Looping, muted YouTube video behind a treatment page header (opt in with
-   .tx-hero--video on .wsite-header-section). Sized like background-size:
+   .tx-hero--video on .wsite-header-section; .tx-hero--dark gives a photo header the same ink wash and white type). Sized like background-size:
    cover via container units; an ink wash keeps the white type readable. */
 .tx-page .tx-hero-video {
   position: absolute;
@@ -557,11 +557,11 @@ img { height: auto; }
   transform: translate(-50%, -50%);
   border: 0;
 }
-.tx-page .tx-hero--video { background-color: #1F1A18 !important; }
-.tx-page .tx-hero--video::after { background: linear-gradient(90deg, rgba(31,26,24,0.8) 0%, rgba(31,26,24,0.55) 45%, rgba(31,26,24,0.3) 100%) !important; }
-.tx-page .wsite-header-elements .tx-hero--video :is(h1, h2).wsite-content-title { color: #fff !important; }
-.tx-page .wsite-header-elements .tx-hero--video .tx-eyebrow { color: #e6d6c3 !important; }
-.tx-page .wsite-header-elements .tx-hero--video .cta-button.cta-button-navy {
+.tx-page :is(.tx-hero--video, .tx-hero--dark) { background-color: #1F1A18 !important; }
+.tx-page :is(.tx-hero--video, .tx-hero--dark)::after { background: linear-gradient(90deg, rgba(31,26,24,0.8) 0%, rgba(31,26,24,0.55) 45%, rgba(31,26,24,0.3) 100%) !important; }
+.tx-page .wsite-header-elements :is(.tx-hero--video, .tx-hero--dark) :is(h1, h2).wsite-content-title { color: #fff !important; }
+.tx-page .wsite-header-elements :is(.tx-hero--video, .tx-hero--dark) .tx-eyebrow { color: #e6d6c3 !important; }
+.tx-page .wsite-header-elements :is(.tx-hero--video, .tx-hero--dark) .cta-button.cta-button-navy {
   color: #fff !important;
   border-color: rgba(255,255,255,0.8) !important;
 }
