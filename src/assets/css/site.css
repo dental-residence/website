@@ -272,37 +272,37 @@ img { height: auto; }
   #wsite-content .appt-guide__actions { align-items: stretch; text-align: center; }
 }
 
-/* Invisalign page redesign (pilot for the editorial direction: The Twenty Two,
-   The Ned, Broadwick). Scoped to this page by its body class so the rest of
-   the site keeps the Weebly theme until the owner signs off. */
-/* Header photo in the brand's warm black and white: any source image is
-   greyed, warmed toward brown and deepened by the filter, so stock, Align and
-   photographer shots read as one set. The photo sits on ::before so the filter
-   never touches the type; ::after is free for a wash. Falls back
-   to a plain off-white band until /assets/img/invisalign-hero.jpg exists. */
-.wsite-page-invisalign .wsite-header-section {
+/* Treatment page layout (editorial direction: The Twenty Two, The Ned,
+   Broadwick). Opt in with "tx-page" in a page's bodyClass; started on
+   Invisalign, now shared by each page in the Treatments menu. A page sets its
+   header photo with style="--hero-img:url(...)" on .wsite-header-section. */
+/* Header photo. Shown as shot by default; --hero-filter can grade it (e.g. a
+   warm black and white) so mixed sources read as one set. The photo sits on
+   ::before so a filter never touches the type; ::after is free for a wash. Without --hero-img
+   (or before the file exists) it is a plain off-white band. */
+.tx-page .wsite-header-section {
   position: relative;
   overflow: hidden;
   background-image: none !important;
   background-color: #F7F5F2 !important; /* off-white: fallback that still carries the ink type */
 }
-.wsite-page-invisalign .wsite-header-section::before,
-.wsite-page-invisalign .wsite-header-section::after {
+.tx-page .wsite-header-section::before,
+.tx-page .wsite-header-section::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
-.wsite-page-invisalign .wsite-header-section::before {
-  background: var(--hero-img, url("/assets/img/invisalign-hero.jpg")) var(--hero-pos, 90% 55%) / cover no-repeat;
+.tx-page .wsite-header-section::before {
+  background: var(--hero-img, none) var(--hero-pos, 90% 55%) / cover no-repeat;
   filter: var(--hero-filter, none);
   z-index: 0 !important; /* theme gives section ::before z-index 1 */
 }
 
-.wsite-page-invisalign .wsite-header-section::after { z-index: 1; }
-.wsite-page-invisalign .wsite-header-section .wsite-section-content { position: relative; z-index: 2; }
-.wsite-page-invisalign #banner { padding-top: 140px !important; padding-bottom: 120px !important; }
-.wsite-page-invisalign .inv-eyebrow {
+.tx-page .wsite-header-section::after { z-index: 1; }
+.tx-page .wsite-header-section .wsite-section-content { position: relative; z-index: 2; }
+.tx-page #banner { padding-top: 140px !important; padding-bottom: 120px !important; }
+.tx-page .tx-eyebrow {
   font-family: "Libre Franklin", sans-serif !important;
   font-size: 12px !important;
   letter-spacing: 0.22em;
@@ -311,7 +311,7 @@ img { height: auto; }
   margin: 0 0 18px !important;
   text-align: left !important;
 }
-.wsite-page-invisalign .wsite-header-elements h2.wsite-content-title {
+.tx-page .wsite-header-elements h2.wsite-content-title {
   font-family: "GFS Didot", serif !important;
   font-size: 64px !important;
   line-height: 1.05 !important;
@@ -320,7 +320,7 @@ img { height: auto; }
   color: #fff !important;
   margin: 0 0 36px !important;
 }
-.wsite-page-invisalign .wsite-header-elements .cta-button {
+.tx-page .wsite-header-elements .cta-button {
   border-radius: 0 !important;
   height: auto !important;
   min-width: 0 !important;
@@ -337,17 +337,17 @@ img { height: auto; }
   color: #fff !important;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.wsite-page-invisalign .wsite-header-elements .cta-button.cta-button-navy {
+.tx-page .wsite-header-elements .cta-button.cta-button-navy {
   background: transparent !important;
   border-color: rgba(255,255,255,0.8) !important;
 }
-.wsite-page-invisalign .wsite-header-elements .cta-button:hover {
+.tx-page .wsite-header-elements .cta-button:hover {
   background: #fff !important;
   border-color: #fff !important;
   color: #1F1A18 !important;
 }
 
-#wsite-content .inv-intro {
+#wsite-content .tx-intro {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 72px;
@@ -355,8 +355,8 @@ img { height: auto; }
   max-width: 1120px;
   margin: 90px auto 100px;
 }
-#wsite-content .inv-eyebrow--dark { color: #7a5f45 !important; }
-#wsite-content h1.inv-title {
+#wsite-content .tx-eyebrow--dark { color: #7a5f45 !important; }
+#wsite-content h1.tx-title {
   font-family: "GFS Didot", serif !important;
   font-size: 52px !important;
   line-height: 1.1 !important;
@@ -368,7 +368,7 @@ img { height: auto; }
   padding-bottom: 28px;
   border-bottom: 1px solid #AC8E6F;
 }
-#wsite-content .inv-copy p {
+#wsite-content .tx-copy p {
   font-family: "Libre Franklin", sans-serif !important;
   font-size: 17px !important;
   line-height: 1.75 !important;
@@ -377,21 +377,21 @@ img { height: auto; }
   text-align: left !important;
   max-width: 58ch;
 }
-#wsite-content .inv-copy p.inv-lede {
+#wsite-content .tx-copy p.tx-lede {
   font-family: "GFS Didot", serif !important;
   font-size: 23px !important;
   line-height: 1.5 !important;
   color: #1F1A18 !important;
   margin-bottom: 26px !important;
 }
-#wsite-content .inv-intro__side .booking-box { margin: 0; }
+#wsite-content .tx-intro__side .booking-box { margin: 0; }
 
 @media (max-width: 900px) {
-  #wsite-content .inv-intro { grid-template-columns: 1fr; gap: 40px; margin: 48px auto 60px; }
-  .wsite-page-invisalign #banner { padding-top: 90px !important; padding-bottom: 70px !important; }
-  .wsite-page-invisalign .wsite-header-elements h2.wsite-content-title { font-size: 44px !important; }
-  #wsite-content h1.inv-title { font-size: 38px !important; }
-  #wsite-content .inv-copy p.inv-lede { font-size: 20px !important; }
+  #wsite-content .tx-intro { grid-template-columns: 1fr; gap: 40px; margin: 48px auto 60px; }
+  .tx-page #banner { padding-top: 90px !important; padding-bottom: 70px !important; }
+  .tx-page .wsite-header-elements h2.wsite-content-title { font-size: 44px !important; }
+  #wsite-content h1.tx-title { font-size: 38px !important; }
+  #wsite-content .tx-copy p.tx-lede { font-size: 20px !important; }
 }
 
 /* Plain header band (no photo) for pages whose banner image was retired.
@@ -405,14 +405,14 @@ img { height: auto; }
 /* Photo shown as shot (no grade, no wash) as the baseline to tune from.
    Light photo, so the type goes ink. To grade it, set --hero-filter, e.g.
    grayscale(1) sepia(0.3) contrast(1.2). */
-.wsite-page-invisalign .wsite-header-section::after { background: none; }
-.wsite-page-invisalign .wsite-header-elements h2.wsite-content-title { color: #1F1A18 !important; }
-.wsite-page-invisalign .wsite-header-elements .inv-eyebrow { color: #7a5f45 !important; }
-.wsite-page-invisalign .wsite-header-elements .cta-button.cta-button-navy {
+.tx-page .wsite-header-section::after { background: none; }
+.tx-page .wsite-header-elements h2.wsite-content-title { color: #1F1A18 !important; }
+.tx-page .wsite-header-elements .tx-eyebrow { color: #7a5f45 !important; }
+.tx-page .wsite-header-elements .cta-button.cta-button-navy {
   color: #1F1A18 !important;
   border-color: #1F1A18 !important;
 }
-.wsite-page-invisalign .wsite-header-elements .cta-button:hover {
+.tx-page .wsite-header-elements .cta-button:hover {
   background: #1F1A18 !important;
   border-color: #1F1A18 !important;
   color: #fff !important;
@@ -509,3 +509,105 @@ img { height: auto; }
 #wsite-content .gd-more a { color: #7a5f45 !important; text-decoration: underline !important; }
 @media (max-width: 900px) { #wsite-content .gd-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { #wsite-content .gd-tiles { grid-template-columns: 1fr; } }
+
+/* Treatment page body sections: heading left, copy right, hairline between,
+   like the Twenty Two's editorial pages. */
+#wsite-content .tx-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+  gap: 72px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 0;
+  border-top: 1px solid #ddd3c4;
+}
+#wsite-content .tx-section:last-of-type { margin-bottom: 90px; }
+#wsite-content .tx-section h2.tx-section__title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 34px !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  text-align: left !important;
+  color: #1F1A18 !important;
+  margin: 0 !important;
+}
+#wsite-content .tx-copy a { color: #7a5f45 !important; text-decoration: underline !important; }
+@media (max-width: 900px) {
+  #wsite-content .tx-section { grid-template-columns: 1fr; gap: 18px; padding: 40px 0; }
+  #wsite-content .tx-section h2.tx-section__title { font-size: 28px !important; }
+}
+
+/* Looping, muted YouTube video behind a treatment page header (opt in with
+   .tx-hero--video on .wsite-header-section). Sized like background-size:
+   cover via container units; an ink wash keeps the white type readable. */
+.tx-page .tx-hero-video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  container-type: size;
+  pointer-events: none;
+}
+.tx-page .tx-hero-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100cqw, 177.78cqh);
+  height: max(56.25cqw, 100cqh);
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+.tx-page .tx-hero--video { background-color: #1F1A18 !important; }
+.tx-page .tx-hero--video::after { background: linear-gradient(90deg, rgba(31,26,24,0.8) 0%, rgba(31,26,24,0.55) 45%, rgba(31,26,24,0.3) 100%) !important; }
+.tx-page .wsite-header-elements .tx-hero--video h2.wsite-content-title { color: #fff !important; }
+.tx-page .wsite-header-elements .tx-hero--video .tx-eyebrow { color: #e6d6c3 !important; }
+.tx-page .wsite-header-elements .tx-hero--video .cta-button.cta-button-navy {
+  color: #fff !important;
+  border-color: rgba(255,255,255,0.8) !important;
+}
+
+/* Inline 16:9 video inside a treatment section. */
+#wsite-content .tx-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-top: 24px;
+  background: #1F1A18;
+}
+#wsite-content .tx-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
+/* Clip players fade between clips (see yt-clips.js). */
+.tx-page [data-yt], .tx-page .tx-hero-video iframe, #wsite-content .tx-video iframe { transition: opacity 0.25s ease; opacity: 0; }
+
+/* Short numbered steps in a treatment section (e.g. Scan. Design. Mill. Fit.) */
+#wsite-content .tx-steps {
+  list-style: none !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  counter-reset: tx-step;
+}
+#wsite-content .tx-steps li {
+  counter-increment: tx-step;
+  position: relative;
+  display: block !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 14px 0 14px 52px !important;
+  border-bottom: 1px solid #ece5da;
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #3d3532 !important;
+}
+#wsite-content .tx-steps li:last-child { border-bottom: 0; }
+#wsite-content .tx-steps li::before {
+  content: counter(tx-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  font-family: "GFS Didot", serif;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #AC8E6F;
+}
+#wsite-content .tx-steps strong { font-weight: 600; color: #1F1A18; }
+#wsite-content .tx-section > .tx-copy { width: 100%; margin: 0 !important; }
