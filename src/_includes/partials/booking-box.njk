@@ -8,11 +8,15 @@
    hijack them back to the generic practice widget. The book_online_button id
    prefix is what GTM's click trigger matches. Treatment links list dentists
    only, so types Rita (OHT) also does get a separate practitioner link.
-   A type with no treatmentId yet falls back to its `url`. #}
+   A type with no treatmentId yet falls back to its `url`.
+   Pages that can't be booked online set bookingCall (a call button shown
+   first) and bookingAltLabel (a heading over the booking types). #}
 {%- set ritaFlags %}{% for key in booking %}{% if bookingTypes[key].rita %}y{% endif %}{% endfor %}{% endset -%}
 <div class="booking-box">
 	<p class="booking-box__eyebrow">{{ bookingLabel or "Booking your appointment" }}</p>
 	{% if bookingIntro %}<p class="booking-box__intro">{{ bookingIntro | safe }}</p>{% endif %}
+	{% if bookingCall %}<a href="tel:{{ site.phone }}" class="booking-box__btn booking-box__call" id="telephone_button_booking_call">{{ bookingCall }}</a>{% endif %}
+	{% if bookingAltLabel %}<p class="booking-box__label booking-box__alt">{{ bookingAltLabel }}</p>{% endif %}
 	<div class="booking-box__types">
 	{%- for key in booking %}
 		<div class="booking-box__type">

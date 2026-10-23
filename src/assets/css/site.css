@@ -294,7 +294,7 @@ img { height: auto; }
   pointer-events: none;
 }
 .tx-page .wsite-header-section::before {
-  background: var(--hero-img, none) var(--hero-pos, 90% 55%) / cover no-repeat;
+  background: var(--hero-img, none) var(--hero-pos, 90% 55%) / var(--hero-size, cover) no-repeat;
   filter: var(--hero-filter, none);
   z-index: 0 !important; /* theme gives section ::before z-index 1 */
 }
@@ -773,3 +773,79 @@ img { height: auto; }
 }
 #wsite-content .tx-faq details[open] summary::after { transform: rotate(45deg); }
 #wsite-content .tx-faq details p { margin: 0 0 20px !important; padding-right: 40px; }
+
+/* Product photo at the top of a treatment section's copy (e.g. whitening
+   options). Shipped with the hidden attribute until the image exists. */
+#wsite-content .tx-figure { margin: 0 0 24px; }
+#wsite-content .tx-figure[hidden] { display: none; }
+#wsite-content .tx-figure img {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #EFEAE1;
+}
+
+/* One panel of a side-by-side source image (whitening-options.webp, 1536x1024:
+   left panel x0-752, right panel x785-1536, captions below y806). The figure
+   is the panel's shape; the oversized image is shifted to show one half. */
+#wsite-content .tx-figure--panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 752 / 806;
+}
+#wsite-content .tx-figure--panel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 204.26% !important;
+  max-width: none !important;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: fill;
+  background: none;
+}
+#wsite-content .tx-figure--right img { left: -104.39%; }
+
+/* Two treatment options side by side as matching cards (whitening). */
+#wsite-content .tx-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  max-width: 1120px;
+  margin: 0 auto 30px;
+  padding-top: 56px;
+  border-top: 1px solid #ddd3c4;
+}
+#wsite-content .tx-option .tx-figure--panel { max-width: none; margin-bottom: 22px; }
+#wsite-content .tx-option h2.tx-option__title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 30px !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  text-align: left !important;
+  color: #1F1A18 !important;
+  margin: 0 0 12px !important;
+}
+#wsite-content .tx-option .tx-eyebrow { margin-bottom: 10px !important; }
+@media (max-width: 900px) {
+  #wsite-content .tx-options { grid-template-columns: 1fr; gap: 44px; padding-top: 40px; }
+}
+/* Call-first booking panel (pages not bookable online). */
+#wsite-content .booking-box a.booking-box__call { display: block; text-align: center; margin: 18px 0 6px; background: #AC8E6F; }
+#wsite-content .booking-box a.booking-box__call:hover { background: #1F1A18; }
+#wsite-content .booking-box .booking-box__alt { margin-top: 22px; }
+
+/* Phones can use a separate header crop: --hero-size-sm / --hero-pos-sm. */
+@media (max-width: 900px) {
+  .tx-page .wsite-header-section::before {
+    background-size: var(--hero-size-sm, var(--hero-size, cover));
+    background-position: var(--hero-pos-sm, var(--hero-pos, 90% 55%));
+  }
+}
+
