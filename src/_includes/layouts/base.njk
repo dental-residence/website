@@ -31,7 +31,7 @@
 {% endfor %}
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="/assets/css/vendor/sites.css" />
 <link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="screen,projection" />
-<link rel="stylesheet" type="text/css" href="/files/main_style.css?v=20260903" title="wsite-theme-css" />
+<link rel="stylesheet" type="text/css" href="/files/main_style.css?v={{ now.build }}" title="wsite-theme-css" />
 <link rel="preload" href="/assets/fonts/Didact_Gothic/regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/Libre_Franklin/regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/Montserrat/regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -44,8 +44,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
 {% include "partials/head-styles.njk" %}
-<link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css" />
-<link rel="stylesheet" type="text/css" href="/assets/css/site.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css?v={{ now.build }}" />
+<link rel="stylesheet" type="text/css" href="/assets/css/site.css?v={{ now.build }}" />
 	</head>
 	<body class="{{ bodyClass }}"><div class="body-wrap">
 <!-- Google Tag Manager (noscript) -->
@@ -82,7 +82,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div style='display:none'><span id="wsite-title">Dental Residence</span></div>
 
-<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/nav.js?v={{ now.build }}"></script>
+{% if ytClips %}<script src="/assets/js/yt-clips.js?v={{ now.build }}" defer></script>{% endif %}
 		<script async type='text/javascript' src='https://www.myhealth1st.com.au/mh1-widget/2021/popup.v3.js'></script>
 
 	</body>
