@@ -275,11 +275,13 @@ img { height: auto; }
 /* Treatment page layout (editorial direction: The Twenty Two, The Ned,
    Broadwick). Opt in with "tx-page" in a page's bodyClass; started on
    Invisalign, now shared by each page in the Treatments menu. A page sets its
-   header photo with style="--hero-img:url(...)" on .wsite-header-section. */
+   header photo with <div class="tx-hero-bg" style="background-image: url(...)">
+   as the section's first child (crop/grade via --hero-* on the section). */
 /* Header photo. Shown as shot by default; --hero-filter can grade it (e.g. a
    warm black and white) so mixed sources read as one set. The photo sits on
-   ::before so a filter never touches the type; ::after is free for a wash. Without --hero-img
-   (or before the file exists) it is a plain off-white band. */
+   .tx-hero-bg (see below) so a filter never touches the type; ::after is free
+   for a wash. Without a photo it is a plain off-white band. ::before is kept
+   empty only to neutralise the theme's own section ::before. */
 .tx-page .wsite-header-section {
   position: relative;
   overflow: hidden;
@@ -294,8 +296,7 @@ img { height: auto; }
   pointer-events: none;
 }
 .tx-page .wsite-header-section::before {
-  background: var(--hero-img, none) var(--hero-pos, 90% 55%) / var(--hero-size, cover) no-repeat;
-  filter: var(--hero-filter, none);
+  background: none;
   z-index: 0 !important; /* theme gives section ::before z-index 1 */
 }
 
@@ -842,9 +843,23 @@ img { height: auto; }
 #wsite-content .booking-box a.booking-box__call:hover { background: #1F1A18; }
 #wsite-content .booking-box .booking-box__alt { margin-top: 22px; }
 
+/* Header photo layer. The image URL is set inline on .tx-hero-bg as a plain
+   background-image: Safari (iOS) didn't draw it when the url() came through a
+   custom property (--hero-img) on ::before. Crop and grade still come from
+   --hero-pos / --hero-size / --hero-filter set on the header section. */
+.tx-page .tx-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: var(--hero-pos, 90% 55%);
+  background-size: var(--hero-size, cover);
+  filter: var(--hero-filter, none);
+}
 /* Phones can use a separate header crop: --hero-size-sm / --hero-pos-sm. */
 @media (max-width: 900px) {
-  .tx-page .wsite-header-section::before {
+  .tx-page .tx-hero-bg {
     background-size: var(--hero-size-sm, var(--hero-size, cover));
     background-position: var(--hero-pos-sm, var(--hero-pos, 90% 55%));
   }
