@@ -1261,3 +1261,64 @@ body.ct-page .wsite-header-section { background: #EAE7DE !important; }
   .ct-page .ct-visit__map iframe { min-height: 300px; }
 }
 
+
+/* Emergency page (em-page, also ct-page for the split header). Header photo
+   is a placeholder until the owner supplies one. The lower half is the
+   homepage's shared blocks, kept word for word and restyled here only. */
+.em-page .em-hero__placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: #DDD3C4;
+}
+.em-page .em-hero__placeholder span {
+  font-family: "Montserrat", sans-serif; font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: #7a5f45; border: 1px dashed #AC8E6F; padding: 14px 22px;
+}
+/* Beats the sitewide heading rule (Oranienbaum capitals), which carries
+   #wrapper plus one :not(#_). */
+html body #wrapper .em-page .ct-hero h2.em-hero__sub:not(#_):not(#__),
+html body.em-page #wrapper h2.em-hero__sub:not(#_):not(#__) {
+  font-family: "Montserrat", sans-serif !important; font-size: 15px !important; line-height: 1.7 !important;
+  letter-spacing: 0.02em !important; text-transform: none !important; color: #1F1A18 !important;
+  text-align: left !important; margin: 0 0 30px !important;
+}
+.em-page .tx-eyebrow {
+  font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.22em;
+  text-transform: uppercase; margin: 0 0 18px !important; text-align: left !important;
+}
+.em-page .em-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.em-page a.em-btn {
+  display: inline-block; padding: 16px 30px;
+  font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none !important; border: 1px solid #1F1A18;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.em-page a.em-btn--ink { background: #1F1A18; color: #fff !important; }
+.em-page a.em-btn--ink:hover { background: #AC8E6F; border-color: #AC8E6F; }
+.em-page a.em-btn--line { color: #1F1A18 !important; }
+.em-page a.em-btn--line:hover { background: #1F1A18; color: #fff !important; }
+
+/* Lower half: square buttons, warm colours, no navy. */
+.em-page #wsite-content .cta-button {
+  border-radius: 0 !important; padding: 16px 30px !important; min-width: 0 !important; width: auto !important; height: auto !important;
+  font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.2em; text-transform: uppercase; line-height: 1 !important;
+  background: #AC8E6F !important; color: #fff !important; border: 1px solid #AC8E6F !important; margin: 0 6px 10px !important;
+}
+.em-page #wsite-content .cta-button.cta-button-navy { background: #1F1A18 !important; border-color: #1F1A18 !important; }
+.em-page #wsite-content .cta-button:hover { background: #1F1A18 !important; border-color: #1F1A18 !important; }
+.em-page #wsite-content .cta-button.cta-button-navy:hover { background: #AC8E6F !important; border-color: #AC8E6F !important; }
+.em-page #wsite-content .wsite-background-433,
+.em-page #wsite-content .wsite-background-436 { background: #EFEAE1 !important; }
+.em-page #wsite-content .wsite-background-435 { background: #fff !important; }
+.em-page #wsite-content .wsite-background-437 { background: #1F1A18 !important; }
+.em-page #wsite-content .wsite-background-437 :is(.paragraph, font, span) { color: #EFEAE1 !important; }
+/* Emergency page: bold phrases in body copy take the heading face
+   (Oranienbaum capitals) instead of bold Montserrat. */
+html body.em-page #wsite-content .tx-copy strong:not(#_) {
+  font-family: "Oranienbaum", serif !important;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.12em;
+  color: #1F1A18;
+}
+#wsite-content .ct-visit .ct-visit__note { display: inline-block; margin-top: 10px; font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #AC8E6F; }
