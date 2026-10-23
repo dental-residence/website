@@ -15,12 +15,19 @@
 				<div class="banner-wrap">
 					<div class="wsite-elements wsite-not-footer wsite-header-elements">
 	<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-header-section wsite-section-bg-image" style="vertical-align: middle;height: auto;background-color: #1F1A18;">
+	<div class="wsite-section wsite-header-section wsite-section-bg-image" style="vertical-align: middle;height: auto;background-color: #EFEAE1;">
+		<div class="appt-hero">
+			<div class="appt-hero__text">
+				<h1 class="appt-hero__title">Which appointment should I book?</h1>
+				<p class="appt-hero__intro">Choose the appointment that best matches why you're coming in. Not sure? <a href="tel:{{ site.phone }}" id="telephone_button_guide">Call us</a> and we'll help you choose.</p>
+			</div>
+			{#- general-postcard.jpg (licensed by the practice, 2026-10-23). -#}
+			<div class="appt-hero__photo" role="img" aria-label="Older woman holding a postcard of a big smile over her mouth, captioned: Everyone loves a great smile" style="background-image: url('/assets/img/general-postcard.jpg');"></div>
+		</div>
 		<div class="wsite-section-content">
 						<div id="banner">
 							<div id="banner-container">
 				<div class="wsite-section-elements">
-					<h2 class="wsite-content-title" style="text-align:left;">Book Online</h2>
 				</div>
 			</div>
 						</div>
@@ -38,24 +45,38 @@
 						<div class="container">
 			<div class="wsite-section-elements">
 <div class="appt-guide">
-	<h1 class="appt-guide__title">Which appointment should I book?</h1>
-	<p class="appt-guide__intro">Choose the appointment that best matches why you're coming in. Not sure? <a href="tel:{{ site.phone }}" id="telephone_button_guide">Call us</a> and we'll help you choose.</p>
-	<ol class="appt-guide__list">
-	{%- for key, t in bookingTypes %}
-		<li class="appt-guide__item">
-			<div class="appt-guide__text">
-				<p class="appt-guide__name">{{ t.name }}</p>
-				<p class="appt-guide__for">{{ t.for }}</p>
-				{% if key == "new-patient" %}<p class="appt-guide__offer">Your first visit: full exam, scale &amp; clean, and x-rays for $249. Any further treatment is quoted before we start.</p>{% endif %}
-				<p class="appt-guide__meta">{{ t.who }} &middot; {{ t.length }}{% if t.page %} &middot; <a href="{{ t.page }}">More about this</a>{% endif %}</p>
-			</div>
-			<div class="appt-guide__actions">
-				<a href="{% if t.treatmentId %}{{ site.treatmentBookingUrl }}{{ t.treatmentId }}{% else %}{{ t.url }}{% endif %}" target="_blank" rel="noopener" class="appt-guide__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book</a>
-				{% if t.rita %}<a href="{{ site.ritaBookingUrl }}" target="_blank" rel="noopener" class="appt-guide__rita" id="book_online_button_rita_{{ key }}" data-practitioner="rita-chen">or book with Rita</a>{% endif %}
-			</div>
-		</li>
+	{#- Three groups by reason for visit. Every key in bookingTypes.json must
+	    appear in exactly one group, or it drops off this page. -#}
+	{%- set groups = [
+	  { id: "in-pain", jump: "In pain?", title: "Something's wrong", line: "Pain, a broken tooth or a tooth that needs to come out. We'll see you fast.", keys: ["emergency", "filling", "extraction", "root-canal"] },
+	  { id: "check-ups", jump: "Check-ups", title: "Check-ups & cleans", line: "New here, coming back, or bringing the kids.", keys: ["new-patient", "returning", "child", "gum"] },
+	  { id: "consultations", jump: "Consultations", title: "Consultations", line: "A chat first, before you decide anything.", keys: ["free-consult", "invisalign", "crown", "dentures", "consultation"] }
+	] %}
+	<nav class="appt-jump" aria-label="Appointment groups">
+	{%- for g in groups %}<a href="#{{ g.id }}">{{ g.jump }}</a>{% endfor -%}
+	</nav>
+	{%- for g in groups %}
+	<section class="appt-group" id="{{ g.id }}">
+		<h2 class="appt-group__title">{{ g.title }}</h2>
+		<p class="appt-group__line">{{ g.line }}</p>
+		<ol class="appt-guide__list">
+		{%- for key in g.keys %}{% set t = bookingTypes[key] %}
+			<li class="appt-guide__item">
+				<div class="appt-guide__text">
+					<p class="appt-guide__name">{{ t.name }}</p>
+					<p class="appt-guide__for">{{ t.for }}</p>
+					{% if key == "new-patient" %}<p class="appt-guide__offer">Your first visit: full exam, scale &amp; clean, and x-rays for $249. Any further treatment is quoted before we start.</p>{% endif %}
+					<p class="appt-guide__meta">{{ t.who }} &middot; {{ t.length }}{% if t.page %} &middot; <a href="{{ t.page }}">More about this</a>{% endif %}</p>
+				</div>
+				<div class="appt-guide__actions">
+					<a href="{% if t.treatmentId %}{{ site.treatmentBookingUrl }}{{ t.treatmentId }}{% else %}{{ t.url }}{% endif %}" target="_blank" rel="noopener" class="appt-guide__btn" id="book_online_button_{{ key }}" data-booking-type="{{ key }}">Book</a>
+					{% if t.rita %}<a href="{{ site.ritaBookingUrl }}" target="_blank" rel="noopener" class="appt-guide__rita" id="book_online_button_rita_{{ key }}" data-practitioner="rita-chen">or book with Rita</a>{% endif %}
+				</div>
+			</li>
+		{%- endfor %}
+		</ol>
+	</section>
 	{%- endfor %}
-	</ol>
 	<p class="appt-guide__note">Teeth whitening can't be booked online. Please <a href="tel:{{ site.phone }}" id="telephone_button_guide_whitening">call us</a>, or book a Complimentary Consultation - Cosmetic &amp; Implants.</p>
 	<p class="appt-guide__note">We accept DVA, OHFFSS, Afterpay, Zip and humm, and offer interest-free payment plans.</p>
 </div>

@@ -174,6 +174,68 @@ img { height: auto; }
   text-decoration: underline !important;
 }
 
+/* Split header on which-appointment.njk: page heading on a stone panel
+   (left), photo filling the right half (on phones: photo on top, heading
+   below). The photo is the square 905x905 postcard shot; the photo side is
+   narrower than half so the crop is near-square, and 62% keeps her eyes and
+   the whole postcard, caption included, in shot. The section is a block, not the
+   theme's table cell, for Safari. */
+.wsite-page-which-appointment .wsite-header-elements .wsite-section-wrap,
+.wsite-page-which-appointment .wsite-header-section { display: block; }
+.wsite-page-which-appointment .wsite-header-section .wsite-section-content { display: none; }
+/* .banner-plain (below) paints this header ink; body. outranks it. */
+body.wsite-page-which-appointment .wsite-header-section { background: #EFEAE1 !important; }
+.wsite-page-which-appointment .wsite-header-section::before { background: none !important; }
+.wsite-page-which-appointment .appt-hero {
+  display: flex;
+  height: 36vw;
+  min-height: 440px;
+  max-height: 680px;
+}
+.wsite-page-which-appointment .appt-hero__text {
+  flex: 1 1 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 56px 48px max(24px, calc(50vw - 460px)); /* left edge lines up with the list below */
+  box-sizing: border-box;
+  font-family: "Libre Franklin", sans-serif;
+  color: #1F1A18;
+  text-align: left;
+}
+.wsite-page-which-appointment .appt-hero h1.appt-hero__title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 48px !important;
+  font-weight: 400 !important;
+  line-height: 1.12 !important;
+  color: #1F1A18 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  margin: 0 0 20px;
+}
+.wsite-page-which-appointment .appt-hero .appt-hero__intro {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #1F1A18 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  margin: 0;
+}
+.wsite-page-which-appointment .appt-hero .appt-hero__intro a { color: #7a5f45; text-decoration: underline; }
+.wsite-page-which-appointment .appt-hero__photo {
+  flex: 0 0 42%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 62%;
+}
+@media (max-width: 700px) {
+  .wsite-page-which-appointment .appt-hero { flex-direction: column; height: auto; min-height: 0; max-height: none; }
+  .wsite-page-which-appointment .appt-hero__photo { order: -1; flex: none; height: 92vw; background-position: 50% 70%; }
+  .wsite-page-which-appointment .appt-hero__text { padding: 32px 24px 36px; }
+  .wsite-page-which-appointment .appt-hero h1.appt-hero__title { font-size: 34px !important; }
+}
+
 /* "Which appointment should I book?" guide (which-appointment.njk). Same
    editorial register as .booking-box; reuses its button. */
 #wsite-content .appt-guide {
@@ -183,19 +245,6 @@ img { height: auto; }
   margin: 50px auto 60px;
 }
 #wsite-content .appt-guide p { margin: 0; }
-#wsite-content .appt-guide h1.appt-guide__title {
-  font-size: 52px !important;
-  line-height: 1 !important;
-  color: #1F1A18 !important;
-  margin: 0 0 18px;
-}
-#wsite-content .appt-guide .appt-guide__intro {
-  font-size: 15px !important;
-  line-height: 1.75 !important;
-  letter-spacing: 0.02em;
-  color: #1F1A18 !important;
-  margin-bottom: 28px;
-}
 #wsite-content .appt-guide__list {
   list-style: none;
   margin: 0 !important;
@@ -233,7 +282,7 @@ img { height: auto; }
   color: #4a4441 !important;
 }
 #wsite-content .appt-guide .appt-guide__note { margin-top: 20px; }
-#wsite-content .appt-guide :is(.appt-guide__intro, .appt-guide__meta, .appt-guide__note) a {
+#wsite-content .appt-guide :is(.appt-guide__meta, .appt-guide__note) a {
   color: #7a5f45 !important;
   text-decoration: underline !important;
 }
@@ -251,7 +300,6 @@ img { height: auto; }
 #wsite-content .appt-guide a.appt-guide__btn:hover { background: #AC8E6F; }
 @media (max-width: 600px) {
   #wsite-content .appt-guide { margin: 32px auto 40px; }
-  #wsite-content .appt-guide h1.appt-guide__title { font-size: 40px !important; }
   #wsite-content .appt-guide__item { flex-direction: column; align-items: stretch; gap: 14px; }
 }
 #wsite-content .appt-guide__actions {
@@ -938,6 +986,12 @@ img { height: auto; }
 /* which-appointment.njk sizing for the two typefaces (see "Typeface system"
    at the end): bigger capitals for the appointment names, small tracked
    capitals for the meta line and buttons. */
+body.wsite-page-which-appointment .appt-hero h1.appt-hero__title {
+  font-size: 56px !important;
+  line-height: 0.98 !important;
+  margin-bottom: 24px;
+}
+body.wsite-page-which-appointment .appt-hero .appt-hero__intro { font-family: "Montserrat", sans-serif !important; font-size: 15px !important; line-height: 1.75 !important; letter-spacing: 0.02em !important; }
 body.wsite-page-which-appointment #wsite-content .appt-guide,
 body.wsite-page-which-appointment #wsite-content .appt-guide :is(p, a) {
   font-family: "Montserrat", sans-serif !important;
@@ -966,6 +1020,7 @@ body.wsite-page-which-appointment #wsite-content .appt-guide a.appt-guide__btn {
 }
 body.wsite-page-which-appointment #wsite-content .appt-guide a.appt-guide__rita { font-size: 12px; letter-spacing: 0.04em; }
 @media (max-width: 700px) {
+  body.wsite-page-which-appointment .appt-hero h1.appt-hero__title { font-size: 46px !important; }
   body.wsite-page-which-appointment #wsite-content .appt-guide .appt-guide__name { font-size: 28px !important; }
 }
 
@@ -1024,3 +1079,50 @@ body { font-family: "Montserrat", sans-serif; }
 /* Buttons and form fields don't inherit fonts, so they were showing the
    device's system font. */
 html body :is(button, input, select, textarea) { font-family: "Montserrat", sans-serif; }
+
+/* Grouped appointment list on which-appointment.njk: a row of jump links,
+   then three sections, each a capital heading, one line, and tighter rows. */
+#wsite-content .appt-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  margin: 0 0 8px;
+  padding: 0 0 22px;
+  border-bottom: 1px solid #ddd3c4;
+}
+#wsite-content .appt-jump a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1F1A18 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #AC8E6F;
+  padding-bottom: 3px;
+}
+#wsite-content .appt-jump a:hover { color: #7a5f45 !important; }
+#wsite-content .appt-group { margin-top: 56px; scroll-margin-top: 24px; }
+#wsite-content .appt-group h2.appt-group__title {
+  font-size: 44px !important;
+  line-height: 1 !important;
+  color: #1F1A18 !important;
+  text-align: left !important;
+  margin: 0 0 10px !important;
+}
+#wsite-content .appt-group .appt-group__line {
+  font-size: 15px !important;
+  color: #4a4441 !important;
+  margin: 0 0 22px !important;
+}
+#wsite-content .appt-group .appt-guide__item { padding: 18px 0; }
+#wsite-content .appt-group .appt-guide__list { border-top-width: 1px; }
+@media (max-width: 600px) {
+  #wsite-content .appt-jump { gap: 10px 22px; }
+  #wsite-content .appt-group { margin-top: 44px; }
+  #wsite-content .appt-group h2.appt-group__title { font-size: 36px !important; }
+  /* Book button sits under the text, left-aligned and not full width, with
+     the Rita link beside it, so each row stays short. */
+  #wsite-content .appt-group .appt-guide__item { gap: 12px; }
+  #wsite-content .appt-group .appt-guide__actions { flex-direction: row; align-items: center; justify-content: flex-start; gap: 18px; text-align: left; }
+  body.wsite-page-which-appointment #wsite-content .appt-group .appt-guide__name { font-size: 25px !important; }
+}
