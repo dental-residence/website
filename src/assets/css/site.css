@@ -292,7 +292,7 @@ img { height: auto; }
 .tx-page .wsite-header-section::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   pointer-events: none;
 }
 .tx-page .wsite-header-section::before {
@@ -544,7 +544,7 @@ img { height: auto; }
    cover via container units; an ink wash keeps the white type readable. */
 .tx-page .tx-hero-video {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   overflow: hidden;
   container-type: size;
   pointer-events: none;
@@ -574,7 +574,7 @@ img { height: auto; }
   margin-top: 24px;
   background: #1F1A18;
 }
-#wsite-content .tx-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
+#wsite-content .tx-video iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
 /* Clip players fade between clips (see yt-clips.js). */
 .tx-page [data-yt], .tx-page .tx-hero-video iframe, #wsite-content .tx-video iframe { transition: opacity 0.25s ease; opacity: 0; }
 
@@ -849,7 +849,7 @@ img { height: auto; }
    --hero-pos / --hero-size / --hero-filter set on the header section. */
 .tx-page .tx-hero-bg {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   z-index: 0;
   pointer-events: none;
   background-repeat: no-repeat;
@@ -904,4 +904,29 @@ img { height: auto; }
 }
 
 /* Self-hosted background video fills the header like background-size: cover. */
-.tx-page .tx-hero-video video { object-fit: cover; opacity: 1; transition: opacity 0.2s ease; }
+.tx-page .tx-hero-video video {
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* Fallbacks for Safari before 15 (no aspect-ratio): give the boxes their
+   height with the padding-top ratio trick so their images don't collapse. */
+@supports not (aspect-ratio: 1 / 1) {
+  #wsite-content .tx-figure--panel { height: 0; padding-top: 107.18%; } /* 806 / 752 */
+  #wsite-content .tx-video { height: 0; padding-top: 56.25%; }
+}
+
+/* Inline looping video inside a treatment section (e.g. crowns > bridges). */
+#wsite-content .tx-video video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
