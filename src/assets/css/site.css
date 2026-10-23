@@ -846,7 +846,13 @@ img { height: auto; }
 /* Header photo layer. The image URL is set inline on .tx-hero-bg as a plain
    background-image: Safari (iOS) didn't draw it when the url() came through a
    custom property (--hero-img) on ::before. Crop and grade still come from
-   --hero-pos / --hero-size / --hero-filter set on the header section. */
+   --hero-pos / --hero-size / --hero-filter set on the header section.
+   The theme lays the header section out as a table cell, and Safari won't use
+   a table cell as the containing block for this absolute layer, so on
+   treatment pages the section and its wrap are plain blocks (same size: the
+   inner content keeps its own table for vertical centring). */
+.tx-page .wsite-header-elements .wsite-section-wrap,
+.tx-page .wsite-header-section { display: block; }
 .tx-page .tx-hero-bg {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
