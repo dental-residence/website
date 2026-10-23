@@ -643,7 +643,7 @@ img { height: auto; }
   color: #fff !important;
 }
 .tx-page .tx-band h2.wsite-content-title strong { font-weight: 400 !important; }
-.tx-page .tx-band button.button-small {
+.tx-page .tx-band :is(button.button-small, button.cta-button) {
   border-radius: 0 !important;
   background: #AC8E6F !important;
   color: #fff !important;
@@ -658,7 +658,7 @@ img { height: auto; }
   white-space: nowrap;
   line-height: 1 !important;
 }
-.tx-page .tx-band button.button-small:hover { background: #fff !important; color: #1F1A18 !important; border-color: #fff !important; }
+.tx-page .tx-band :is(button.button-small, button.cta-button):hover { background: #fff !important; color: #1F1A18 !important; border-color: #fff !important; }
 .tx-page .tx-band .paragraph font { color: #cfc5b8 !important; font-weight: 400; }
 
 /* Background video is desktop-only (yt-clips.js skips phones/tablets). */
