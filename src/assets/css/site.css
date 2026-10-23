@@ -1263,7 +1263,7 @@ body.ct-page .wsite-header-section { background: #EAE7DE !important; }
 
 
 /* Emergency page (em-page, also ct-page for the split header). Header photo
-   is a placeholder until the owner supplies one. The lower half is the
+   is emergency-magnifier.jpg (licensed). The lower half is the
    homepage's shared blocks, kept word for word and restyled here only. */
 .em-page .em-hero__placeholder {
   display: flex; align-items: center; justify-content: center;
@@ -1322,3 +1322,7 @@ html body.em-page #wsite-content .tx-copy strong:not(#_) {
   color: #1F1A18;
 }
 #wsite-content .ct-visit .ct-visit__note { display: inline-block; margin-top: 10px; font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #AC8E6F; }
+/* Emergency header photo: portrait vintage shot; crop keeps her eyes, the
+   magnifying glass and the hand. Shorter on phones so Call shows sooner. */
+.em-page .em-hero__photo { background-repeat: no-repeat; background-size: cover; background-position: 50% 48%; }
+@media (max-width: 900px) { .em-page .em-hero__photo { height: 72vw; background-position: 50% 45%; } }
