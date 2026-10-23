@@ -311,7 +311,7 @@ img { height: auto; }
   margin: 0 0 18px !important;
   text-align: left !important;
 }
-.tx-page .wsite-header-elements h2.wsite-content-title {
+.tx-page .wsite-header-elements :is(h1, h2).wsite-content-title {
   font-family: "GFS Didot", serif !important;
   font-size: 64px !important;
   line-height: 1.05 !important;
@@ -388,8 +388,8 @@ img { height: auto; }
 
 @media (max-width: 900px) {
   #wsite-content .tx-intro { grid-template-columns: 1fr; gap: 40px; margin: 48px auto 60px; }
-  .tx-page #banner { padding-top: 90px !important; padding-bottom: 70px !important; }
-  .tx-page .wsite-header-elements h2.wsite-content-title { font-size: 44px !important; }
+  .tx-page #banner { padding-top: 56px !important; padding-bottom: 48px !important; }
+  .tx-page .wsite-header-elements :is(h1, h2).wsite-content-title { font-size: 44px !important; }
   #wsite-content h1.tx-title { font-size: 38px !important; }
   #wsite-content .tx-copy p.tx-lede { font-size: 20px !important; }
 }
@@ -406,7 +406,7 @@ img { height: auto; }
    Light photo, so the type goes ink. To grade it, set --hero-filter, e.g.
    grayscale(1) sepia(0.3) contrast(1.2). */
 .tx-page .wsite-header-section::after { background: none; }
-.tx-page .wsite-header-elements h2.wsite-content-title { color: #1F1A18 !important; }
+.tx-page .wsite-header-elements :is(h1, h2).wsite-content-title { color: #1F1A18 !important; }
 .tx-page .wsite-header-elements .tx-eyebrow { color: #7a5f45 !important; }
 .tx-page .wsite-header-elements .cta-button.cta-button-navy {
   color: #1F1A18 !important;
@@ -559,7 +559,7 @@ img { height: auto; }
 }
 .tx-page .tx-hero--video { background-color: #1F1A18 !important; }
 .tx-page .tx-hero--video::after { background: linear-gradient(90deg, rgba(31,26,24,0.8) 0%, rgba(31,26,24,0.55) 45%, rgba(31,26,24,0.3) 100%) !important; }
-.tx-page .wsite-header-elements .tx-hero--video h2.wsite-content-title { color: #fff !important; }
+.tx-page .wsite-header-elements .tx-hero--video :is(h1, h2).wsite-content-title { color: #fff !important; }
 .tx-page .wsite-header-elements .tx-hero--video .tx-eyebrow { color: #e6d6c3 !important; }
 .tx-page .wsite-header-elements .tx-hero--video .cta-button.cta-button-navy {
   color: #fff !important;
@@ -611,3 +611,58 @@ img { height: auto; }
 }
 #wsite-content .tx-steps strong { font-weight: 600; color: #1F1A18; }
 #wsite-content .tx-section > .tx-copy { width: 100%; margin: 0 !important; }
+
+/* Single-column intro for hub pages with no booking box. */
+#wsite-content .tx-intro--solo { grid-template-columns: minmax(0, 1fr); margin-bottom: 40px; }
+#wsite-content .tx-intro--solo .tx-intro__lead { max-width: 760px; }
+#wsite-content .tx-intro--solo h2.tx-title {
+  font-family: "GFS Didot", serif !important;
+  font-size: 52px !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  text-align: left !important;
+  color: #1F1A18 !important;
+  margin: 0 0 28px !important;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #AC8E6F;
+}
+#wsite-content .tx-intro .tx-copy a { color: #7a5f45 !important; text-decoration: underline !important; }
+.tx-page #wsite-content .gd-tiles { max-width: 1120px; margin-top: 0; }
+@media (max-width: 900px) {
+  #wsite-content .tx-intro--solo h2.tx-title { font-size: 38px !important; }
+}
+
+/* Dark "Got a question?" band at the foot of treatment pages. */
+.tx-page .tx-band h2.wsite-content-title,
+.tx-page .tx-band h2.wsite-content-title font {
+  font-family: "GFS Didot", serif !important;
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  color: #fff !important;
+}
+.tx-page .tx-band h2.wsite-content-title strong { font-weight: 400 !important; }
+.tx-page .tx-band button.button-small {
+  border-radius: 0 !important;
+  background: #AC8E6F !important;
+  color: #fff !important;
+  border: 1px solid #AC8E6F !important;
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px 30px !important;
+  height: auto !important;
+  width: auto !important;
+  white-space: nowrap;
+  line-height: 1 !important;
+}
+.tx-page .tx-band button.button-small:hover { background: #fff !important; color: #1F1A18 !important; border-color: #fff !important; }
+.tx-page .tx-band .paragraph font { color: #cfc5b8 !important; font-weight: 400; }
+
+/* Background video is desktop-only (yt-clips.js skips phones/tablets). */
+@media (max-width: 900px), (hover: none) {
+  .tx-page .tx-hero-video { display: none; }
+  .tx-page .tx-hero--video::after { background: none !important; }
+}

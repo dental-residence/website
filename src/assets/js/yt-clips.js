@@ -7,13 +7,17 @@
  * the first, so text overlays that sit between the clips are never shown.
  * The player is faded out during each jump (YouTube can land a few frames off
  * the requested time) and faded back in once it is inside the clip.
- * Used for the CEREC film on crowns.html, whose captions we can't edit.
+ * Desktop only (see below). Used for the CEREC film on crowns.html, whose captions we can't edit.
  * Wrap players in an element with the inert attribute: otherwise the player
  * can take focus inside its frame and the browser scrolls the page to it.
  */
 (function () {
   var targets = document.querySelectorAll('[data-yt][data-clips]');
   if (!targets.length) return;
+  // Phones and tablets: mobile YouTube ignores the clip control (shows its
+  // own title bar, pause button, "More videos" and the captioned parts), so
+  // the plain band shows instead. Keep in sync with the CSS media query.
+  if (window.matchMedia('(max-width: 900px), (hover: none)').matches) return;
 
   function parseClips(s) {
     return s.split(',').map(function (pair) {
