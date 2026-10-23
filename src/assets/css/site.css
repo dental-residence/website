@@ -1080,6 +1080,17 @@ body { font-family: "Montserrat", sans-serif; }
    device's system font. */
 html body :is(button, input, select, textarea) { font-family: "Montserrat", sans-serif; }
 
+/* "Your appointment, served." photo break on which-appointment.njk. The
+   photo is portrait with the glove and tray in its lower half, so it is
+   cropped to a near-square around them. */
+#wsite-content .appt-guide .appt-served { margin: 56px 0 40px; }
+#wsite-content .appt-served .tx-feature__img img {
+  aspect-ratio: 1 / 1.05;
+  object-fit: cover;
+  object-position: 50% 68%;
+}
+#wsite-content .appt-served .tx-feature__sub a { color: #7a5f45 !important; text-decoration: underline !important; }
+
 /* Grouped appointment list on which-appointment.njk: a row of jump links,
    then three sections, each a capital heading, one line, and tighter rows. */
 #wsite-content .appt-jump {
