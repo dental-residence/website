@@ -745,3 +745,31 @@ img { height: auto; }
 }
 
 #wsite-content .tx-feature[hidden] { display: none; }
+
+/* FAQ accordion on treatment pages (visible text must match the FAQPage
+   JSON-LD in the page front matter). */
+#wsite-content .tx-faq details { border-bottom: 1px solid #ece5da; }
+#wsite-content .tx-faq details:first-child { border-top: 1px solid #ece5da; }
+#wsite-content .tx-faq summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding: 18px 40px 18px 0;
+  font-family: "GFS Didot", serif;
+  font-size: 21px;
+  line-height: 1.35;
+  color: #1F1A18;
+}
+#wsite-content .tx-faq summary::-webkit-details-marker { display: none; }
+#wsite-content .tx-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 16px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 22px;
+  color: #AC8E6F;
+  transition: transform 0.2s ease;
+}
+#wsite-content .tx-faq details[open] summary::after { transform: rotate(45deg); }
+#wsite-content .tx-faq details p { margin: 0 0 20px !important; padding-right: 40px; }
