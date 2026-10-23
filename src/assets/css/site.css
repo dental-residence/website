@@ -548,7 +548,7 @@ img { height: auto; }
   container-type: size;
   pointer-events: none;
 }
-.tx-page .tx-hero-video iframe {
+.tx-page .tx-hero-video :is(iframe, video) {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -661,9 +661,10 @@ img { height: auto; }
 .tx-page .tx-band :is(button.button-small, button.cta-button):hover { background: #fff !important; color: #1F1A18 !important; border-color: #fff !important; }
 .tx-page .tx-band .paragraph font { color: #cfc5b8 !important; font-weight: 400; }
 
-/* Background video is desktop-only (yt-clips.js skips phones/tablets). */
+/* YouTube background video is desktop-only (yt-clips.js skips phones and
+   tablets). Self-hosted <video> backgrounds play everywhere. */
 @media (max-width: 900px), (hover: none) {
-  .tx-page .tx-hero-video { display: none; }
+  .tx-page .tx-hero-video:has(iframe, [data-yt]) { display: none; } /* YouTube only; <video> files play on phones */
   .tx-page .tx-hero--video::after { background: none !important; }
 }
 
@@ -886,3 +887,6 @@ img { height: auto; }
   .tx-page .tx-hero--split .tx-hero__photo img { max-width: none; margin: 0; }
   .tx-page #banner:has(.tx-hero__photo) { padding-top: 40px !important; padding-bottom: 40px !important; }
 }
+
+/* Self-hosted background video fills the header like background-size: cover. */
+.tx-page .tx-hero-video video { object-fit: cover; opacity: 1; transition: opacity 0.2s ease; }
