@@ -615,7 +615,7 @@ img { height: auto; }
 /* Single-column intro for hub pages with no booking box. */
 #wsite-content .tx-intro--solo { grid-template-columns: minmax(0, 1fr); margin-bottom: 40px; }
 #wsite-content .tx-intro--solo .tx-intro__lead { max-width: 760px; }
-#wsite-content .tx-intro--solo h2.tx-title {
+#wsite-content h2.tx-title {
   font-family: "GFS Didot", serif !important;
   font-size: 52px !important;
   line-height: 1.1 !important;
@@ -630,7 +630,7 @@ img { height: auto; }
 #wsite-content .tx-intro .tx-copy a { color: #7a5f45 !important; text-decoration: underline !important; }
 .tx-page #wsite-content .gd-tiles { max-width: 1120px; margin-top: 0; }
 @media (max-width: 900px) {
-  #wsite-content .tx-intro--solo h2.tx-title { font-size: 38px !important; }
+  #wsite-content h2.tx-title { font-size: 38px !important; }
 }
 
 /* Dark "Got a question?" band at the foot of treatment pages. */
@@ -666,3 +666,82 @@ img { height: auto; }
   .tx-page .tx-hero-video { display: none; }
   .tx-page .tx-hero--video::after { background: none !important; }
 }
+
+/* Bulleted list inside a treatment section (same rhythm as .tx-steps). */
+#wsite-content .tx-list { list-style: none !important; margin: 0 0 18px !important; padding: 0 !important; max-width: none !important; }
+#wsite-content .tx-list li {
+  display: block !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 12px 0 12px 24px !important;
+  position: relative;
+  border-bottom: 1px solid #ece5da;
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #3d3532 !important;
+}
+#wsite-content .tx-list li:last-child { border-bottom: 0; }
+#wsite-content .tx-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 23px;
+  width: 8px;
+  height: 1px;
+  background: #AC8E6F;
+}
+#wsite-content .tx-list strong { font-weight: 600; color: #1F1A18; }
+
+/* Playful image break on a treatment page: vintage photo in the brand's warm
+   black and white beside one big line (the Twenty Two's wink). */
+#wsite-content .tx-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: center;
+  max-width: 1120px;
+  margin: 10px auto 70px;
+  padding: 56px;
+  background: #EFEAE1;
+}
+#wsite-content .tx-feature__img { margin: 0; }
+#wsite-content .tx-feature__img img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  filter: grayscale(1) sepia(0.35) contrast(1.08);
+}
+#wsite-content .tx-feature__kicker {
+  font-family: "Libre Franklin", sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7a5f45 !important;
+  margin: 0 0 14px !important;
+}
+#wsite-content .tx-feature__line {
+  font-family: "GFS Didot", serif !important;
+  font-size: 58px !important;
+  line-height: 1.05 !important;
+  color: #1F1A18 !important;
+  margin: 0 0 18px !important;
+}
+#wsite-content .tx-feature__sub {
+  font-family: "GFS Didot", serif !important;
+  font-style: italic;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+  color: #3d3532 !important;
+  margin: 0 !important;
+}
+#wsite-content .tx-section__head .tx-eyebrow { margin-bottom: 12px !important; }
+@media (max-width: 900px) {
+  #wsite-content .tx-feature { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; margin-bottom: 40px; }
+  #wsite-content .tx-feature__img img { max-width: 260px; margin: 0 auto; }
+  #wsite-content .tx-feature__line { font-size: 40px !important; }
+  #wsite-content .tx-feature__sub { font-size: 19px !important; }
+}
+
+#wsite-content .tx-feature[hidden] { display: none; }
