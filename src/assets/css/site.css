@@ -1671,3 +1671,8 @@ html body img.team-photo.is-colour { filter: none; }
 .ab-page .ab-text #x, .ab-page #wsite-content .ab-text h2.hp-split__title { text-align: center !important; }
 .ab-page #wsite-content .ab-text p.ab-kicker, .ab-page #wsite-content .ab-text p.ab-copy { text-align: center !important; }
 @media (max-width: 900px) { .ab-page .ab-text { padding: 56px 22px 24px; } }
+/* About: CEREC video sized to the (shorter) copy beside it. */
+@media (min-width: 901px) {
+  .ab-page .ab-split.hp-split--right { grid-template-columns: 1.15fr 0.85fr; }
+  .ab-page .ab-split .ab-video { min-height: 0 !important; height: 400px; }
+}
