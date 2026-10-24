@@ -1564,3 +1564,15 @@ html body.hp-page #wrapper h2.hp-eyebrow:not(#_):not(#__) {
   .hp-page .hp-split--why .hp-why { grid-template-columns: 1fr; gap: 22px; }
 }
 .hp-page #wsite-content .hp-split--services h2.hp-split__title { text-align: center !important; max-width: 760px; margin: 0 auto 40px !important; }
+/* Homepage "Meet the team" curtain band: full-bleed, graded from bright red
+   to a warm wine so it sits with the stone/ink palette. The image already
+   says "Meet the team", so the heading is visually hidden but kept. */
+.hp-page .hp-curtain { position: relative; height: min(52vw, 560px); min-height: 300px; margin-top: 72px; overflow: hidden; background: #1F1A18; }
+.hp-page .hp-curtain__img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: url('/assets/img/team-curtain.webp') 50% 45% / cover no-repeat; filter: saturate(0.55) sepia(0.25) brightness(0.88) contrast(1.05); }
+.hp-page h2.hp-curtain__title { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: 0 !important; }
+.hp-page #wsite-content a.hp-curtain__link {
+  position: absolute; left: 50%; bottom: 9%; transform: translateX(-50%); z-index: 1; white-space: nowrap;
+  font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #EFEAE1 !important; text-decoration: none !important; border-bottom: 1px solid #EFEAE1; padding-bottom: 6px;
+}
+@media (max-width: 900px) { .hp-page .hp-curtain { margin-top: 48px; } }
