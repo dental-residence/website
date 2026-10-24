@@ -1980,3 +1980,12 @@ body.wsite-page-marrickville-dentist #wsite-content :is(.prev, .next) { border-r
 body.wsite-page-marrickville-dentist #wsite-content img.icon-image { filter: grayscale(1); }
 body.wsite-page-marrickville-dentist .wsite-background-440 img { filter: grayscale(1); opacity: 0.7; }
 html body.wsite-page-marrickville-dentist #wrapper #wsite-content h2:not(.ct-visit__title):not(#_), html body.wsite-page-marrickville-dentist #wrapper #wsite-content h2:not(.ct-visit__title) *:not(#_) { color: #1F1A18 !important; }
+
+/* The theme's header-photo overlay (::before, z-index 1) is decorative but
+   sat on top of header content, swallowing clicks on the Emergency (and
+   any other) header buttons. Let clicks through it everywhere. */
+html body :is(.wsite-header-section, .wsite-background)::before, html body :is(.wsite-header-section, .wsite-background)::after { pointer-events: none !important; }
+/* The closed mobile menu drawer is invisible (opacity 0) but still full
+   height on the left, and swallowed taps on buttons behind it on some pages.
+   It only takes taps while open (nav.js sets body.menu-open). */
+html body:not(.menu-open) .navmobile-wrapper { pointer-events: none !important; }
