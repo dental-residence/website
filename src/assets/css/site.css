@@ -1386,3 +1386,10 @@ html body.em-page #wsite-content a.book-with:not(#_) {
 /* Every embedded Google map: warm-palette black and white, slightly darker
    so it doesn't look washed out (owner request, 2026-10-24). */
 iframe[src*="google.com/maps/embed"] { filter: grayscale(1) brightness(0.86) contrast(1.08); }
+/* Butler photo: plain black and white (no sepia), its white background
+   blended into the stone panel so the tray looks printed on it. */
+#wsite-content .appt-served .tx-feature__img img {
+  filter: grayscale(1) contrast(1.12) !important;
+  mix-blend-mode: multiply;
+  border-radius: 0 !important;
+}
