@@ -1344,3 +1344,32 @@ html body.em-page #wsite-content .tx-copy strong:not(#_) {
   .em-page .em-callbar a.em-callbar__call { white-space: nowrap; letter-spacing: 0.1em; }
   body.em-page { padding-bottom: 76px; }
 }
+/* Emergency page: two-column "Emergencies we treat" list on desktop, and
+   "What to do right now" as a stone first-aid card. */
+@media (min-width: 901px) {
+  #wsite-content .tx-list.em-list--two { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  #wsite-content .tx-list.em-list--two li:nth-last-child(2) { border-bottom: 0; }
+}
+#wsite-content .tx-section.em-firstaid {
+  background: #EFEAE1; border-top: 2px solid #AC8E6F;
+  padding: 56px 56px; margin: 24px auto; box-sizing: border-box;
+}
+#wsite-content .tx-section.em-firstaid + .tx-section { border-top: 0; }
+#wsite-content .em-firstaid .tx-list li { border-bottom-color: #ddd3c4; }
+@media (max-width: 900px) {
+  #wsite-content .tx-section.em-firstaid { padding: 32px 22px; margin: 16px -4px; }
+}
+/* Emergency page: tighter vertical rhythm (owner: "a little spaced out"). */
+body.em-page #wsite-content .tx-intro { margin: 64px auto 64px; gap: 56px; }
+body.em-page #wsite-content .tx-section { padding: 40px 0; gap: 56px; }
+body.em-page #wsite-content .tx-section.em-firstaid { padding: 40px 44px; margin: 16px auto; }
+body.em-page #wsite-content .tx-section:last-of-type { margin-bottom: 56px; }
+body.em-page #wsite-content .tx-list li { padding: 9px 0 9px 24px !important; }
+body.em-page #wsite-content .tx-list li::before { top: 20px; }
+body.em-page #wsite-content .tx-section__head .tx-eyebrow { margin-bottom: 8px !important; }
+@media (max-width: 900px) {
+  body.em-page #wsite-content .tx-intro { margin: 40px auto 44px; gap: 32px; }
+  body.em-page #wsite-content .tx-section { padding: 30px 0; gap: 14px; }
+  body.em-page #wsite-content .tx-section.em-firstaid { padding: 28px 20px; margin: 12px -4px; }
+  body.em-page #wsite-content .tx-list li { font-size: 16px !important; }
+}
