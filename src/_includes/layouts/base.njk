@@ -76,6 +76,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div style='display:none'><span id="wsite-title">Dental Residence</span></div>
 
+{#- Phone-only sticky Call / Book bar (hidden from 901px up; see site.css). -#}
+<div class="em-callbar" aria-label="Call or book">
+	<a href="tel:{{ site.phone }}" class="em-callbar__call" id="telephone_button_sticky">Call {{ site.phoneDisplay }}</a>
+	<a href="{{ callbarBook or '/which-appointment.html' }}"{% if callbarBook %} target="_blank" rel="noopener"{% endif %} class="em-callbar__book" id="book_online_button_sticky">Book</a>
+</div>
 <script src="/assets/js/nav.js?v={{ now.build }}"></script>
 {% if ytClips %}<script src="/assets/js/yt-clips.js?v={{ now.build }}" defer></script>{% endif %}
 {% if videoClips %}<script src="/assets/js/video-clips.js?v={{ now.build }}" defer></script>{% endif %}

@@ -1327,22 +1327,22 @@ html body.em-page #wsite-content .tx-copy strong:not(#_) {
 .em-page .em-hero__photo { background-repeat: no-repeat; background-size: cover; background-position: 50% 48%; }
 @media (max-width: 900px) { .em-page .em-hero__photo { height: 72vw; background-position: 50% 45%; } }
 /* Emergency page: sticky Call / Book bar on phones only. */
-.em-page .em-callbar { display: none; }
+.em-callbar { display: none; }
 @media (max-width: 900px) {
-  .em-page .em-callbar {
+  body .em-callbar {
     display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
     padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 10px;
     background: rgba(239, 234, 225, 0.97); border-top: 1px solid #ddd3c4;
   }
-  .em-page .em-callbar a {
+  body .em-callbar a {
     display: flex; align-items: center; justify-content: center; padding: 15px 10px;
     font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
     text-decoration: none !important;
   }
-  .em-page .em-callbar__call { flex: 1 1 auto; background: #1F1A18; color: #fff !important; }
-  .em-page .em-callbar__book { flex: 0 0 28%; border: 1px solid #1F1A18; color: #1F1A18 !important; }
-  .em-page .em-callbar a.em-callbar__call { white-space: nowrap; letter-spacing: 0.1em; }
-  body.em-page { padding-bottom: 76px; }
+  body .em-callbar__call { flex: 1 1 auto; background: #1F1A18; color: #fff !important; }
+  body .em-callbar__book { flex: 0 0 28%; border: 1px solid #1F1A18; color: #1F1A18 !important; }
+  body .em-callbar a.em-callbar__call { white-space: nowrap; letter-spacing: 0.1em; }
+  body { padding-bottom: 76px; }
 }
 /* Emergency page: two-column "Emergencies we treat" list on desktop, and
    "What to do right now" as a stone first-aid card. */
@@ -1586,3 +1586,17 @@ html body.hp-page #wrapper h2.hp-eyebrow:not(#_):not(#__) {
   .hp-page .hp-split--services { display: block; padding: 56px 22px; }
   .hp-page #wsite-content .hp-split--services h2.hp-split__title { position: static; font-size: 28px !important; margin: 0 0 28px !important; }
 }
+
+/* Dentist photos: black and white, colour on hover (desktop) or as the card
+   scrolls into the middle of the screen (phones; .is-colour set in nav.js). */
+html body img.team-photo { filter: grayscale(1) contrast(1.04); transition: filter 0.5s ease; }
+@media (hover: hover) { html body img.team-photo:hover { filter: none; } }
+html body img.team-photo.is-colour { filter: none; }
+
+/* Homepage "Why choose": one-liners, tighter. */
+.hp-page .hp-split--why { padding-bottom: 72px; }
+.hp-page .hp-split--why .hp-why { gap: 28px 48px; }
+.hp-page .hp-why dt { font-size: 19px; margin-bottom: 6px; }
+.hp-page .hp-why dd { font-size: 14px; line-height: 1.55; }
+.hp-page .hp-statement--small { padding-bottom: 40px; }
+.hp-page .hp-curtain { margin-top: 8px; }

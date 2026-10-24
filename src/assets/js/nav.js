@@ -218,3 +218,15 @@
     menu.style.display = 'block';
   }
 })();
+
+/* Dentist photos go from black and white to colour as they reach the middle
+   of the screen on touch devices (no hover there). See site.css. */
+(function () {
+  if (!window.matchMedia || window.matchMedia('(hover: hover)').matches || !('IntersectionObserver' in window)) return;
+  var photos = document.querySelectorAll('img.team-photo');
+  if (!photos.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { e.target.classList.toggle('is-colour', e.isIntersecting); });
+  }, { rootMargin: '-35% 0px -35% 0px' });
+  photos.forEach(function (p) { io.observe(p); });
+})();
