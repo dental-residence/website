@@ -1683,3 +1683,36 @@ html body img.team-photo.is-colour { filter: none; }
   .ab-page #wsite-content p.ab-copy, .ab-page #wsite-content p.ab-lede-sub { font-size: 16px !important; }
   .ab-page #wsite-content .ab-close h2.hp-title { font-size: 34px !important; }
 }
+
+/* Petersham page (pe-*), on top of the homepage hp-* layout. */
+.pe-page #wsite-content p.pe-lede-sub { font-size: 15px !important; color: #4a4441 !important; margin-top: 16px !important; }
+.pe-page .pe-offer { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: center; max-width: 1040px; margin: 0 auto 72px; padding: 56px 64px; background: #EFEAE1; border-top: 2px solid #AC8E6F; box-sizing: border-box; }
+.pe-page #wsite-content h2.pe-offer__kicker { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.22em !important; color: #6b5038 !important; margin: 0 0 12px !important; text-align: left !important; }
+.pe-page #wsite-content p.pe-offer__name { font-family: "Oranienbaum", serif !important; text-transform: uppercase; font-size: 34px !important; line-height: 1 !important; color: #1F1A18 !important; margin: 0 0 8px !important; }
+.pe-page #wsite-content p.pe-offer__price { font-family: "Oranienbaum", serif !important; font-size: 72px !important; line-height: 1 !important; color: #1F1A18 !important; margin: 0 !important; }
+.pe-page .pe-offer__list { list-style: none !important; margin: 0 0 22px !important; padding: 0 !important; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.pe-page .pe-offer__list li { list-style: none !important; font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #1F1A18; }
+.pe-page .pe-offer__links { display: flex; gap: 32px; margin: 0 0 20px !important; }
+.pe-page #wsite-content p.pe-offer__small { font-size: 13px !important; line-height: 1.6 !important; color: #6b625c !important; margin: 0 !important; }
+.pe-page .pe-links { padding-top: 88px; padding-bottom: 88px; }
+.pe-page .pe-quotes { max-width: 1120px; margin: 0 auto; padding: 96px 24px 72px; }
+.pe-page .pe-quotes__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; margin-top: 40px; border-top: 1px solid #ddd3c4; }
+.pe-page #wsite-content blockquote.pe-quote { margin: 0 !important; padding: 26px 0 !important; border: 0 !important; border-bottom: 1px solid #ddd3c4 !important; background: none !important; }
+.pe-page #wsite-content blockquote.pe-quote p { font-family: "Montserrat", sans-serif !important; font-style: normal !important; font-size: 16px !important; line-height: 1.7 !important; color: #3d3532 !important; margin: 0 !important; text-align: left !important; }
+.pe-page #wsite-content blockquote.pe-quote p::before { content: "\201C"; font-family: "Oranienbaum", serif; font-size: 34px; line-height: 0; vertical-align: -12px; margin-right: 4px; color: #AC8E6F; }
+.pe-page .pe-team h2.hp-title { margin-bottom: 20px !important; }
+.pe-page .pe-gallery .wsite-section { background: #fff !important; }
+.pe-page .pe-funds { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1120px; margin: 0 auto; padding: 88px 24px; box-sizing: border-box; }
+.pe-page .pe-funds h2.hp-split__title { font-size: 34px !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 20px !important; }
+.pe-page .pe-funds p.ab-copy { font-family: "Montserrat", sans-serif !important; font-size: 17px !important; line-height: 1.7 !important; color: #3d3532 !important; }
+.pe-page .pe-funds img { width: 100%; height: auto; }
+@media (max-width: 900px) {
+  .pe-page .pe-offer { grid-template-columns: 1fr; gap: 24px; padding: 36px 24px; margin: 0 16px 48px; }
+  .pe-page #wsite-content p.pe-offer__price { font-size: 56px !important; }
+  .pe-page .pe-links { padding-top: 56px; padding-bottom: 56px; }
+  .pe-page .pe-quotes { padding: 56px 22px 40px; }
+  .pe-page .pe-quotes__grid { grid-template-columns: 1fr; }
+  .pe-page .pe-funds { grid-template-columns: 1fr; gap: 28px; padding: 56px 22px; }
+}
+.pe-page .pe-links { background: #fff; border-top: 1px solid #ddd3c4; border-bottom: 1px solid #ddd3c4; }
+.pe-page .pe-gallery h2, .pe-page .pe-gallery h2 :is(span, font) { color: #1F1A18 !important; font-size: 44px !important; }
