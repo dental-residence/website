@@ -1600,3 +1600,7 @@ html body img.team-photo.is-colour { filter: none; }
 .hp-page .hp-why dd { font-size: 14px; line-height: 1.55; }
 .hp-page .hp-statement--small { padding-bottom: 40px; }
 .hp-page .hp-curtain { margin-top: 8px; }
+
+/* Header logo ~40% smaller on desktop (The Twenty Two proportions); phones
+   already use the small size from main_style.css. */
+@media (min-width: 901px) { #header .logo-image { height: 30px !important; } }
