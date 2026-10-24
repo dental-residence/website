@@ -29,6 +29,20 @@
 		</div>
 	{%- endfor %}
 	</div>
+	{#- Matched dentist (front matter bookingDentist: anna | mac; optional
+	    bookingDentistLine overrides the line). Deep-links that dentist's
+	    availability for the first booking type. Plain anchor, see above. -#}
+	{%- if bookingDentist and dentists[bookingDentist] -%}
+	{%- set d = dentists[bookingDentist] -%}
+	{%- set firstType = bookingTypes[booking[0]] -%}
+	<div class="booking-box__pick">
+		<img class="booking-box__pick-photo team-photo" src="{{ d.img }}" alt="{{ d.name }}" width="96" height="120" loading="lazy">
+		<div>
+			<p class="booking-box__pick-line">{{ bookingDentistLine or d.line }}</p>
+			<a href="https://www.myhealth1st.com.au/appointmentWidget/?practiceId=9023&amp;practitionerId={{ d.practitionerId }}{% if firstType.treatmentId %}&amp;treatmentId={{ firstType.treatmentId }}{% endif %}" target="_blank" rel="noopener" class="booking-box__pick-link" id="book_online_button_pick_{{ bookingDentist }}" data-practitioner="{{ bookingDentist }}">Book with {{ d.short }}</a>
+		</div>
+	</div>
+	{%- endif %}
 	{%- if ritaFlags | trim %}
 	<p class="booking-box__help">Seeing our Oral Health Therapist, Rita Chen? <a href="{{ site.ritaBookingUrl }}" target="_blank" rel="noopener" class="book-with-rita" id="book_online_button_rita" data-practitioner="rita-chen">Book with Rita</a></p>
 	{%- endif %}
