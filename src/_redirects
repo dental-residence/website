@@ -24,3 +24,7 @@ https://dentalresidenceproject.netlify.app/*  https://www.dentalresidence.com.au
 # Why Choose Us merged into About (2026-10-24): same content, About is the one page.
 /why-choose-us.html     /about.html               301!
 /why-choose-us          /about.html               301!
+
+# COVID safety page retired 2026-10-24 (dated; removed from the footer)
+/covid-safety.html      /                         301!
+/covid-safety           /                         301!

@@ -1868,3 +1868,73 @@ html body #wrapper .pe-band p.ab-copy:not(#_) { padding: 0 !important; margin: 0
 .pe-page .pe-band__photo { background-position: 50% 30%; }
 .pe-page .pe-band__photo { filter: saturate(0.8) sepia(0.14) brightness(1.04) contrast(1.02); }
 .pe-page .pe-band__photo { filter: none; background-position: 50% 50%; }
+
+/* Visit band on every page (it replaced the old "Got a Question?" band):
+   page-independent title/address colours and the "Ask Us Anything" link. */
+html body .ct-visit-band .ct-visit h2.ct-visit__title:not(#_) { font-size: 36px !important; color: #EFEAE1 !important; text-align: left !important; margin: 0 0 20px !important; }
+html body .ct-visit-band .ct-visit p.ct-visit__addr:not(#_) { font-size: 15px !important; line-height: 1.8 !important; color: #cfc5b8 !important; text-align: left !important; }
+html body .ct-visit p.ct-visit__ask:not(#_) { margin: 26px 0 0 !important; text-align: left !important; }
+html body .ct-visit a.ct-visit__asklink:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #EFEAE1 !important; text-decoration: none !important; padding-bottom: 6px; border-bottom: 1px solid #AC8E6F; }
+html body .ct-visit a.ct-visit__asklink:not(#_):hover { color: #AC8E6F !important; }
+
+/* One button system sitewide (audit 2026-10-24). Primary = solid ink,
+   secondary (.cta-button-navy, a legacy class name) = ink outline. Over dark
+   photos and video the pair flips to stone and a light outline. No tan fills. */
+html body #wrapper .cta-button:not(#_):not(#__), html body #wrapper .wsite-button:not(#_):not(#__) {
+  border-radius: 0 !important; padding: 16px 30px !important; min-width: 0 !important; width: auto !important; height: auto !important;
+  font-family: "Montserrat", sans-serif !important; font-size: 12px !important; font-weight: 400 !important; letter-spacing: 0.2em !important; text-transform: uppercase; line-height: 1 !important;
+  background: #1F1A18 !important; color: #EFEAE1 !important; border: 1px solid #1F1A18 !important; box-shadow: none !important; text-shadow: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+html body #wrapper .wsite-button:not(#_):not(#__) .wsite-button-inner { background: none !important; color: inherit !important; font: inherit !important; letter-spacing: inherit !important; padding: 0 !important; }
+html body #wrapper .cta-button:not(#_):not(#__):hover, html body #wrapper .wsite-button:not(#_):not(#__):hover { background: #3d3532 !important; border-color: #3d3532 !important; color: #EFEAE1 !important; }
+html body #wrapper .cta-button.cta-button-navy:not(#_):not(#__) { background: transparent !important; color: #1F1A18 !important; border-color: #1F1A18 !important; }
+html body #wrapper .cta-button.cta-button-navy:not(#_):not(#__):hover { background: #1F1A18 !important; color: #EFEAE1 !important; }
+/* Over photos: old-style page banners, and dark/video treatment heroes. */
+html body:not(.tx-page) #wrapper .wsite-header-elements .cta-button:not(#_):not(#__),
+html body.tx-page #wrapper .wsite-header-elements :is(.tx-hero--video, .tx-hero--dark) .cta-button:not(#_):not(#__) { background: #EFEAE1 !important; color: #1F1A18 !important; border-color: #EFEAE1 !important; }
+html body:not(.tx-page) #wrapper .wsite-header-elements .cta-button.cta-button-navy:not(#_):not(#__),
+html body.tx-page #wrapper .wsite-header-elements :is(.tx-hero--video, .tx-hero--dark) .cta-button.cta-button-navy:not(#_):not(#__) { background: transparent !important; color: #fff !important; border-color: rgba(255,255,255,0.85) !important; }
+html body:not(.tx-page) #wrapper .wsite-header-elements .cta-button:not(#_):not(#__):hover,
+html body.tx-page #wrapper .wsite-header-elements :is(.tx-hero--video, .tx-hero--dark) .cta-button:not(#_):not(#__):hover { background: #fff !important; color: #1F1A18 !important; border-color: #fff !important; }
+
+/* Short pages: no black strip under the footer (the theme sets body and
+   #footer to black; the condensed footer is designed on white). */
+html body:not(#_) { background-color: #fff !important; }
+html body #footer:not(#_) { background-color: #fff !important; }
+
+/* Thank-you pages: split hero like About (stone text panel + photo). */
+.ty-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; min-height: 560px; background: #EFEAE1; }
+.ty-hero__text { display: flex; flex-direction: column; justify-content: center; padding: 72px 64px 72px max(24px, calc(50vw - 560px)); }
+.ty-hero__photo { background-size: cover; background-position: 50% 50%; }
+html body #wrapper .ty-hero p.ty-hero__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 18px !important; text-align: left !important; }
+html body #wrapper .ty-hero h1.ty-hero__title:not(#_) { font-size: 72px !important; line-height: 1 !important; color: #1F1A18 !important; margin: 0 0 24px !important; text-align: left !important; }
+html body #wrapper .ty-hero p.ty-hero__lede:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 18px !important; line-height: 1.7 !important; color: #3d3532 !important; max-width: 480px; margin: 0 0 14px !important; text-align: left !important; }
+html body #wrapper .ty-hero p.ty-hero__small:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 14px !important; color: #6b5038 !important; margin: 0 0 28px !important; text-align: left !important; }
+.ty-hero__links { display: flex; flex-wrap: wrap; gap: 32px; }
+html body #wrapper a.ty-hero__link:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #1F1A18 !important; text-decoration: none !important; padding-bottom: 6px; border-bottom: 1px solid #AC8E6F; }
+@media (max-width: 900px) {
+  .ty-hero { grid-template-columns: 1fr; min-height: 0; }
+  .ty-hero__photo { order: -1; height: 72vw; }
+  .ty-hero__text { padding: 40px 22px 52px; }
+  html body #wrapper .ty-hero h1.ty-hero__title:not(#_) { font-size: 48px !important; }
+}
+
+/* Enquiry form: stone panel, square ink-ruled fields, Montserrat labels. */
+body.wsite-page-enquiry #wsite-content .wsite-section:not(.ct-visit-band) { background: #EFEAE1 !important; }
+body.wsite-page-enquiry #wsite-content form[name="enquiry"] { max-width: 960px; margin: 0 auto; padding: 24px 0 64px; }
+html body.wsite-page-enquiry #wrapper form h1.wsite-content-title:not(#_) { font-size: 44px !important; color: #1F1A18 !important; margin: 24px 0 36px !important; }
+html body.wsite-page-enquiry #wrapper .wsite-form-label:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 11px !important; letter-spacing: 0.18em; text-transform: uppercase; color: #6b5038 !important; font-weight: 400 !important; margin-bottom: 8px; display: block; }
+html body.wsite-page-enquiry #wrapper .form-required:not(#_) { color: #AC8E6F !important; }
+html body.wsite-page-enquiry #wrapper :is(input.wsite-input, textarea.wsite-input, select.form-select):not(#_) {
+  width: 100% !important; max-width: none !important; box-sizing: border-box; border: 1px solid #cdbfae !important; border-radius: 0 !important; background: #fff !important;
+  padding: 12px 14px !important; font-family: "Montserrat", sans-serif !important; font-size: 15px !important; color: #1F1A18 !important; box-shadow: none !important; height: auto !important;
+}
+html body.wsite-page-enquiry #wrapper :is(input.wsite-input, textarea.wsite-input, select.form-select):not(#_):focus { outline: none; border-color: #1F1A18 !important; }
+body.wsite-page-enquiry .wsite-form-field { margin-bottom: 18px !important; }
+/* Older Weebly buttons join the same system: ink outline, ink fill on hover. */
+html body #wrapper :is(button.button-small, button.button-small-new, button.button-navigation):not(#_):not(#__) { background: transparent !important; color: #1F1A18 !important; border: 1px solid #1F1A18 !important; }
+html body #wrapper :is(button.button-small, button.button-small-new, button.button-navigation):not(#_):not(#__):hover { background: #1F1A18 !important; color: #EFEAE1 !important; }
+/* Booking-box buttons join the button system (capitals, ink, no tan hover). */
+html body #wsite-content .booking-box a.booking-box__btn:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.5 !important; padding: 15px 22px !important; color: #EFEAE1 !important; }
+html body #wsite-content .booking-box a.booking-box__btn:not(#_):hover { background: #3d3532 !important; }
