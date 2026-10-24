@@ -1576,3 +1576,13 @@ html body.hp-page #wrapper h2.hp-eyebrow:not(#_):not(#__) {
   color: #EFEAE1 !important; text-decoration: none !important; border-bottom: 1px solid #EFEAE1; padding-bottom: 6px;
 }
 @media (max-width: 900px) { .hp-page .hp-curtain { margin-top: 48px; } }
+/* Homepage services v2: stone block, heading left (sticky), one-column list right. */
+.hp-page .hp-split--services { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; max-width: none; margin: 24px 0 0; padding: 88px max(24px, calc((100% - 1120px) / 2)); background: #EFEAE1; }
+.hp-page .hp-split--services .hp-split__text { display: contents; }
+.hp-page #wsite-content .hp-split--services h2.hp-split__title { position: sticky; top: 120px; text-align: left !important; max-width: none; margin: 0 !important; font-size: 38px !important; line-height: 1.08 !important; }
+.hp-page .hp-split--services .hp-index { display: block; border-top-color: #d6ccbd; }
+.hp-page .hp-split--services .hp-index li { border-bottom-color: #d6ccbd; }
+@media (max-width: 900px) {
+  .hp-page .hp-split--services { display: block; padding: 56px 22px; }
+  .hp-page #wsite-content .hp-split--services h2.hp-split__title { position: static; font-size: 28px !important; margin: 0 0 28px !important; }
+}
