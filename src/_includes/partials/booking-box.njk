@@ -39,7 +39,6 @@
 		<img class="booking-box__pick-photo team-photo" src="{{ d.img }}" alt="{{ d.name }}" width="96" height="120" loading="lazy">
 		<div>
 			<p class="booking-box__pick-line">{{ bookingDentistLine or d.line }}</p>
-			{% if d.days %}<p class="booking-box__pick-days">{{ d.days }}</p>{% endif %}
 			<a href="https://www.myhealth1st.com.au/appointmentWidget/?practiceId=9023&amp;practitionerId={{ d.practitionerId }}{% if firstType.treatmentId %}&amp;treatmentId={{ firstType.treatmentId }}{% endif %}" target="_blank" rel="noopener" class="booking-box__pick-link" id="book_online_button_pick_{{ bookingDentist }}" data-practitioner="{{ bookingDentist }}">Book with {{ d.short }}</a>
 		</div>
 	</div>
