@@ -1716,3 +1716,28 @@ html body img.team-photo.is-colour { filter: none; }
 }
 .pe-page .pe-links { background: #fff; border-top: 1px solid #ddd3c4; border-bottom: 1px solid #ddd3c4; }
 .pe-page .pe-gallery h2, .pe-page .pe-gallery h2 :is(span, font) { color: #1F1A18 !important; font-size: 44px !important; }
+
+/* Meet Our Team page (mt-*): curtain hero, statement with jump links, one
+   alternating photo/bio row per person. */
+.mt-page .mt-curtain { margin-top: 0; height: min(42vw, 480px); }
+.mt-page #wsite-content .hp-statement p.mt-eyebrow { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 20px !important; text-align: center !important; }
+.mt-page .mt-jump { justify-content: center; border-bottom: 0; margin: 36px 0 0; padding: 0; }
+.mt-page .mt-person { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 72px; align-items: start; max-width: 1120px; margin: 0 auto; padding: 72px 24px; border-top: 1px solid #ddd3c4; box-sizing: border-box; scroll-margin-top: 20px; }
+.mt-page .mt-person--flip .mt-person__photo { order: 2; }
+.mt-page .mt-person__photo { position: sticky; top: 110px; }
+.mt-page .mt-person__photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.mt-page #wsite-content p.mt-person__cred { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 12px !important; text-align: left !important; }
+.mt-page #wsite-content h2.mt-person__name { font-size: 48px !important; line-height: 1 !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 24px !important; }
+.mt-page #wsite-content .mt-person p.ab-copy { font-family: "Montserrat", sans-serif !important; font-size: 16px !important; line-height: 1.75 !important; color: #3d3532 !important; margin: 0 0 14px !important; text-align: left !important; }
+.mt-page .mt-person__links { display: flex; align-items: baseline; gap: 32px; margin-top: 24px !important; }
+@media (max-width: 900px) {
+  .mt-page .mt-curtain { height: 56vw; min-height: 0; }
+  .mt-page .mt-person { grid-template-columns: 1fr; gap: 24px; padding: 48px 22px; }
+  .mt-page .mt-person--flip .mt-person__photo { order: 0; }
+  .mt-page .mt-person__photo { position: static; max-width: 300px; }
+  .mt-page #wsite-content h2.mt-person__name { font-size: 36px !important; }
+  .mt-page #wsite-content .mt-person p.ab-copy { font-size: 15px !important; }
+  .mt-page .mt-jump { gap: 10px 18px; }
+}
+@media (min-width: 901px) { .mt-page .mt-person--flip { grid-template-columns: 1.25fr 0.75fr; } }
+.mt-page .hp-statement .mt-jump { margin-top: 32px !important; }
