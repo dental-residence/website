@@ -1464,3 +1464,103 @@ html body #wrapper :is(button.button-small, button.button-small-new, button.butt
 }
 html body #wrapper :is(.my-component-container, .my-component-left-div, .my-component-right-div, .my-component-inner-div) { border-radius: 0 !important; }
 html body #wrapper :is(.my-component-right-div, .my-component-inner-div) { background-color: #1F1A18 !important; }
+
+/* ==========================================================================
+   Homepage (hp-*), The Twenty Two layout: full-bleed photo, centred
+   statement, split photo/text sections, photo with a white card, team grid.
+   Headings take the sitewide Oranienbaum capitals.
+   ========================================================================== */
+.hp-page .hp-hero { height: 78vh; min-height: 460px; max-height: 760px; background-size: cover; background-position: 50% 58%; }
+.hp-page #wsite-content > section { box-sizing: border-box; }
+.hp-page .hp-statement { max-width: 860px; margin: 0 auto; padding: 96px 24px 88px; text-align: center; }
+.hp-page .hp-statement--small { padding: 96px 24px 56px; }
+html body.hp-page #wrapper h2.hp-eyebrow:not(#_):not(#__) {
+  font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em !important;
+  color: #7a5f45 !important; margin: 0 0 22px !important; text-align: center !important;
+}
+.hp-page h1.hp-title, .hp-page h2.hp-title { font-size: 72px !important; line-height: 0.98 !important; color: #1F1A18 !important; margin: 0 0 28px !important; text-align: center !important; }
+.hp-page h2.hp-title--md { font-size: 52px !important; }
+.hp-page #wsite-content p.hp-lede { font-family: "Montserrat", sans-serif !important; font-size: 17px !important; line-height: 1.75 !important; color: #3d3532 !important; max-width: 640px; margin: 0 auto !important; text-align: center !important; }
+.hp-page .hp-links { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin: 36px 0 0 !important; }
+.hp-page #wsite-content a.hp-link, .hp-page #wsite-content a.hp-card__btn {
+  font-family: "Montserrat", sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #1F1A18 !important; text-decoration: none !important; border-bottom: 1px solid #AC8E6F; padding-bottom: 6px;
+}
+.hp-page #wsite-content a.hp-link:hover { color: #7a5f45 !important; }
+
+.hp-page .hp-split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: 1240px; margin: 0 auto; padding: 40px 24px; gap: 72px; }
+.hp-page .hp-split--left .hp-split__photo { order: -1; }
+.hp-page .hp-split__photo { min-height: 640px; height: 100%; background-size: cover; background-position: 50% 40%; }
+.hp-page .hp-split__text { padding: 24px 0; }
+.hp-page #wsite-content h2.hp-split__title { font-size: 34px !important; line-height: 1.08 !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 28px !important; }
+.hp-page .hp-index { list-style: none !important; margin: 0 !important; padding: 0 !important; border-top: 1px solid #ddd3c4; }
+.hp-page .hp-index li { list-style: none !important; margin: 0 !important; padding: 0 !important; border-bottom: 1px solid #ddd3c4; }
+.hp-page #wsite-content .hp-index a { display: block; padding: 16px 28px 16px 0; text-decoration: none !important; position: relative; }
+.hp-page #wsite-content .hp-index a::after { content: "\2192"; position: absolute; right: 0; top: 16px; color: #AC8E6F; font-family: "Montserrat", sans-serif; }
+.hp-page .hp-index__name { display: block; font-family: "Oranienbaum", serif; text-transform: uppercase; letter-spacing: 0.03em; font-size: 22px; color: #1F1A18; margin-bottom: 4px; }
+.hp-page .hp-index__text { display: block; font-family: "Montserrat", sans-serif; font-size: 14px; line-height: 1.6; color: #4a4441; }
+.hp-page #wsite-content .hp-index a:hover .hp-index__name { color: #7a5f45; }
+
+.hp-page .hp-why { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; }
+.hp-page .hp-why dt { font-family: "Oranienbaum", serif; text-transform: uppercase; letter-spacing: 0.03em; font-size: 20px; line-height: 1.15; color: #1F1A18; margin-bottom: 8px; }
+.hp-page .hp-why dd { margin: 0; font-family: "Montserrat", sans-serif; font-size: 14px; line-height: 1.65; color: #4a4441; }
+
+.hp-page .hp-card-band { position: relative; height: 640px; margin-top: 72px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.hp-page .hp-card-band video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; }
+.hp-page .hp-card { position: relative; z-index: 1; background: #fff; padding: 44px 56px; text-align: center; max-width: 440px; }
+.hp-page #wsite-content h2.hp-card__title { font-size: 40px !important; line-height: 1 !important; color: #1F1A18 !important; margin: 0 0 24px !important; text-align: center !important; }
+.hp-page #wsite-content a.hp-card__btn { display: inline-block; background: #1F1A18; color: #fff !important; border: 0; padding: 14px 26px; }
+.hp-page #wsite-content a.hp-card__btn:hover { background: #AC8E6F; }
+
+.hp-page .hp-team { background: #EFEAE1; padding: 80px 24px 88px; scroll-margin-top: 20px; }
+.hp-page #wsite-content p.hp-team__intro { font-family: "Montserrat", sans-serif !important; font-size: 16px !important; line-height: 1.75 !important; color: #3d3532 !important; max-width: 720px; margin: 0 auto 48px !important; text-align: center !important; }
+.hp-page .hp-team__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; max-width: 1180px; margin: 0 auto; }
+.hp-page .hp-member img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 18px; }
+.hp-page #wsite-content h3.hp-member__name { font-size: 24px !important; color: #1F1A18 !important; margin: 0 0 4px !important; text-align: left !important; }
+.hp-page #wsite-content p.hp-member__role { font-family: "Montserrat", sans-serif !important; font-size: 14px !important; color: #4a4441 !important; margin: 0 0 12px !important; text-align: left !important; }
+.hp-page #wsite-content p.hp-member__book { margin: 0 !important; text-align: left !important; }
+
+@media (max-width: 900px) {
+  .hp-page .hp-hero { height: 62vh; min-height: 340px; }
+  .hp-page .hp-statement { padding: 60px 22px 56px; }
+  .hp-page .hp-statement--small { padding: 64px 22px 32px; }
+  .hp-page h1.hp-title { font-size: 46px !important; }
+  .hp-page h2.hp-title--md { font-size: 38px !important; }
+  .hp-page #wsite-content p.hp-lede { font-size: 16px !important; }
+  .hp-page .hp-links { flex-direction: column; align-items: center; gap: 20px; }
+  .hp-page .hp-split { grid-template-columns: 1fr; gap: 28px; padding: 16px 0 24px; }
+  .hp-page .hp-split--right .hp-split__photo, .hp-page .hp-split--left .hp-split__photo { order: -1; min-height: 0; height: 92vw; }
+  .hp-page .hp-split__text { padding: 0 22px; }
+  .hp-page #wsite-content h2.hp-split__title { font-size: 28px !important; }
+  .hp-page .hp-why { grid-template-columns: 1fr; gap: 22px; }
+  .hp-page .hp-card-band { height: 520px; margin-top: 48px; }
+  .hp-page .hp-card { padding: 32px 28px; margin: 0 22px; }
+  .hp-page #wsite-content h2.hp-card__title { font-size: 32px !important; }
+  .hp-page .hp-team { padding: 56px 22px 64px; }
+  .hp-page .hp-team__grid { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+  .hp-page #wsite-content h3.hp-member__name { font-size: 19px !important; }
+  .hp-page #wsite-content a.book-with:not(#_) { font-size: 16px !important; }
+}
+/* Homepage: the Visit band sits outside #wsite-content, so restate its colours. */
+.hp-page .ct-visit h2.ct-visit__title { font-size: 36px !important; color: #EFEAE1 !important; text-align: left !important; margin: 0 0 20px !important; }
+.hp-page .ct-visit p.ct-visit__addr { font-size: 15px !important; line-height: 1.8 !important; color: #cfc5b8 !important; text-align: left !important; margin: 0 0 28px !important; font-family: "Montserrat", sans-serif !important; }
+.hp-page .ct-visit .ct-visit__note { display: inline-block; margin-top: 10px; font-style: normal; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #AC8E6F; }
+.hp-page .hp-card-band { background: #1F1A18 url('/files/theme/backgroundvideo-poster.jpg') 62% 40% / cover no-repeat; }
+/* Homepage hero as the dentists video (owner preference); the card band
+   below uses the dusk entrance photo. */
+.hp-page .hp-hero--video { position: relative; overflow: hidden; background: #1F1A18 url('/files/theme/backgroundvideo-poster.jpg') 62% 40% / cover no-repeat; }
+.hp-page .hp-hero--video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; }
+.hp-page .hp-card-band[style*="background-image"] { background-size: cover; background-position: 50% 60%; background-color: #1F1A18; }
+/* Homepage splits without photos (owner removed them): text-only blocks. */
+.hp-page .hp-split--solo { display: block; max-width: 1080px; padding: 24px 24px 40px; }
+.hp-page .hp-split--services #wsite-content h2.hp-split__title,
+.hp-page .hp-split--services h2.hp-split__title { text-align: center !important; max-width: 760px; margin: 0 auto 40px !important; }
+.hp-page .hp-split--services .hp-index { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
+.hp-page .hp-split--why .hp-why { grid-template-columns: repeat(3, 1fr); gap: 40px 48px; }
+@media (max-width: 900px) {
+  .hp-page .hp-split--solo { padding: 8px 22px 24px; }
+  .hp-page .hp-split--solo .hp-split__text { padding: 0; }
+  .hp-page .hp-split--services .hp-index { grid-template-columns: 1fr; }
+  .hp-page .hp-split--why .hp-why { grid-template-columns: 1fr; gap: 22px; }
+}
+.hp-page #wsite-content .hp-split--services h2.hp-split__title { text-align: center !important; max-width: 760px; margin: 0 auto 40px !important; }
