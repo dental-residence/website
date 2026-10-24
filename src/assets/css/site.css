@@ -1393,3 +1393,18 @@ iframe[src*="google.com/maps/embed"] { filter: grayscale(1) brightness(0.86) con
   mix-blend-mode: multiply;
   border-radius: 0 !important;
 }
+/* Footer: each list as one line of small tracked capitals with dot
+   separators (The Twenty Two style); every link and name kept. */
+#footer .wsite-footer .paragraph.ft-line {
+  font-family: "Montserrat", sans-serif !important; font-size: 11px !important; line-height: 2 !important;
+  letter-spacing: 0.14em !important; text-transform: uppercase; color: #7a5f45 !important; text-align: left !important;
+}
+#footer .wsite-footer .paragraph.ft-line a { color: #7a5f45 !important; text-decoration: none !important; }
+#footer .wsite-footer .paragraph.ft-line a:hover { color: #1F1A18 !important; text-decoration: underline !important; }
+#footer .wsite-footer .ft-dot { color: #AC8E6F; }
+#footer .wsite-footer .paragraph.ft-line { margin-bottom: 22px !important; }
+#footer .wsite-footer .paragraph.ft-copy,
+#footer .wsite-footer .paragraph.ft-copy font {
+  font-family: "Montserrat", sans-serif !important; font-size: 11px !important; line-height: 1.8 !important;
+  letter-spacing: 0.06em !important; color: #8a7f76 !important;
+}
