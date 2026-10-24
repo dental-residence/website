@@ -1747,3 +1747,12 @@ html body img.team-photo.is-colour { filter: none; }
 #wsite-content .booking-box img.booking-box__pick-photo { width: 64px; height: 80px; object-fit: cover; flex-shrink: 0; }
 #wsite-content .booking-box p.booking-box__pick-line { font-size: 14px !important; line-height: 1.55 !important; color: #3d3532 !important; margin: 0 0 8px !important; }
 #wsite-content .booking-box a.booking-box__pick-link { font-family: "Oranienbaum", serif !important; font-size: 19px; text-transform: uppercase; letter-spacing: 0.04em; color: #7a5f45 !important; text-decoration: underline !important; text-decoration-color: #ddd3c4 !important; text-underline-offset: 5px; }
+
+/* Working days under Dr Anna / Dr Mac (steer bookings to them). */
+html body #wsite-content :is(p.hp-member__days, p.mt-person__days, p.booking-box__pick-days) {
+  font-family: "Montserrat", sans-serif !important; font-size: 11px !important; line-height: 1.5 !important;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #7a5f45 !important; text-align: left !important;
+}
+.hp-page #wsite-content p.hp-member__days { margin: -6px 0 12px !important; }
+.mt-page #wsite-content p.mt-person__days { margin: -12px 0 22px !important; font-size: 12px !important; }
+#wsite-content .booking-box p.booking-box__pick-days { margin: 0 0 8px !important; }
