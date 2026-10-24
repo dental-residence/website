@@ -1867,3 +1867,4 @@ html body #wrapper .pe-band p.ab-copy:not(#_) { padding: 0 !important; margin: 0
 @media (max-width: 900px) { .pe-page .pe-cover__frame { height: 62vw; } }
 .pe-page .pe-band__photo { background-position: 50% 30%; }
 .pe-page .pe-band__photo { filter: saturate(0.8) sepia(0.14) brightness(1.04) contrast(1.02); }
+.pe-page .pe-band__photo { filter: none; background-position: 50% 50%; }
