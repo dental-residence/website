@@ -1938,3 +1938,45 @@ html body #wrapper :is(button.button-small, button.button-small-new, button.butt
 /* Booking-box buttons join the button system (capitals, ink, no tan hover). */
 html body #wsite-content .booking-box a.booking-box__btn:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.5 !important; padding: 15px 22px !important; color: #EFEAE1 !important; }
 html body #wsite-content .booking-box a.booking-box__btn:not(#_):hover { background: #3d3532 !important; }
+
+/* Utility pages (pg-*): stone page header instead of the old photo banner;
+   Privacy set as a readable column. */
+.pg-page .pg-head { background: #EFEAE1; padding: 88px 24px 72px; width: 100vw; margin: 0 0 56px calc(50% - 50vw); box-sizing: border-box; text-align: center; }
+html body #wrapper .pg-head p.pg-head__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 16px !important; text-align: center !important; }
+html body #wrapper .pg-head h1.wsite-content-title:not(#_) { font-size: 56px !important; line-height: 1.05 !important; color: #1F1A18 !important; text-align: center !important; margin: 0 !important; }
+.pg-page #wsite-content { overflow-x: hidden; }
+body.wsite-page-privacy #wsite-content .paragraph { max-width: 760px; margin: 0 auto 48px !important; font-family: "Montserrat", sans-serif !important; font-size: 16px !important; line-height: 1.8 !important; color: #3d3532 !important; text-align: left !important; }
+body.wsite-page-privacy #wsite-content .paragraph :is(strong, b) { font-family: "Oranienbaum", serif; font-weight: 400; font-size: 22px; text-transform: uppercase; color: #1F1A18; display: inline-block; margin-top: 18px; }
+@media (max-width: 900px) {
+  .pg-page .pg-head { padding-top: 56px; padding-bottom: 48px; margin-bottom: 36px; }
+  html body #wrapper .pg-head h1.wsite-content-title:not(#_) { font-size: 38px !important; }
+}
+body.wsite-page-privacy #wsite-content .paragraph strong.pp-h { display: block; margin: 28px 0 6px; }
+
+/* Ads landing pages (free consultation, Marrickville): video hero with an ink
+   gradient, Oranienbaum title, light buttons over the video; calmer body. */
+body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-container { height: min(86vh, 780px); }
+body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-overlay { background: linear-gradient(90deg, rgba(31,26,24,0.78) 0%, rgba(31,26,24,0.45) 50%, rgba(31,26,24,0.15) 100%) !important; }
+body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-overlay-content { left: max(24px, calc(50vw - 560px)); transform: translateY(-50%); width: min(640px, 100%); }
+html body #wrapper .video-overlay-content :is(h1, .video-overlay-h1):not(#_) { font-family: "Oranienbaum", serif !important; font-size: 60px !important; line-height: 1.05 !important; color: #fff !important; text-align: left !important; margin: 0 0 18px !important; }
+html body #wrapper .video-overlay-content h2:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 13px !important; font-weight: 400 !important; letter-spacing: 0.22em; text-transform: uppercase; color: #e6d6c3 !important; text-align: left !important; padding-bottom: 28px !important; margin: 0 !important; }
+html body #wrapper .video-overlay-content .cta-button:not(#_):not(#__) { background: #EFEAE1 !important; color: #1F1A18 !important; border-color: #EFEAE1 !important; margin: 0 10px 10px 0 !important; }
+html body #wrapper .video-overlay-content .cta-button.cta-button-navy:not(#_):not(#__) { background: transparent !important; color: #fff !important; border-color: rgba(255,255,255,0.85) !important; }
+html body #wrapper .video-overlay-content .cta-button:not(#_):not(#__):hover { background: #fff !important; color: #1F1A18 !important; border-color: #fff !important; }
+body.wsite-page-free-consultation #wsite-content .paragraph { font-family: "Montserrat", sans-serif !important; font-size: 16px !important; line-height: 1.75 !important; color: #3d3532 !important; max-width: 720px; margin-left: auto !important; margin-right: auto !important; }
+html body.wsite-page-free-consultation #wrapper #wsite-content h2:not(#_) { font-size: 40px !important; color: #1F1A18 !important; }
+html body.wsite-page-free-consultation #wrapper #wsite-content h3:not(#_) { font-family: "Oranienbaum", serif !important; font-size: 24px !important; text-transform: uppercase; color: #1F1A18 !important; }
+body.wsite-page-free-consultation #wsite-content .wsite-multicol-col { border-top: 1px solid #ddd3c4; padding-top: 18px !important; }
+body.wsite-page-free-consultation #wsite-content .wsite-section[style*="#EFEAE1"] .wsite-multicol-col { border-top: 0; }
+body.wsite-page-marrickville-dentist #wsite-content #offer_band_link:hover { color: #AC8E6F !important; }
+body.wsite-page-marrickville-dentist #wsite-content .wsite-section[style*="#1F1A18"] .paragraph { font-family: "Montserrat", sans-serif !important; font-size: 15px !important; letter-spacing: 0.02em; }
+body.wsite-page-marrickville-dentist #wsite-content :is(.prev, .next) { border-radius: 0 !important; background: #1F1A18 !important; }
+@media (max-width: 900px) {
+  body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-container { height: auto; }
+  body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-overlay-content { left: auto; transform: none; }
+  html body #wrapper .video-overlay-content :is(h1, .video-overlay-h1):not(#_) { font-size: 38px !important; }
+  html body.wsite-page-free-consultation #wrapper #wsite-content h2:not(#_) { font-size: 30px !important; }
+}
+body.wsite-page-marrickville-dentist #wsite-content img.icon-image { filter: grayscale(1); }
+body.wsite-page-marrickville-dentist .wsite-background-440 img { filter: grayscale(1); opacity: 0.7; }
+html body.wsite-page-marrickville-dentist #wrapper #wsite-content h2:not(.ct-visit__title):not(#_), html body.wsite-page-marrickville-dentist #wrapper #wsite-content h2:not(.ct-visit__title) *:not(#_) { color: #1F1A18 !important; }
