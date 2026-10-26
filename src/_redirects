@@ -28,3 +28,20 @@ https://dentalresidenceproject.netlify.app/*  https://www.dentalresidence.com.au
 # COVID safety page retired 2026-10-24 (dated; removed from the footer)
 /covid-safety.html      /                         301!
 /covid-safety           /                         301!
+
+# Old Weebly addresses still in Google's index that 404'd after the
+# migration (found in Search Console 2026-10-26).
+/dr-khalil.html               /meet-our-dentists.html      301!
+/dr-khalil                    /meet-our-dentists.html      301!
+/dr-khalil-3.html             /meet-our-dentists.html      301!
+/dr-khalil-3                  /meet-our-dentists.html      301!
+/family-818191.html           /general-dental.html         301!
+/family-818191                /general-dental.html         301!
+/in-chair-whitening.html      /teeth-whitening-trays.html  301!
+/in-chair-whitening           /teeth-whitening-trays.html  301!
+/invisalign-calculator.html   /invisalign.html             301!
+/invisalign-calculator        /invisalign.html             301!
+/dental-health                /                            301!
+/dental-health.html           /                            301!
+/dental-residence.html        /                            301!
+/dental-residence             /                            301!
