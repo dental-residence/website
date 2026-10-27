@@ -1995,3 +1995,56 @@ html body:not(.menu-open) .navmobile-wrapper { pointer-events: none !important; 
 .hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster.jpg'); background-position: 50% 45%; }
 .hp-page .hp-hero--video video { object-position: 50% 45%; }
 body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-background { object-position: 50% 45%; }
+
+/* Treatment template (sv-*), 2026-10-27. Reuses pe-cards / pe-band /
+   hp-statement / Visit band; adds the split hero, booking wrapper and FAQ. */
+.sv-page .sv-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 620px; background: #EFEAE1; }
+.sv-page .sv-hero__text { display: flex; flex-direction: column; justify-content: center; padding: 80px 64px 80px max(24px, calc(50vw - 560px)); }
+.sv-page .sv-hero__photo { background-size: cover; background-position: 50% 40%; }
+html body #wrapper .sv-hero p.sv-hero__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 18px !important; text-align: left !important; }
+html body #wrapper .sv-hero h1.sv-hero__title:not(#_) { font-size: 64px !important; line-height: 1.02 !important; color: #1F1A18 !important; margin: 0 0 24px !important; text-align: left !important; }
+html body #wrapper .sv-hero p.sv-hero__lede:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 18px !important; line-height: 1.7 !important; color: #3d3532 !important; max-width: 500px; margin: 0 0 32px !important; text-align: left !important; }
+.sv-page .sv-hero__links { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin: 0 !important; }
+html body #wrapper a.sv-hero__btn:not(#_) { display: inline-block; background: #1F1A18; color: #EFEAE1 !important; font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none !important; padding: 16px 30px; }
+html body #wrapper a.sv-hero__btn:not(#_):hover { background: #3d3532; }
+html body #wrapper a.sv-hero__link:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #1F1A18 !important; text-decoration: none !important; padding-bottom: 6px; border-bottom: 1px solid #AC8E6F; }
+.sv-page .sv-intro { padding: 96px 24px 24px; }
+html body #wrapper .sv-intro p.hp-lede:not(#_) { font-size: 19px !important; line-height: 1.75 !important; max-width: 720px; }
+.sv-page .pe-card { display: block; }
+.sv-page .sv-book { max-width: 860px; margin: 0 auto; padding: 96px 24px 24px; box-sizing: border-box; }
+.sv-page .sv-faq { max-width: 860px; margin: 0 auto; padding: 72px 24px 112px; box-sizing: border-box; }
+html body #wrapper .sv-faq p.sv-faq__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 12px !important; text-align: left !important; }
+html body #wrapper .sv-faq h2.sv-faq__title:not(#_) { font-size: 40px !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 28px !important; }
+.sv-page .sv-faq__item { border-top: 1px solid #ddd3c4; }
+.sv-page .sv-faq__item:last-of-type { border-bottom: 1px solid #ddd3c4; }
+.sv-page .sv-faq__item summary { list-style: none; cursor: pointer; padding: 22px 36px 22px 0; position: relative; font-family: "Oranienbaum", serif; font-size: 22px; text-transform: uppercase; color: #1F1A18; }
+.sv-page .sv-faq__item summary::-webkit-details-marker { display: none; }
+.sv-page .sv-faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 18px; font-family: "Montserrat", sans-serif; font-size: 24px; color: #AC8E6F; }
+.sv-page .sv-faq__item[open] summary::after { content: "\2013"; }
+html body #wrapper .sv-faq__item p:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 16px !important; line-height: 1.75 !important; color: #3d3532 !important; margin: 0 0 22px !important; max-width: 680px; text-align: left !important; }
+@media (max-width: 900px) {
+  .sv-page .sv-hero { grid-template-columns: 1fr; min-height: 0; }
+  .sv-page .sv-hero__photo { order: -1; height: 66vw; }
+  .sv-page .sv-hero__text { padding: 40px 22px 52px; }
+  html body #wrapper .sv-hero h1.sv-hero__title:not(#_) { font-size: 44px !important; }
+  html body #wrapper .sv-hero p.sv-hero__lede:not(#_) { font-size: 17px !important; }
+  .sv-page .sv-intro { padding: 56px 22px 8px; }
+  .sv-page .sv-book { padding: 56px 16px 8px; }
+  .sv-page .sv-faq { padding: 48px 22px 72px; }
+  html body #wrapper .sv-faq h2.sv-faq__title:not(#_) { font-size: 32px !important; }
+}
+
+/* sv-text: plain heading + copy sections on treatment pages (kept SEO H2s). */
+.sv-page .sv-text { max-width: 760px; margin: 0 auto; padding: 56px 24px 8px; box-sizing: border-box; }
+html body #wrapper .sv-text h2.sv-text__title:not(#_) { font-size: 34px !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 18px !important; }
+html body #wrapper .sv-text p.ab-copy:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 17px !important; line-height: 1.75 !important; color: #3d3532 !important; text-align: left !important; margin: 0 0 16px !important; }
+.sv-page .sv-list { columns: 2; column-gap: 40px; margin: 8px 0 0; padding: 0 0 0 18px; }
+.sv-page .sv-list li { font-family: "Montserrat", sans-serif; font-size: 16px; line-height: 1.9; color: #3d3532; break-inside: avoid; }
+.sv-page .pe-band .pe-offer__links { display: flex; flex-wrap: wrap; gap: 28px; }
+html body #wrapper .sv-page .pe-band a:not(.hp-link):not(#_) { color: #1F1A18 !important; text-decoration: underline !important; text-decoration-color: #AC8E6F !important; }
+html body #wrapper .sv-intro p.hp-lede a:not(#_), html body #wrapper .sv-text p a:not(#_), html body #wrapper .sv-faq__item p a:not(#_) { color: #1F1A18 !important; text-decoration: underline !important; text-decoration-color: #AC8E6F !important; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .sv-page .sv-text { padding: 40px 22px 0; }
+  html body #wrapper .sv-text h2.sv-text__title:not(#_) { font-size: 28px !important; }
+  .sv-page .sv-list { columns: 1; }
+}
