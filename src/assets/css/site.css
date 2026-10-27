@@ -1989,3 +1989,9 @@ html body :is(.wsite-header-section, .wsite-background)::before, html body :is(.
    height on the left, and swallowed taps on buttons behind it on some pages.
    It only takes taps while open (nav.js sets body.menu-open). */
 html body:not(.menu-open) .navmobile-wrapper { pointer-events: none !important; }
+
+/* New patient-visit film loops (2026-10-27): subjects sit near the centre of
+   frame, so crop from the centre (the 62% setting suited the old video). */
+.hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster.jpg'); background-position: 50% 45%; }
+.hp-page .hp-hero--video video { object-position: 50% 45%; }
+body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-background { object-position: 50% 45%; }
