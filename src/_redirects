@@ -45,3 +45,11 @@ https://dentalresidenceproject.netlify.app/*  https://www.dentalresidence.com.au
 /dental-health.html           /                            301!
 /dental-residence.html        /                            301!
 /dental-residence             /                            301!
+/bridges-2023.html            /bridges.html                301!
+/bridges-2023                 /bridges.html                301!
+/dental-implants-2023.html    /dental-implants.html        301!
+/dental-implants-2023         /dental-implants.html        301!
+/dental-implants1.html        /dental-implants.html        301!
+/dental-implants1             /dental-implants.html        301!
+/family.html                  /general-dental.html         301!
+/family                       /general-dental.html         301!
