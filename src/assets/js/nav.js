@@ -239,6 +239,19 @@
 (function () {
   var vids = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
   if (!vids.length) return;
+  /* Big hero loops carry data-src so they don't compete with the first paint
+     on slow connections: the poster shows, and the video loads after the
+     page has finished loading. */
+  function attach() {
+    vids.forEach(function (v) {
+      var changed = false;
+      if (v.getAttribute('data-src')) { v.src = v.getAttribute('data-src'); v.removeAttribute('data-src'); changed = true; }
+      Array.prototype.forEach.call(v.querySelectorAll('source[data-src]'), function (s) { s.src = s.getAttribute('data-src'); s.removeAttribute('data-src'); changed = true; });
+      if (changed) { v.preload = 'auto'; v.load(); }
+    });
+    kick();
+  }
+  if (document.readyState === 'complete') setTimeout(attach, 0); else window.addEventListener('load', function () { setTimeout(attach, 0); });
   function kick() {
     vids.forEach(function (v) {
       v.muted = true; v.setAttribute('muted', ''); v.playsInline = true;
