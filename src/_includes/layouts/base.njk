@@ -29,18 +29,14 @@
 {% endif %}
 {% for block in jsonld %}<script type="application/ld+json">{{ block | safe }}</script>
 {% endfor %}
-		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="/assets/css/vendor/sites.css" />
-<link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="print" onload="this.media='screen,projection'" />
-<link rel="stylesheet" type="text/css" href="/files/main_style.css?v={{ now.build }}" title="wsite-theme-css" />
 {# Two faces sitewide (see "Typeface system" in site.css, which re-points the
    older family names at these files). #}
 <link rel="preload" href="/assets/fonts/Montserrat/regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/Oranienbaum/regular.woff2" as="font" type="font/woff2" crossorigin>
-{% include "partials/fonts.njk" %}
-{% include "partials/head-styles.njk" %}
-<link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css?v={{ now.build }}" />
-{% if peExtra %}<link rel="stylesheet" type="text/css" href="/assets/css/platform-elements-extra.css?v={{ now.build }}" />{% endif %}
-<link rel="stylesheet" type="text/css" href="/assets/css/site.css?v={{ now.build }}" />
+{# All head CSS in one request, built by src/css-bundle.11ty.js from sites.css,
+   social-icons.css, main_style.css, partials/fonts.njk, partials/head-styles.njk,
+   platform-elements(-extra).css and site.css, in that order. #}
+<link rel="stylesheet" type="text/css" href="/assets/css/{{ 'all-pe' if peExtra else 'all' }}.css?v={{ now.build }}" />
 	</head>
 	<body class="{{ bodyClass }}"><div class="body-wrap">
 <!-- Google Tag Manager (noscript) -->
