@@ -230,3 +230,23 @@
   }, { rootMargin: '-35% 0px -35% 0px' });
   photos.forEach(function (p) { io.observe(p); });
 })();
+
+/* Background videos on phones. iOS Low Power Mode (and some data-saver
+   settings) block autoplay and show a play button over the video. Try to
+   play on load, and again on the first touch or scroll, which phones allow;
+   the poster still shows until then. The play-button overlay is hidden in
+   site.css. */
+(function () {
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+  if (!vids.length) return;
+  function kick() {
+    vids.forEach(function (v) {
+      v.muted = true; v.setAttribute('muted', ''); v.playsInline = true;
+      if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    });
+  }
+  kick();
+  var once = function () { kick(); ['touchstart', 'scroll', 'click'].forEach(function (e) { window.removeEventListener(e, once, true); }); };
+  ['touchstart', 'scroll', 'click'].forEach(function (e) { window.addEventListener(e, once, { capture: true, passive: true }); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) kick(); });
+})();

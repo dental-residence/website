@@ -30,7 +30,7 @@
 {% for block in jsonld %}<script type="application/ld+json">{{ block | safe }}</script>
 {% endfor %}
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="/assets/css/vendor/sites.css" />
-<link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="/assets/css/vendor/social-icons.css" media="print" onload="this.media='screen,projection'" />
 <link rel="stylesheet" type="text/css" href="/files/main_style.css?v={{ now.build }}" title="wsite-theme-css" />
 {# Two faces sitewide (see "Typeface system" in site.css, which re-points the
    older family names at these files). #}
@@ -39,6 +39,7 @@
 {% include "partials/fonts.njk" %}
 {% include "partials/head-styles.njk" %}
 <link rel="stylesheet" type="text/css" href="/assets/css/platform-elements.css?v={{ now.build }}" />
+{% if peExtra %}<link rel="stylesheet" type="text/css" href="/assets/css/platform-elements-extra.css?v={{ now.build }}" />{% endif %}
 <link rel="stylesheet" type="text/css" href="/assets/css/site.css?v={{ now.build }}" />
 	</head>
 	<body class="{{ bodyClass }}"><div class="body-wrap">
@@ -56,7 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<span class="mobile"></span>
 				</div>
 			</div>
-                <div id="sitename"><a href="/"><img class="logo-image" width="4203" height="300" src="/files/theme/images/dental_residence_logo.png" alt="Dental Residence — Marrickville Dentist"></a> </div>
+                <div id="sitename"><a href="/"><img class="logo-image" width="4203" height="300" src="/assets/img/dental-residence-logo-1200.png" alt="Dental Residence — Marrickville Dentist"></a> </div>
                 <a class="header-book" href="/which-appointment.html" id="header_book_appointment">Book Appointment</a>
 			</div>
 

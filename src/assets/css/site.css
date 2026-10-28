@@ -1992,7 +1992,7 @@ html body:not(.menu-open) .navmobile-wrapper { pointer-events: none !important; 
 
 /* New patient-visit film loops (2026-10-27): subjects sit near the centre of
    frame, so crop from the centre (the 62% setting suited the old video). */
-.hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster.jpg'); background-position: 50% 45%; }
+.hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster-2.jpg'); background-position: 50% 45%; }
 .hp-page .hp-hero--video video { object-position: 50% 45%; }
 body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-background { object-position: 50% 45%; }
 
@@ -2048,3 +2048,36 @@ html body #wrapper .sv-intro p.hp-lede a:not(#_), html body #wrapper .sv-text p 
   html body #wrapper .sv-text h2.sv-text__title:not(#_) { font-size: 28px !important; }
   .sv-page .sv-list { columns: 1; }
 }
+
+/* sv-steps / sv-options / video media for the treatment template (2026-10-28). */
+.sv-page .sv-steps { max-width: 1120px; margin: 0 auto; padding: 88px 24px 24px; box-sizing: border-box; text-align: center; }
+html body #wrapper .sv-page p.sv-steps__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 12px !important; text-align: center !important; }
+html body #wrapper .sv-steps h2.sv-steps__title:not(#_), html body #wrapper .sv-options p.sv-options__title:not(#_) { font-family: "Oranienbaum", serif !important; font-size: 34px !important; text-transform: uppercase; color: #1F1A18 !important; text-align: center !important; margin: 0 0 44px !important; }
+.sv-page .sv-steps__list { list-style: none; counter-reset: svstep; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 0; padding: 0; text-align: left; }
+.sv-page .sv-steps__list li { counter-increment: svstep; border-top: 1px solid #ddd3c4; padding-top: 20px; }
+.sv-page .sv-steps__list li::before { content: "0" counter(svstep); display: block; font-family: "Oranienbaum", serif; font-size: 40px; line-height: 1; color: #AC8E6F; margin-bottom: 14px; }
+.sv-page .sv-steps__name { display: block; font-family: "Oranienbaum", serif; font-size: 24px; text-transform: uppercase; color: #1F1A18; margin-bottom: 8px; }
+.sv-page .sv-steps__text { display: block; font-family: "Montserrat", sans-serif; font-size: 15px; line-height: 1.7; color: #3d3532; }
+.sv-page .sv-options { max-width: 1120px; margin: 0 auto; padding: 88px 24px 24px; box-sizing: border-box; text-align: center; }
+.sv-page .sv-options__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: left; }
+.sv-page .sv-option__img { aspect-ratio: 4 / 3; background: #EFEAE1 url('/assets/img/whitening-options.webp') no-repeat; background-size: 200% auto; margin-bottom: 22px; }
+html body #wrapper .sv-option p.sv-option__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 11px !important; letter-spacing: 0.22em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 10px !important; text-align: left !important; }
+html body #wrapper .sv-option h2.sv-option__title:not(#_) { font-size: 30px !important; line-height: 1.1 !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 12px !important; }
+html body #wrapper .sv-option p.ab-copy:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 16px !important; line-height: 1.7 !important; color: #3d3532 !important; text-align: left !important; }
+.sv-page .sv-hero__video, .sv-page .sv-band__video { position: relative; overflow: hidden; background: #1F1A18; }
+.sv-page .sv-hero__video video, .sv-page .sv-band__video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) {
+  .sv-page .sv-steps, .sv-page .sv-options { padding: 56px 22px 8px; }
+  .sv-page .sv-steps__list { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .sv-page .sv-options__grid { grid-template-columns: 1fr; gap: 40px; }
+  html body #wrapper .sv-steps h2.sv-steps__title:not(#_), html body #wrapper .sv-options p.sv-options__title:not(#_) { font-size: 28px !important; margin-bottom: 28px !important; }
+}
+/* Booking-box secondary (call) button: ink outline like the rest of the system. */
+html body #wsite-content .booking-box a.booking-box__btn.booking-box__call:not(#_) { background: transparent !important; color: #1F1A18 !important; border: 1px solid #1F1A18 !important; }
+html body #wsite-content .booking-box a.booking-box__btn.booking-box__call:not(#_):hover { background: #1F1A18 !important; color: #EFEAE1 !important; }
+.sv-page .sv-list--one { columns: 1; }
+.sv-page .sv-list li strong { color: #1F1A18; font-weight: 600; }
+.sv-page .sv-reviews { padding-top: 72px; }
+html body #wrapper .sv-reviews cite.sv-reviews__name:not(#_) { display: block; margin-top: 12px; font-family: "Montserrat", sans-serif; font-style: normal; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6b5038; }
+/* Hide the iOS play-button overlay on decorative background videos. */
+video[autoplay]::-webkit-media-controls, video[autoplay]::-webkit-media-controls-start-playback-button, video[autoplay]::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; opacity: 0 !important; }
