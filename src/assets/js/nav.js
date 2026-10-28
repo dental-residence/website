@@ -241,12 +241,13 @@
   if (!vids.length) return;
   /* Big hero loops carry data-src so they don't compete with the first paint
      on slow connections: the poster shows, and the video loads after the
-     page has finished loading. */
+     page has finished loading. Phones get the lighter data-src-m cut. */
+  var phone = window.innerWidth < 700;
   function attach() {
     vids.forEach(function (v) {
       var changed = false;
       if (v.getAttribute('data-src')) { v.src = v.getAttribute('data-src'); v.removeAttribute('data-src'); changed = true; }
-      Array.prototype.forEach.call(v.querySelectorAll('source[data-src]'), function (s) { s.src = s.getAttribute('data-src'); s.removeAttribute('data-src'); changed = true; });
+      Array.prototype.forEach.call(v.querySelectorAll('source[data-src]'), function (s) { s.src = (phone && s.getAttribute('data-src-m')) || s.getAttribute('data-src'); s.removeAttribute('data-src'); changed = true; });
       if (changed) { v.preload = 'auto'; v.load(); }
     });
     kick();
