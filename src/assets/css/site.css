@@ -2106,3 +2106,12 @@ video[autoplay]::-webkit-media-controls, video[autoplay]::-webkit-media-controls
 @media (min-width: 1760px) {
   .wsite-section-wrap:has(> .wsite-section-bg-image) { width: 1680px !important; margin-left: auto !important; margin-right: auto !important; }
 }
+
+/* Photo slots waiting for George's own photos (2026-10-29): a plain panel,
+   a shade darker than the cream so the layout still reads. */
+.img-blank { background-image: none !important; background-color: #E4DBCD !important; }
+.img-blank { display: flex !important; align-items: center; justify-content: center; }
+.img-blank::after { content: "Image coming soon"; font-family: "Montserrat", sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: #8a7b6e; padding: 12px 18px; border-top: 1px solid #c9bcab; border-bottom: 1px solid #c9bcab; }
+/* Big photo slots: plum envelope with a "Coming soon" card (inline SVG). */
+.img-soon { background: radial-gradient(ellipse at 62% 28%, #6B2A3A 0%, #3E1520 55%, #2A0D15 100%) !important; display: flex !important; align-items: center; justify-content: center; overflow: hidden; }
+.img-soon svg { width: 82%; height: 82%; max-width: 560px; filter: drop-shadow(0 18px 24px rgba(0,0,0,.35)); }
