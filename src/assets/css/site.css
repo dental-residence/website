@@ -1763,7 +1763,7 @@ html body #wrapper .pe-cards h2.pe-cards__title:not(#_) { font-size: 34px !impor
 .pe-page a.pe-card { display: block; text-decoration: none !important; color: inherit !important; }
 .pe-page .pe-card__img { display: block; overflow: hidden; aspect-ratio: 4 / 5; background: #EFEAE1; margin-bottom: 22px; }
 .pe-page .pe-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease; }
-.pe-page a.pe-card:nth-child(2) { margin-top: 72px; }
+.pe-page a.pe-card:nth-child(2) { margin-top: 0; } /* stagger removed 2026-10-29: George wants the cards aligned */
 .pe-page a.pe-card:hover .pe-card__img img { transform: scale(1.04); }
 .pe-page .pe-card__label { display: block; font-family: "Montserrat", sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #6b5038; margin-bottom: 10px; }
 .pe-page .pe-card__title { display: block; font-family: "Oranienbaum", serif; font-size: 30px; line-height: 1.1; text-transform: uppercase; color: #1F1A18; margin-bottom: 12px; }
