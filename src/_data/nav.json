@@ -64,6 +64,28 @@
     ]
   },
   {
+    "id": "nav--facial-aesthetics-html",
+    "title": "FACIAL AESTHETICS",
+    "url": "/facial-aesthetics.html",
+    "children": [
+      {
+        "id": "nav--facial-aesthetics-menu",
+        "title": "TREATMENT MENU",
+        "url": "/facial-aesthetics.html#treatment-menu"
+      },
+      {
+        "id": "nav--facial-aesthetics-simon",
+        "title": "DR SIMON KHALIL",
+        "url": "/facial-aesthetics.html#dr-simon"
+      },
+      {
+        "id": "nav--facial-aesthetics-faqs",
+        "title": "FAQS",
+        "url": "/facial-aesthetics.html#faqs"
+      }
+    ]
+  },
+  {
     "id": "pg947749646235433042",
     "title": "EMERGENCY DENTIST",
     "url": "/emergency-dentist.html"
