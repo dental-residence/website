@@ -153,6 +153,10 @@
     var current = rootUl;
     var moving = false;
 
+    /* The slides are absolutely positioned, so the slider gets the height of
+       the slide on show; otherwise long menus can't scroll on short phones. */
+    function fit(slide) { slider.style.height = slide.offsetHeight + 'px'; }
+
     function goTo(oldSlide, newSlide, rightToLeft) {
       if (moving) return;
       moving = true;
@@ -161,6 +165,7 @@
       newSlide.style.transition = 'none';
       newSlide.style.transform = 'translate3d(' + (sign * w) + 'px, 0, 0)';
       newSlide.style.display = 'block';
+      slider.style.height = Math.max(oldSlide.offsetHeight, newSlide.offsetHeight) + 'px';
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           oldSlide.style.transition = newSlide.style.transition = 'transform 300ms linear';
@@ -170,6 +175,7 @@
             oldSlide.style.display = 'none';
             oldSlide.style.transform = '';
             current = newSlide;
+            fit(newSlide);
             moving = false;
           }, 320);
         });
@@ -216,6 +222,7 @@
     });
 
     menu.style.display = 'block';
+    fit(rootUl);
   }
 })();
 
