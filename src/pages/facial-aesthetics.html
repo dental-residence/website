@@ -96,6 +96,18 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
   html body #wrapper .fa-tile h3.fa-tile__title:not(#_) { font-size: 20px !important; }
   html body #wrapper .fa-tile p.fa-tile__text:not(#_) { font-size: 13px !important; }
 }
+/* Compact Dr Simon block (2026-10-29) */
+.fa-simon { max-width: 880px; margin: 32px auto 0; padding: 0 24px; box-sizing: border-box; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+.fa-simon__photo { aspect-ratio: 4 / 5; background-size: cover; background-position: 50% 15%; }
+html body #wrapper .fa-simon p.fa-simon__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 11px !important; font-weight: 500 !important; letter-spacing: .26em !important; text-transform: uppercase !important; color: #6b2a22 !important; text-align: left !important; margin: 0 0 8px !important; }
+html body #wrapper .fa-simon h2.fa-simon__title:not(#_) { font-size: 30px !important; line-height: 1.15 !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 12px !important; }
+html body #wrapper .fa-simon p.fa-simon__copy:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 15px !important; line-height: 1.75 !important; color: #3d3532 !important; text-align: left !important; margin: 0 0 14px !important; max-width: 480px; }
+html body #wrapper .fa-simon p.fa-simon__links:not(#_) { text-align: left !important; margin: 0 !important; }
+@media (max-width: 700px) {
+  .fa-simon { grid-template-columns: 120px 1fr; gap: 20px; padding: 0 22px; }
+  html body #wrapper .fa-simon h2.fa-simon__title:not(#_) { font-size: 24px !important; }
+  html body #wrapper .fa-simon p.fa-simon__copy:not(#_) { font-size: 14px !important; }
+}
 </style>
 
 <section class="sv-hero">
@@ -109,7 +121,7 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
 		</p>
 		<p class="fa-hero__call"><a href="tel:+61283846667" class="sv-hero__link"><span id="telephone_button">Call (02) 8384 6667</span></a></p>
 	</div>
-	<div class="sv-hero__photo" role="img" aria-label="A woman with her eyes closed in warm sunlight" style="background-image: url('/assets/img/facial/fa-hero-sun.jpg'); background-position: 50% 40%;"></div>
+	<div class="sv-hero__photo" role="img" aria-label="A woman with her eyes closed in warm sunlight" style="background-image: url('/assets/img/facial/fa-hero-sun.jpg'); background-position: 72% 58%; background-size: 165%;"></div>
 </section>
 
 <div id="content-wrapper">
@@ -132,7 +144,7 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
 </section>
 
 <section class="hp-statement sv-intro">
-	<p class="hp-lede">Good facial aesthetics should go unnoticed. Every treatment at Dental Residence begins with an unhurried consultation with Dr Simon Khalil, who brings a dentist&rsquo;s understanding of the face, the jaw and the smile to a plan made only for you.</p>
+	<p class="hp-lede">Good facial aesthetics should go unnoticed. The aim is never to change how you look, only to soften what has started to show, so you leave looking rested and entirely yourself. Every treatment begins with an unhurried conversation, in a house that feels more like a private residence than a clinic.</p>
 </section>
 
 <section class="fa-menu" id="treatment-menu" aria-label="Treatment menu">
@@ -143,7 +155,7 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
 	<!-- Photos supplied by George 2026-10-29 (he holds the rights). Web-resolution copies; swap for full-size originals before launch. -->
 	<div class="fa-grid">
 		<figure class="fa-tile">
-			<div class="fa-tile__img" role="img" aria-label="A close-up of a man's eye and brow" style="background-image: url('/assets/img/facial/fa-lines-man.jpg'); background-position: 50% 30%;"></div>
+			<div class="fa-tile__img" role="img" aria-label="A close-up of a woman's forehead, brow and eye" style="background-image: url('/assets/img/facial/fa-brow-smile.jpg'); background-position: 50% 20%;"></div>
 			<figcaption>
 				<p class="fa-tile__kicker">Upper face</p>
 				<h3 class="fa-tile__title">Lines &amp; Expression</h3>
@@ -152,7 +164,7 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
 			</figcaption>
 		</figure>
 		<figure class="fa-tile">
-			<div class="fa-tile__img" role="img" aria-label="A close-up of a woman's eye in warm light" style="background-image: url('/assets/img/facial/fa-eyes-warm.jpg'); background-position: 50% 30%;"></div>
+			<div class="fa-tile__img" role="img" aria-label="A close-up of a man's eye" style="background-image: url('/assets/img/facial/fa-lines-man.jpg'); background-position: 50% 25%;"></div>
 			<figcaption>
 				<p class="fa-tile__kicker">Around the eyes</p>
 				<h3 class="fa-tile__title">The Eye Area</h3>
@@ -161,7 +173,7 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
 			</figcaption>
 		</figure>
 		<figure class="fa-tile">
-			<div class="fa-tile__img" role="img" aria-label="A close-up of a woman's brow, eye and lips" style="background-image: url('/assets/img/facial/fa-brow-smile.jpg'); background-position: 50% 35%;"></div>
+			<div class="fa-tile__img" role="img" aria-label="A close-up of a woman's brow, eye and lips in warm light" style="background-image: url('/assets/img/facial/fa-eyes-warm.jpg'); background-position: 50% 45%;"></div>
 			<figcaption>
 				<p class="fa-tile__kicker">Facial balance</p>
 				<h3 class="fa-tile__title">Brow &amp; Smile</h3>
@@ -203,14 +215,13 @@ html body #wrapper .fa-tile p.fa-tile__note:not(#_) { font-family: "Montserrat",
 	<p class="fa-menu__cta"><a href="https://www.myhealth1st.com.au/profile/show/9023" target="_blank" data-mh1-source="customer-name" class="1stAvailableWidget widget sv-hero__btn" id="9023" rel="noopener"><span id="book_online_button_facial">Book a Consultation</span></a></p>
 </section>
 
-<section class="pe-band" id="dr-simon">
-	<div class="pe-band__photo" role="img" aria-label="Dr Simon Khalil" style="background-image: url('/uploads/1/3/8/3/138327651/dr-simon-khalil.jpg'); background-position: 50% 8%;"></div>
-	<div class="pe-band__text">
-		<p class="pe-band__kicker">Your practitioner</p>
-		<h2 class="pe-band__title">Dr Simon Khalil</h2>
-		<p class="ab-copy">Dr Simon is the principal dentist at Dental Residence. His work in general and cosmetic dentistry has given him a close understanding of how the jaw, the lips and the muscles of the face work together.</p>
-		<p class="ab-copy">His approach to facial aesthetics is the same as his approach to a smile: restrained, natural and planned around you.</p>
-		<p class="pe-offer__links"><a href="/meet-our-dentists.html" class="hp-link">Meet our dentists</a><a href="/cosmetic-dentistry.html" class="hp-link">Cosmetic dentistry</a></p>
+<section class="fa-simon" id="dr-simon">
+	<div class="fa-simon__photo" role="img" aria-label="Dr Simon Khalil" style="background-image: url('/uploads/1/3/8/3/138327651/dr-simon-khalil.jpg');"></div>
+	<div class="fa-simon__text">
+		<p class="fa-simon__kicker">Your practitioner</p>
+		<h2 class="fa-simon__title">Dr Simon Khalil</h2>
+		<p class="fa-simon__copy">Principal dentist at Dental Residence. A dentist&rsquo;s eye for how the jaw, the lips and the face work together, and a quiet, natural approach.</p>
+		<p class="fa-simon__links"><a href="/meet-our-dentists.html" class="hp-link">Meet our dentists</a></p>
 	</div>
 </section>
 
