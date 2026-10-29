@@ -2081,3 +2081,28 @@ html body #wsite-content .booking-box a.booking-box__btn.booking-box__call:not(#
 html body #wrapper .sv-reviews cite.sv-reviews__name:not(#_) { display: block; margin-top: 12px; font-family: "Montserrat", sans-serif; font-style: normal; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6b5038; }
 /* Hide the iOS play-button overlay on decorative background videos. */
 video[autoplay]::-webkit-media-controls, video[autoplay]::-webkit-media-controls-start-playback-button, video[autoplay]::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; opacity: 0 !important; }
+
+/* ---- Big screens (2026-10-29) ----
+   Split text/photo sections used to stretch edge to edge, so on 2000px+ screens
+   the photos were upscaled into soft, short strips and the text was pushed
+   inwards by calc(50vw - ...) padding. Cap the content at 1680px and let the
+   tan background carry on to the screen edges (box-shadow + clip-path). */
+@media (min-width: 1760px) {
+  .sv-page .sv-hero, .pe-page .pe-band, .ab-page .ab-hero, .ty-hero {
+    max-width: 1680px; margin-left: auto !important; margin-right: auto !important;
+    box-shadow: 0 0 0 100vmax #EFEAE1; clip-path: inset(0 -100vmax);
+  }
+  .sv-page .sv-hero__text, .ab-page .ab-hero__text, .ty-hero__text { padding-left: 120px; }
+  .pe-page .pe-band__text { padding-right: 120px; }
+  .ct-page .ct-hero, .wsite-page-which-appointment .appt-hero { max-width: 1680px; margin-left: auto !important; margin-right: auto !important; }
+  .ct-page .ct-hero__text, .wsite-page-which-appointment .appt-hero__text { padding-left: 120px; }
+}
+/* Small vintage photo (wisdom page, 366x488 original): show it framed at about
+   its real size instead of stretching it across half the screen. */
+.pe-page .pe-band--print .pe-band__photo { background-size: contain; background-repeat: no-repeat; background-position: 50% 50%; background-color: #EFEAE1; margin: 56px 0 56px 56px; }
+@media (max-width: 900px) { .pe-page .pe-band--print .pe-band__photo { margin: 32px 22px 0; height: 120vw; max-height: 560px; } }
+/* Legacy full-width photo banners (Weebly section backgrounds): cap on big
+   screens so low-resolution photos aren't stretched past 2x. */
+@media (min-width: 1760px) {
+  .wsite-section-wrap:has(> .wsite-section-bg-image) { width: 1680px !important; margin-left: auto !important; margin-right: auto !important; }
+}

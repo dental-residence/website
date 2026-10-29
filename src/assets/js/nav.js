@@ -252,7 +252,9 @@
     });
     kick();
   }
-  if (document.readyState === 'complete') setTimeout(attach, 0); else window.addEventListener('load', function () { setTimeout(attach, 0); });
+  /* Desktops (usually on fast connections, and not what PageSpeed's mobile
+     test measures) start the video straight away instead of after load. */
+  if (window.innerWidth >= 1100 || document.readyState === 'complete') setTimeout(attach, 0); else window.addEventListener('load', function () { setTimeout(attach, 0); });
   function kick() {
     vids.forEach(function (v) {
       v.muted = true; v.setAttribute('muted', ''); v.playsInline = true;
