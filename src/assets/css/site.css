@@ -1992,7 +1992,10 @@ html body:not(.menu-open) .navmobile-wrapper { pointer-events: none !important; 
 
 /* New patient-visit film loops (2026-10-27): subjects sit near the centre of
    frame, so crop from the centre (the 62% setting suited the old video). */
-.hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster-2.jpg'); background-position: 50% 45%; }
+.hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster-2.webp'); background-position: 50% 45%; }
+/* Phones (same <700px cut-off nav.js uses for the lighter video): a square
+   centre crop, since the tall hero shows only the middle of the frame. */
+@media (max-width: 699px) { .hp-page .hp-hero--video { background-image: url('/assets/img/home-visit-poster-2-sq.webp'); } }
 .hp-page .hp-hero--video video { object-position: 50% 45%; }
 body:is(.wsite-page-free-consultation, .wsite-page-marrickville-dentist) .video-background { object-position: 50% 45%; }
 
