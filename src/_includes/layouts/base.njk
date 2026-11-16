@@ -77,6 +77,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<a href="{{ callbarBook or '/which-appointment.html' }}"{% if callbarBook %} target="_blank" rel="noopener"{% endif %} class="em-callbar__book" id="book_online_button_sticky">Book</a>
 </div>
 <script src="/assets/js/nav.js?v={{ now.build }}"></script>
+{#- SmileView clicks (any link with data-track="smileview"): GA4 event via the
+    page's gtag, plus a Meta custom event. Link opens in a new tab, so the
+    hits are sent before anything unloads. -#}
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[data-track="smileview"]');
+  if (!a) return;
+  if (typeof gtag === 'function') gtag('event', 'smileview_click', { link_url: a.href });
+  if (typeof fbq === 'function') fbq('trackCustom', 'SmileViewClick');
+});
+</script>
 {% if ytClips %}<script src="/assets/js/yt-clips.js?v={{ now.build }}" defer></script>{% endif %}
 {% if videoClips %}<script src="/assets/js/video-clips.js?v={{ now.build }}" defer></script>{% endif %}
 		<script async type='text/javascript' src='https://www.myhealth1st.com.au/mh1-widget/2021/popup.v3.js'></script>

@@ -2122,3 +2122,19 @@ video[autoplay]::-webkit-media-controls, video[autoplay]::-webkit-media-controls
 /* Phone menu: room at the bottom so the last items scroll clear of the
    fixed Call / Book bar (2026-10-29). */
 .navmobile-wrapper { padding-bottom: 110px !important; -webkit-overflow-scrolling: touch; }
+
+/* Invisalign SmileView band (2026-11-16): button on phones, QR on desktop. */
+.sv-page .sv-smile { max-width: 1120px; margin: 72px auto 88px; padding: 56px 64px; box-sizing: border-box; display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; border: 1px solid #ddd3c4; }
+html body #wrapper .sv-smile p.sv-smile__kicker:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 12px !important; letter-spacing: 0.24em; text-transform: uppercase; color: #6b5038 !important; margin: 0 0 12px !important; text-align: left !important; }
+html body #wrapper .sv-smile h2.sv-smile__title:not(#_) { font-size: 40px !important; line-height: 1.08 !important; color: #1F1A18 !important; text-align: left !important; margin: 0 0 18px !important; }
+html body #wrapper .sv-smile p.sv-smile__copy:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 17px !important; line-height: 1.7 !important; color: #3d3532 !important; text-align: left !important; max-width: 520px; margin: 0 0 28px !important; }
+html body #wrapper .sv-smile p.sv-smile__links:not(#_) { margin: 0 0 20px !important; text-align: left !important; }
+html body #wrapper .sv-smile p.sv-smile__small:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 13px !important; line-height: 1.6 !important; color: #6b5038 !important; text-align: left !important; max-width: 520px; margin: 0 !important; }
+.sv-page .sv-smile__qr { text-align: center; }
+.sv-page .sv-smile__qr img { display: block; width: 220px; height: 220px; margin: 0 auto 12px; }
+html body #wrapper .sv-smile__qr p:not(#_) { font-family: "Montserrat", sans-serif !important; font-size: 11px !important; letter-spacing: 0.2em; text-transform: uppercase; color: #6b5038 !important; text-align: center !important; margin: 0 !important; }
+@media (max-width: 900px) {
+  .sv-page .sv-smile { grid-template-columns: 1fr; margin: 48px 16px 56px; padding: 36px 22px; gap: 0; }
+  .sv-page .sv-smile__qr { display: none; }
+  html body #wrapper .sv-smile h2.sv-smile__title:not(#_) { font-size: 30px !important; }
+}

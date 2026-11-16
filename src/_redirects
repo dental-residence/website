@@ -54,3 +54,7 @@
 # Old contact address still visited (23 GA4 users, Oct 2026)
 /contact-us.html              /contact.html                301!
 /contact-us                   /contact.html                301!
+
+# Invisalign SmileView short link (2026-11-16): use dentalresidence.com.au/smile
+# on socials, Business Profile and print. 302 so the target can change.
+/smile                        https://cus-invisalign-starter-use-prd.herokuapp.com/sv/897680   302!
